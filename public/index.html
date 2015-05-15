@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en"  ng-app="MyApp">
 <head>
 	<meta charset="UTF-8">
 	<meta charset="utf-8">
@@ -7,7 +7,7 @@
 	<meta name="keywords" content="">
 	<meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	
+
 	<meta name="renderer" content="webkit">
 
 	<!-- No Baidu Siteapp-->
@@ -16,20 +16,39 @@
 	<title>Lumx</title>
 	<!-- Head -->
 	<link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
-	<link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.css">
+	<!-- <link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.css"> -->
+	<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.3.0/css/amazeui.min.css">
+	<style type="text/css">
+		.am-titlebar{
+			margin-top: 0px;
+		}
+		.am-titlebar-default{
+			border-bottom: 0px;
+		}
+	</style>
 </head>
 <body>
 
-	<div ng-app="MyApp">
-		<button class="btn btn--m btn--blue btn--raised" lx-ripple>Button</button>
-		<button class="btn btn--m btn--blue btn--flat" lx-ripple>Button</button>
-		<button class="btn btn--m btn--blue btn--fab" lx-ripple><i class="mdi mdi-plus"></i></button>
-		<button class="btn btn--m btn--blue btn--icon" lx-ripple><i class="mdi mdi-plus"></i></button>
+	<div>
+		<div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+			<h2 class="am-titlebar-title">2015黑客马拉松</h2>
+			<nav class="am-titlebar-nav">
+				<a href="#" class="">更多 &raquo;</a>
+			</nav>
+		</div>
+		<div class="am-panel am-panel-secondary">
+			<div class="am-panel-hd">
+				<h3 class="am-panel-title">活动举办方</h3>
+			</div>
+			<div class="am-panel-bd">
+				杭州电子科技大学&浙江工商大学
+			</div>
+		</div>
 		<div flex-item>
-        <div class="card">
-        	<div class="card__actions">
-                <h1>Hello World</h1>
-            </div>
+        <div class="card am-panel am-panel-success">
+        	<div class="am-panel-hd">
+				<h3 class="am-panel-title">活动详情</h3>
+			</div>
             <div class="p+">
                 <strong class="fs-headline display-block">Lorem Ipsum</strong>
                 <span class="fs-subhead tc-black-2 display-block">Lorem Ipsum</span>
@@ -47,6 +66,20 @@
             </div>
         </div>
     </div>
+
+			    <div flex-container="row" flex-gutter="24">
+    <div flex-item>
+        <lx-text-field label="Last name">
+            <input type="text" ng-model="textFields.lastName">
+        </lx-text-field>
+    </div>
+
+    <div flex-item>
+        <lx-text-field label="First name">
+            <input type="text" ng-model="textFields.firstName">
+        </lx-text-field>
+    </div>
+</div>
 	</div>
 	<!-- Before body closing tag -->
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
@@ -54,6 +87,7 @@
 	<script type="text/javascript" src="bower_components/moment/min/moment-with-locales.js"></script>
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="bower_components/lumx/dist/lumx.js"></script>
+	<script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.3.0/js/amazeui.js"></script>
 	<script type="text/javascript">
 		angular.module('MyApp', ['lumx']);
 	</script>
