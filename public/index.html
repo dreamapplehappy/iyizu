@@ -1,10 +1,49 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>iYiZu</title>
+	<title>Lumx</title>
+	<!-- Head -->
+	<link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
+	<link rel="stylesheet" href="bower_components/mdi/css/materialdesignicons.css">
 </head>
 <body>
-	welcom----
+
+	<div ng-app="MyApp">
+		<button class="btn btn--m btn--blue btn--raised" lx-ripple>Button</button>
+		<button class="btn btn--m btn--blue btn--flat" lx-ripple>Button</button>
+		<button class="btn btn--m btn--blue btn--fab" lx-ripple><i class="mdi mdi-plus"></i></button>
+		<button class="btn btn--m btn--blue btn--icon" lx-ripple><i class="mdi mdi-plus"></i></button>
+		<div flex-item>
+        <div class="card">
+        	<div class="card__actions">
+                <h1>Hello World</h1>
+            </div>
+            <div class="p+">
+                <strong class="fs-headline display-block">Lorem Ipsum</strong>
+                <span class="fs-subhead tc-black-2 display-block">Lorem Ipsum</span>
+
+                <div class="paragraph fs-body-1 mt+">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tristique orci a lacinia malesuada.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card__actions">
+                <button class="btn btn--m btn--black btn--flat" lx-ripple>Yes</button>
+                <button class="btn btn--m btn--orange btn--flat" lx-ripple>No</button>
+            </div>
+        </div>
+    </div>
+	</div>
+	<!-- Before body closing tag -->
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="bower_components/velocity/velocity.js"></script>
+	<script type="text/javascript" src="bower_components/moment/min/moment-with-locales.js"></script>
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/lumx/dist/lumx.js"></script>
+	<script type="text/javascript">
+		angular.module('MyApp', ['lumx']);
+	</script>
 </body>
 </html>
