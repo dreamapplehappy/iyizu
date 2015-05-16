@@ -38,6 +38,20 @@
         .am-slider-default .am-control-nav{
           bottom: 20%;
         }
+        #silder2{
+          margin-bottom: 10%;
+        }
+        .fa-up{
+          display: block;
+          text-align: center;
+          font-size: 2em;
+          height: 1em;
+        }
+        .fa-down{
+          display: block;
+          font-size: 1em;
+
+        }
   </style>
 </head>
 <body>
@@ -60,13 +74,13 @@
     </ul>
   </div>
 
-  <div id="silder2" class="am-slider am-slider-b3">
+  <div id="silder2"  class="am-slider am-slider-default">
     <ul class="am-slides">
       <li class="am-g">
-        <div class="am-u-sm-3"><i class="fa fa-map-marker fa-2x pull-top"></i>地图导航</div>
-        <div class="am-u-sm-3"><i class="fa fa-map-marker fa-2x"></i>地图导航</div>
-        <div class="am-u-sm-3"><i class="fa fa-map-marker fa-2x"></i>地图导航</div>
-        <div class="am-u-sm-3"><i class="fa fa-map-marker fa-2x"></i>地图导航</div>
+        <div class="am-u-sm-3"><i class="fa fa fa-flag fa-up"></i><sapn class="fa-down">最新活动</span></div>
+        <div class="am-u-sm-3"><i class="fa fa-jpy fa-up"></i><sapn class="fa-down">消费指南</span></div>
+        <div class="am-u-sm-3"><i class="fa fa-map-marker fa-up"></i><sapn class="fa-down">地图导航</span></div>
+        <div class="am-u-sm-3"><i class="fa fa-info-circle fa-up"></i><sapn class="fa-down">关于我们</span></div>
       </li>
     </ul>
   </div>
@@ -81,6 +95,9 @@
          initDelay: 0
       });
       $('#slider').flexslider('play');
+      $('#silder2').flexslider({
+        directionNav: true
+      });
     });
   </script>
 </body>
