@@ -33,55 +33,54 @@
   <meta name="msapplication-TileColor" content="#0e90d2">
 
   <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.3.0/css/amazeui.min.css">
-  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <style>
-        .am-slider-default .am-control-nav{
-          bottom: 20%;
-        }
+        
   </style>
 </head>
 <body>
 
 
-  <div id="silder" class="am-slider am-slider-default">
-    <ul class="am-slides">
-      <li>
-        <img src="http://upload.520apk.com/news/20140707/14047120826244.jpg">
-      </li>
-      <li>
-        <img src="http://down1.cnmo.com/cnmo-app/a209/hefuqinglv.jpg">
-      </li>
-      <li>
-        <img src="http://upload.520apk.com/news/20140630/14041086982071.jpg">
-      </li>
-      <li>
-        <img src="http://upload.520apk.com/news/20140630/1404108699920.jpg">
-      </li>
-    </ul>
-  </div>
-
-  <div id="silder2" class="am-slider am-slider-b3">
-    <ul class="am-slides">
-      <li class="am-g">
-        <div class="am-u-sm-3"><i class="fa fa-map-marker fa-2x pull-top"></i>地图导航</div>
-        <div class="am-u-sm-3"><i class="fa fa-map-marker fa-2x"></i>地图导航</div>
-        <div class="am-u-sm-3"><i class="fa fa-map-marker fa-2x"></i>地图导航</div>
-        <div class="am-u-sm-3"><i class="fa fa-map-marker fa-2x"></i>地图导航</div>
-      </li>
-    </ul>
-  </div>
-
+  
+<script type="text/x-handlebars-template" id="amz-tpl">
+  {{>slider slider}}
+</script>
 
   <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
   <script src="http://cdn.amazeui.org/amazeui/2.3.0/js/amazeui.js"></script>
+  <script src="assets/js/handlebars.min.js"></script>
+<script src="assets/js/amazeui.widgets.helper.js"></script>
   <script type="text/javascript">
     $(function() {
-      $('.am-slider').flexslider({
-         directionNav: false,
-         initDelay: 0
-      });
-      $('#slider').flexslider('play');
-    });
+    var $tpl = $('#amz-tpl'),
+      source = $tpl.text(),
+      template = Handlebars.compile(source),
+      data = {
+        slider: {
+          "theme": "a2",
+          "content": [
+            {
+              "img": "http://s.cn.bing.net/az/hprichbg/rb/TheLuxorHotel_ZH-CN12121725266_1920x1080.jpg"
+            },
+            {
+              "img": "http://s.cn.bing.net/az/hprichbg/rb/MovingWalkway_ZH-CN9842297711_1920x1080.jpg"
+            },
+            {
+              "img": "http://global.bing.com/az/hprichbg/rb/UchisarCastle_EN-US10838608428_1920x1080.jpg"
+            },
+            {
+              "img": "http://global.bing.com/az/hprichbg/rb/DumbartonOaksGardens_EN-US12360736195_1920x1080.jpg"
+            }
+          ]
+        },
+
+      },
+      html = template(data);
+    $tpl.before(html);
+    $.each(['slider'], function(i, m) {
+      var module = $.AMUI[m];
+      module && module.init && module.init();
+    })
+  });
   </script>
 </body>
 </html>
