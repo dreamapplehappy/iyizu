@@ -35,9 +35,12 @@
   <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.3.0/css/amazeui.min.css">
   <style>
         .am-slider-default .am-control-nav{
-          bottom: 9em;
+          bottom: 12em;
         }
-        
+        img{
+          width: 100%;
+          height: 100%;
+        }
   </style>
 </head>
 <body>
@@ -46,32 +49,16 @@
   <div id="silder" class="am-slider am-slider-default">
     <ul class="am-slides">
       <li>
-        <img src="http://img5q.duitang.com/uploads/item/201306/25/20130625050134_NCFLH.jpeg">
-        <div class="am-slider-desc">
-          <h2 class="am-slider-title">远方 有一个地方 那里种有我们的梦想</h2>
-          <a class="am-slider-more">了解更多</a>
-        </div>
+        <img src="http://upload.520apk.com/news/20140707/14047120826244.jpg">
       </li>
       <li>
-        <img src="http://img4.duitang.com/uploads/item/201407/31/20140731135852_ZGQ2M.jpeg">
-        <div class="am-slider-desc">
-          <h2 class="am-slider-title">某天 也许会相遇 相遇在这个好地方</h2>
-          <a class="am-slider-more">了解更多</a>
-        </div>
+        <img src="http://down1.cnmo.com/cnmo-app/a209/hefuqinglv.jpg">
       </li>
       <li>
-        <img src="http://img4q.duitang.com/uploads/item/201306/25/20130625045841_3XtMm.jpeg">
-        <div class="am-slider-desc">
-          <h2 class="am-slider-title">不要太担心 只因为我相信 终会走过这条遥远的道路</h2>
-          <a class="am-slider-more">了解更多</a>
-        </div>
+        <img src="http://upload.520apk.com/news/20140630/14041086982071.jpg">
       </li>
       <li>
-        <img src="http://img4q.duitang.com/uploads/item/201308/10/20130810180055_RMkt4.jpeg">
-        <div class="am-slider-desc">
-          <h2 class="am-slider-title">OH PARA PARADISE 是否那么重要 你是否那么地遥远</h2>
-          <a class="am-slider-more">了解更多</a>
-        </div>
+        <img src="http://upload.520apk.com/news/20140630/1404108699920.jpg">
       </li>
     </ul>
   </div>
@@ -82,7 +69,8 @@
   <script type="text/javascript">
     $(function() {
       $('.am-slider').flexslider({
-         directionNav: false
+         directionNav: false,
+         initDelay: 0
       });
       $('#slider').flexslider('play');
     });
