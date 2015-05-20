@@ -1,7 +1,9 @@
 .under-slider-tabs{
 	background-color: white;
+	height: 5em;
 }
 .under-slider-tabs .tab-item img{
+	margin-top: 0.5em;
 	width: 3em;
 	height: 3em;
 	border-radius: 3em;
