@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>To Do List</title>
+
+  <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../css/tem5/style.css">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+  -->
+
+  <!-- ionic/angularjs js -->
+  <script src="../lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- your app's js -->
+  <script src="../js/tem5/app.js"></script>
+</head>
+<body ng-app="starter">
+       <div  ng-controller="MyController">
+              <ul class="list">
+                  <li class="item">
+                         <label class="item item-input">
+                          <input type="text" placeholder="type need to do thing" ng-model="thing">
+                        </label>
+                        <button ng-click="add()">add</button>
+                  </li>
+                  <li ng-repeat="list in lists" class="item item-checkbox">
+                        <label class="checkbox">
+                         <input type="checkbox">
+                       </label>
+                      {{list.content}}
+                  </li>
+              </ul>
+       </div>
+</body>
+</html>
