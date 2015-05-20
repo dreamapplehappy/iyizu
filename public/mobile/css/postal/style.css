@@ -1,3 +1,7 @@
+.am-slider-a1{
+	box-shadow: none;
+	border-bottom: none;
+}
 .under-slider-tabs{
 	position: relative;
 	background-color: white;
