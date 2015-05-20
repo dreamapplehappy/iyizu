@@ -1,4 +1,17 @@
-.tabs-icon-top{
+.under-slider-tabs{
+	background-color: white;
+}
+.under-slider-tabs .tab-item img{
+	width: 3em;
+	height: 3em;
+	border-radius: 3em;
+}
+.under-slider-tabs .tab-item div{
+	font-size: 1.5em;
+	line-height: 1.5em;
+}
+
+div.footer-tabs{
 	position: fixed !important;
 	bottom: 0px !important;
 }
