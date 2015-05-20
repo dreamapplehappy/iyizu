@@ -1,5 +1,8 @@
 angular.module('starter', ['ionic'])
 .controller("MyController", function($scope) {
+	$scope.shouldShowDelete = false;
+ 	$scope.shouldShowReorder = false;
+ 	$scope.listCanSwipe = true
     $scope.lists = [
     	{	status: "new", content: "I need to do1"},
     	{	status: "new", content: "I need to do2"},
@@ -15,4 +18,5 @@ angular.module('starter', ['ionic'])
     $scope.remove = function(){
 
     }
+
 });
