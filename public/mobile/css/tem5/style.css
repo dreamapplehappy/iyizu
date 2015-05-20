@@ -4,3 +4,7 @@
 .item-checkbox{
 	padding-left: 10px;
 }
+.list-content{
+	padding-left: 60px !important;
+	font-size: 1.2em !important;
+}

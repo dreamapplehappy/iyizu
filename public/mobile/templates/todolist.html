@@ -18,30 +18,28 @@
   <script src="../js/tem5/app.js"></script>
 </head>
 <body ng-app="starter">
-       <div  ng-controller="MyController">
-              <ul class="list">
-                  <li class="item item-checkbox">
-                        <label class="item item-input">
-                          <input type="text" placeholder="type need to do thing" ng-model="thing">
-                        </label>
-                  </li>
-                  <li>
-                    <div class="button-bar">
-                    <a class="button button-positive">全选</a>
-                      <a class="button" ng-click="add()">添加</a>
-                      <a class="button">。。。</a>
-                    </div>
-                  </li>
-              </ul>
+       <div>
               <ion-list ng-controller="MyController"
                   show-delete="shouldShowDelete"
                   show-reorder="shouldShowReorder"
                   can-swipe="listCanSwipe">
+                    <li class="item item-checkbox">
+                        <label class="item item-input">
+                          <input type="text" placeholder="type need to do thing" ng-model="thing">
+                        </label>
+                    </li>
+                    <li>
+                      <div class="button-bar">
+                      <a class="button button-positive">全选</a>
+                      <a class="button" ng-click="add()">添加</a>
+                      <a class="button">。。。</a>
+                      </div>
+                    </li>
                     <ion-item ng-repeat="list in lists" class="item item-checkbox">
                       <label class="checkbox">
                          <input type="checkbox" ng-model="checked" >
                        </label>
-                      <h6>&nbsp;&nbsp;&nbsp;{{list.content}}</h6>
+                      <h6 class="list-content">{{list.content}}</h6>
                       <ion-option-button class="button-positive"
                        ng-click="share(item)">
                                   Share
