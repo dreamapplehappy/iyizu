@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Ionic Slide Box</title>
+
+  <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+  -->
+
+  <!-- ionic/angularjs js -->
+  <script src="../lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- your app's js -->
+  <script src="../js/tem4/app.js"></script>
+</head>
+<body ng-app="starter" ng-controller="MyController">
+        <ion-slide-box on-slide-changed="slideHasChanged($index)">
+              <ion-slide>
+                    <div class="box blue"><h1>BLUE</h1></div>
+              </ion-slide>
+              <ion-slide>
+                    <div class="box yellow"><h1>YELLOW</h1></div>
+              </ion-slide>
+              <ion-slide>
+                    <div class="box pink"><h1>PINK</h1></div>
+              </ion-slide>
+      </ion-slide-box>
+</body>
+</html>
