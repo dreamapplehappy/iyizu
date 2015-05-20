@@ -20,17 +20,30 @@
 <body ng-app="starter">
        <div  ng-controller="MyController">
               <ul class="list">
-                  <li class="item">
-                         <label class="item item-input">
+                  <li class="item item-checkbox">
+                        <label class="item item-input">
                           <input type="text" placeholder="type need to do thing" ng-model="thing">
                         </label>
-                        <button ng-click="add()">add</button>
                   </li>
-                  <li ng-repeat="list in lists" class="item item-checkbox">
+                  <li>
+                    <div class="button-bar">
+                    <a class="button button-positive">全选</a>
+                      <a class="button" ng-click="add()">添加</a>
+                      <a class="button">。。。</a>
+                    </div>
+                  </li>
+                  <li ng-repeat="list in lists" class="item item-checkbox" ng-class="{red: checked}">
                         <label class="checkbox">
-                         <input type="checkbox">
+                         <input type="checkbox" ng-model="checked" >
                        </label>
                       {{list.content}}
+                  </li>
+                  <li>
+                    <div class="button-bar">
+                    <a class="button button-calm">所有</a>
+                      <a class="button button-energized">未完成</a>
+                      <a class="button button-balanced">已完成</a>
+                    </div>
                   </li>
               </ul>
        </div>
