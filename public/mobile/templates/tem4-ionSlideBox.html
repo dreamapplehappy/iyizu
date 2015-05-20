@@ -16,18 +16,40 @@
 
   <!-- your app's js -->
   <script src="../js/tem4/app.js"></script>
+  <style type="text/css">
+    .blue{
+      background-color: blue !important;
+    }
+    .yellow{
+      background-color: yellow !important;
+    }
+    .pink{
+      background-color: pink !important;
+    }
+    .box{
+      width: 100% !important;
+    }
+    
+  </style>
 </head>
 <body ng-app="starter" ng-controller="MyController">
         <ion-slide-box on-slide-changed="slideHasChanged($index)">
               <ion-slide>
-                    <div class="box blue"><h1>BLUE</h1></div>
+                    <div class="box blue" name="box"><h1>BLUE</h1></div>
               </ion-slide>
               <ion-slide>
-                    <div class="box yellow"><h1>YELLOW</h1></div>
+                    <div class="box yellow" name="box"><h1>YELLOW</h1></div>
               </ion-slide>
               <ion-slide>
-                    <div class="box pink"><h1>PINK</h1></div>
+                    <div class="box pink" name="box"><h1>PINK</h1></div>
               </ion-slide>
       </ion-slide-box>
+      <script type="text/javascript">
+        var boxs = document.getElementsByName("box");
+        for(var i = 0; i < boxs.length; i++){
+          console.log(boxs[i].offsetHeight + "px");
+          boxs[i].style.height = window.screen.height + "px" + " !important";
+        }
+      </script>
 </body>
 </html>
