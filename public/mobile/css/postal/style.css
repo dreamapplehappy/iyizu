@@ -1,4 +1,5 @@
 .under-slider-tabs{
+	position: relative;
 	background-color: white;
 	height: 5em;
 }
