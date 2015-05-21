@@ -80,3 +80,15 @@ div.footer-tabs{
 	position: fixed !important;
 	bottom: 0px !important;
 }
+
+.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {
+  font-size: 10px;
+  line-height: 14px; }
+    .tab-item:hover {
+    cursor: pointer; }
+
+    .tab-item .icon {
+  display: block;
+  margin: 0 auto;
+  height: 32px;
+  font-size: 32px; }
