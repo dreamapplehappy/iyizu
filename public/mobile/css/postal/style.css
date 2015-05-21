@@ -2,17 +2,12 @@
 	box-shadow: none;
 	border-bottom: none;
 }
-.tabs{
-	border-top-color: #FFF !important;
-	border-top-width: 0px !important;
-}
 .under-slider-tabs{
 	margin-top: 0.5em;
 	position: relative;
 	background-color: white;
 	height: 6em;
-	border-top-width: 0px !important;
-	border-top-color: #FFF !important;
+	border-top-style: none !important;
 }
 .under-slider-tabs .tab-item img{
 	margin-top: 0.5em;
