@@ -10,6 +10,9 @@ body{
 	color: #666;
 	text-align: center;
 }
+.tabs-under-silder .div-item span{
+	font-size: 0.8em;
+}
 .tabs-under-silder .div-item:hover{
 	cursor: pointer;
 }
