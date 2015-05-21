@@ -91,7 +91,7 @@ body{
 }
 .newspaper-in .title{
 	text-indent: 0.8em;
-	font-size: 1.2em;
+	font-size: 1em;
 	line-height: 2em;
 	border-bottom: 1px solid #999;
 }
@@ -99,6 +99,7 @@ body{
 	width: 100%;
 	margin: 1em auto;
 	text-align: center;
+	font-size: 0.8em;
 }
 .newspaper-in .content img{
 	display: block;
