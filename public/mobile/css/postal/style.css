@@ -32,7 +32,7 @@ body{
 }
 .lists .lists-head{
 	text-indent: 0.8em;
-	font-size: 1.2em;
+	font-size: 1em;
 	line-height: 2em;
 	border-bottom: 1px solid #999;
 }
@@ -40,12 +40,12 @@ body{
 	width: 100%;
 }
 .lists .lists-content .list{
-	height: 6em;
+	height: 7em;
 	border-bottom: 1px solid #999;
 }
 .lists .lists-content .list img{
 	width: 3.5em;
-	height: 5em;
+	height: 6em;
 	margin-top: 0.5em;
 	margin-left: 1.3em;
 }
@@ -54,6 +54,7 @@ body{
 	font-size: 0.9em;
 	margin-bottom: 0.5em;
 	margin-top: 0.5em;
+	color: #666;
 }
 .lists .lists-content .list .list-right p.price{
 	padding-left: 1em;
