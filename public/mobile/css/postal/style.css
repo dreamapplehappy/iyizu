@@ -19,6 +19,25 @@
 	line-height: 1.5em;
 }
 
+/*card*/
+.card a{
+	height: 8em;
+}
+.card a div.am-u-sm-4 img{
+	width: 4em;
+	height: 6em;
+}
+.car a div.am-u-sm-8{
+	height: 6em;
+}
+.car a div.am-u-sm-8 p{
+	height: 4em;
+}
+
+/*.car a div.content-container p{
+
+}*/
+
 div.footer-tabs{
 	position: fixed !important;
 	bottom: 0px !important;
