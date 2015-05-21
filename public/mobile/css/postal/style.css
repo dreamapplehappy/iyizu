@@ -1,6 +1,28 @@
 body{
 	background-color: #EEEEEE;
 }
+/*tabs-under-silder*/
+.tabs-under-silder{
+	position: relative;
+	background-color: #FFFFFF;
+}
+.tabs-under-silder .div-item{
+	color: #666;
+	text-align: center;
+}
+.tabs-under-silder .div-item:hover{
+	cursor: pointer;
+}
+.tabs-under-silder .div-item img{
+	display: block;
+	width: 3em;
+	height: 3em;
+	border-radius: 3em;
+	margin: 0.5em auto;
+	margin-bottom: 0em;
+}
+
+/*tabs footer*/
 .tabs-icon-top{
 	position: fixed;
 	bottom: 0em;
