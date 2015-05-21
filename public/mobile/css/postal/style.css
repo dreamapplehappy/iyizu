@@ -5,7 +5,6 @@ body{
 	position: fixed;
 	bottom: 0em;
 	background-color: #F8F8F8;
-	color: #666;
 }
 .tabs-icon-top a{
 	text-align: center;
@@ -13,6 +12,7 @@ body{
 	line-height: 1.5em;
 	font-size: 0.8em;
 	margin-bottom: 0.1em;
+	color: #666;
 }
 .tabs-icon-top a i{
 	display: block;
