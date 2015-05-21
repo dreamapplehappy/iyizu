@@ -63,7 +63,13 @@ div.hot div.list-content div.am-u-sm-8 p.cost{
 	font-size: 0.5em;
 	height: 2em;
 	margin: 0em;
-	margin-top: 0.5em;
+	margin-top: 1em;
+}
+div.hot div.list-content div.am-u-sm-8 p.cost span.am-badge{
+	display: inline-block;
+	border-radius: ;
+	float: right;
+
 }
 
 /*.car a div.content-container p{
