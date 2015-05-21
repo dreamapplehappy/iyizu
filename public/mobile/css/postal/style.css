@@ -8,7 +8,7 @@ body{
 .under-slider-tabs{
 	position: relative;
 	background-color: white;
-	height: 6em;
+	height: 5em;
 	border-top-style: none !important;
 }
 .under-slider-tabs .tab-item img{
@@ -37,7 +37,6 @@ div.hot div.title{
 	text-align: left;
 	text-indent: 1em;
 	line-height: 2em;
-	font-weight: 200%;
 	border-top: 1px solid #999;
 	margin-top: 0.5em;
 }
