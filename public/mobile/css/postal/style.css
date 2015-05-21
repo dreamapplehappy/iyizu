@@ -45,9 +45,11 @@ body{
 }
 .lists .lists-content .list img{
 	width: 3.5em;
-	height: 6em;
-	margin-top: 0.5em;
+	height: 5em;
+	margin-top: 1em;
 	margin-left: 1.3em;
+	transform: skewX(160deg);
+	transform: skewY(160deg);
 }
 .lists .lists-content .list .list-right p.details{
 	padding-left: 1em;
