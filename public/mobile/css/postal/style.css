@@ -7,7 +7,7 @@
 	position: relative;
 	background-color: white;
 	height: 6em;
-	border-top: none;
+	border-top: 0px solid #FFF;
 }
 .under-slider-tabs .tab-item img{
 	margin-top: 0.5em;
