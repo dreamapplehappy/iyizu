@@ -26,6 +26,10 @@ body{
 }
 
 /*tabs footer*/
+.space{
+	height: 6em;
+}
+/**/
 .tabs-icon-top{
 	position: fixed;
 	bottom: 0em;
