@@ -1,94 +1,23 @@
 body{
 	background-color: #EEEEEE;
 }
-.am-slider-a1{
-	box-shadow: none;
-	border-bottom: none;
+.tabs-icon-top{
+	position: fixed;
+	bottom: 0em;
+	background-color: #F8F8F8;
+	color: #666;
 }
-.under-slider-tabs{
-	position: relative;
-	background-color: white;
-	height: 5em;
-	border-top-style: none !important;
-}
-.under-slider-tabs .tab-item img{
-	margin-top: 0.5em;
-	width: 4em;
-	height: 4em;
-	border-radius: 4em;
-}
-.under-slider-tabs .tab-item div{
-	font-size: 1.5em;
+.tabs-icon-top a{
+	text-align: center;
+	padding: 0.5em;
 	line-height: 1.5em;
+	font-size: 0.8em;
+	margin-bottom: 0.1em;
 }
-
-/*card*/
-div.hot{
-	width: 100%;
-	height: 13em;
-	background-color: #FFF;
-}
-div.hot div.title{
-	width: 100%;
-	background-color: #FFF;
-	color: #999;
-	height: 2em;
+.tabs-icon-top a i{
+	display: block;
 	font-size: 1em;
-	text-align: left;
-	text-indent: 1em;
-	line-height: 2em;
-	border-top: 1px solid #999;
-	margin-top: 0.5em;
 }
-div.hot div.list-content{
-	width: 100%;
-	height: 5.5em;
-	border-top: 1px solid #999;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
-	border-bottom: 1px solid #999;
+.tabs-icon-top a:hover{
+	cursor: pointer;
 }
-div.hot div.list-content div.am-u-sm-4 img{
-	padding: 0.5em 0;
-	width: 3em;
-	height: 5em;
-	margin-left: 2em;
-}
-div.hot div.list-content div.am-u-sm-8 p.detail{
-	font-size: 0.5em;
-	height: 3em;
-	margin-bottom: 0em;
-}
-div.hot div.list-content div.am-u-sm-8 p.cost{
-	font-size: 0.5em;
-	height: 2em;
-	margin: 0em;
-	margin-top: 1em;
-}
-div.hot div.list-content div.am-u-sm-8 p.cost span.am-badge{
-	display: inline-block;
-	border-radius: ;
-	float: right;
-
-}
-
-/*.car a div.content-container p{
-
-}*/
-
-div.footer-tabs{
-	position: fixed !important;
-	bottom: 0px !important;
-}
-
-.tabs-icon-top > .tabs .tab-item, .tabs-icon-top.tabs .tab-item, .tabs-icon-bottom > .tabs .tab-item, .tabs-icon-bottom.tabs .tab-item {
-  font-size: 10px;
-  line-height: 14px; }
-    .tab-item:hover {
-    cursor: pointer; }
-
-    .tab-item .icon {
-  display: block;
-  margin: 0 auto;
-  height: 32px;
-  font-size: 32px; }
