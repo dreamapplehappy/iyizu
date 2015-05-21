@@ -2,6 +2,10 @@
 	box-shadow: none;
 	border-bottom: none;
 }
+.tabs{
+	border-top-color: #FFF !important;
+	border-top-width: 0px !important;
+}
 .under-slider-tabs{
 	margin-top: 0.5em;
 	position: relative;
