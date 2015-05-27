@@ -8,6 +8,7 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.flat.min.css">
   <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.min.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/datetimepicker/css/amazeui.datetimepicker.css">
 
   <!-- your app's css -->
   <link rel="stylesheet" type="text/css" href="../css/vip/vip.css">
@@ -15,6 +16,7 @@
   <!-- JS -->
   <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../bower_components/datetimepicker/js/amazeui.datetimepicker.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.legacy.min.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.widgets.helper.min.js"></script>
   
@@ -53,10 +55,10 @@
     </div>
     
     <div class="am-form-group">
-      <label for="doc-select-1">生日：</label>
-      <div class="am-input-group am-datepicker-date" data-am-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}">
-        <input id="date" type="text" class="am-form-field" placeholder="选择你的生日" readonly="readonly">
-        <span id="data-icon" class="am-input-group-btn am-datepicker-add-on">
+      <label for="">生日：</label>
+      <div id="date-picker-container" class="am-input-group am-datepicker-date">
+        <input id="date-picker" type="text" class="am-form-field" placeholder="选择您的生日" readonly>
+        <span class="am-input-group-btn am-datepicker-add-on">
           <button class="am-btn am-btn-default" type="button"><span class="am-icon-calendar"></span> </button>
         </span>
       </div>

@@ -25,7 +25,15 @@ $(function(){
 
 // register date
 $(function(){
-	$("#date").click(function(){
-		$("#data").datepicker('open');
+	var toggle = 0;
+	$("#date-picker-container").click(function(){
+		if(0 == toggle){
+			$("#date-picker").datepicker("open");
+			toggle = 1;
+		}
+		else if(1 == toggle){
+			$("#date-picker").datepicker("close");
+			toggle = 0;
+		}
 	});
 });
