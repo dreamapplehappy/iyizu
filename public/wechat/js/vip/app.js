@@ -1,5 +1,6 @@
 $(function(){
 	var flag = 0;
+	// 后面让动画延时执行
 	$("#card").click(function(){
 		if(0 == flag){
 			$("#card").removeClass("filp");

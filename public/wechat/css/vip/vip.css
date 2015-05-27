@@ -50,14 +50,18 @@
 	line-height: 3em;
 	font-size: 1em;
 	background-color: #F0FFFF;
-}
-.card-container div.card-op div.card-detail{
 	color: #000000;
 }
-.card-container div.card-op div.get-card{
+.card-container div.card-op a{
+	text-align: center;
+	height: 100%;
+	line-height: 3em;
+	font-size: 1em;
+	background-color: #F0FFFF;
 	color: #000000;
 	border-left: 1px solid #8A2BE2;
 }
+
 
 /* lists */
 .am-list{
