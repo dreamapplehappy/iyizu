@@ -43,13 +43,23 @@
     </div>
 
     <div class="am-form-group am-form-icon">
-      <label for="doc-select-1">您的性别：</label>
+      <label for="doc-select-1">性别：</label>
       <select id="doc-select-1">
         <option value="option1">男</option>
         <option value="option2">女</option>
         <option value="option3">保密</option>
       </select>
       <span class="am-form-caret"></span>
+    </div>
+    
+    <div class="am-form-group">
+      <label for="doc-select-1">生日：</label>
+      <div class="am-input-group am-datepicker-date" data-am-datepicker="{format: 'yyyy-mm-dd', viewMode: 'years'}">
+        <input type="text" class="am-form-field" placeholder="日历组件" readonly>
+        <span class="am-input-group-btn am-datepicker-add-on">
+          <button class="am-btn am-btn-default" type="button"><span class="am-icon-calendar"></span> </button>
+        </span>
+      </div>
     </div>
 
     <div class="am-form-group am-form-icon">
