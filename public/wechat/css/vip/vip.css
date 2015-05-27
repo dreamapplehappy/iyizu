@@ -7,6 +7,11 @@
 	-moz-transition: 2s;
 	-webkit-transition: 2s;
 }
+.filpc{
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
 
 .card-container{
 	position: relative;
