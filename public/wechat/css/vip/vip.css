@@ -1,4 +1,12 @@
-
+/* animation */
+.filp{
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	transition: 2s;
+	-moz-transition: 2s;
+	-webkit-transition: 2s;
+}
 
 .card-container{
 	position: relative;
@@ -8,9 +16,22 @@
 	display: block;
 	margin: 1em 1em;
 	height: 10em;
-	background-color: #000;
+	background-color: #999;
 	border-radius: 1em;
 }
+.card-container div.card div{
+	display: block;
+	height: 10em;
+	border-radius: 1em;
+}
+.card-container div.card div.front{
+	background-color: #0F0;
+}
+.card-container div.card div.back{
+	background-color: #00F;
+	display: none;
+}
+
 .card-container div.card-op{
 	height: 3em;
 	margin-bottom: 0em;
