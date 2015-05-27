@@ -7,19 +7,19 @@
 .card-container div.card{
 	display: block;
 	margin: 1em 1em;
-	height: 8em;
+	height: 10em;
 	background-color: #000;
 	border-radius: 1em;
 }
 .card-container div.card-op{
-	height: 2em;
+	height: 3em;
 	margin-bottom: 0em;
 	border-top: 1px solid #AAA;
 }
 .card-container div.card-op div{
 	text-align: center;
 	height: 100%;
-	line-height: 2em;
+	line-height: 3em;
 	font-size: 1em;
 }
 .card-container div.card-op div.get-card{
