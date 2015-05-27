@@ -91,3 +91,8 @@
 .tabs-icon-top a span{
 	font-size: 0.6em;
 }
+
+/* register form*/
+.register .header{
+	text-align: center;
+}
