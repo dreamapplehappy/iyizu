@@ -22,8 +22,11 @@
 	line-height: 3em;
 	font-size: 1em;
 }
+.card-container div.card-op div.card-detail{
+	background-color: #00F5FF;
+}
 .card-container div.card-op div.get-card{
-	background-color: #F00;
+	background-color: #00FFFF;
 }
 
 /* lists */
@@ -45,7 +48,7 @@
 	color: #666;
 }
 .tabs-icon-top a:active{
-	color: #F00;
+	color: #00F5FF;
 }
 .tabs-icon-top a i{
 	display: block;
