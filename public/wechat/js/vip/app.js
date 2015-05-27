@@ -1,6 +1,6 @@
 $(function(){
 	var flag = 0;
-	$("#card-container").click(function(){
+	$("#card").click(function(){
 		if(0 == flag){
 			$("#card").removeClass("filp");
 			$("#front").removeClass("filpc");
