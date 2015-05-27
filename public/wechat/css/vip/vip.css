@@ -1,3 +1,36 @@
+
+
+.card-container{
+	position: relative;
+	padding-bottom: 0em;
+}
+.card-container div.card{
+	display: block;
+	margin: 1em 1em;
+	height: 8em;
+	background-color: #000;
+	border-radius: 1em;
+}
+.card-container div.card-op{
+	height: 2em;
+	margin-bottom: 0em;
+	border-top: 1px solid #AAA;
+}
+.card-container div.card-op div{
+	text-align: center;
+	height: 100%;
+	line-height: 2em;
+	font-size: 1em;
+}
+.card-container div.card-op div.get-card{
+	background-color: #F00;
+}
+
+/* lists */
+.am-list{
+	margin-top: 0em;
+}
+
 /* footer-tabs */
 .tabs-icon-top{
 	position: fixed;
