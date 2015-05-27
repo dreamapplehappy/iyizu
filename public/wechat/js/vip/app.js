@@ -22,3 +22,10 @@ $(function(){
 		}
 	});
 });
+
+// register date
+$(function(){
+	$("#date").click(function(){
+		$("#data").datepicker('open');
+	});
+});
