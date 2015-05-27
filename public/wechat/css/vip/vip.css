@@ -6,13 +6,18 @@
 }
 .tabs-icon-top a{
 	text-align: center;
-	padding: 0.5em;
-	line-height: 1.5em;
-	font-size: 0.8em;
+	padding: 0.2em;
+	line-height: 1em;
 	padding-bottom: 0.1em;
 	color: #666;
 }
+.tabs-icon-top a:active{
+	color: #F00;
+}
 .tabs-icon-top a i{
 	display: block;
-	font-size: 1em;
+	font-size: 0.8em;
+}
+.tabs-icon-top a span{
+	font-size: 0.1em;
 }
