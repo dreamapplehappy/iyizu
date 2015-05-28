@@ -31,16 +31,117 @@
         <div id="msg-right" class="am-u-sm-6">right</div>
     </div>
     <div class="msg-details">
-        <div class="left">
-          left
+      <div id="detail-left" class="left">
+        <section data-am-widget="accordion" class="am-accordion am-accordion-gapped"
+        data-am-accordion='{  }'>
+        <dl class="am-accordion-item">
+          <dt class="am-accordion-title am-g">
+            <span class="am-u-sm-2 icon am-icon-bullhorn am-icon-md"></span>
+            <span class="am-u-sm-8 content">
+              <!-- <p class="c-title">qw</p>
+              <p class="c-date">2015-5-25 12:12:12</p> -->
+              <b>我是广播</b> <br/>
+              2015-5-25 12:12:12
+            </span>
+          </dt>
+          <dd class="am-accordion-bd am-collapse">
+            <div class="am-accordion-content">
+                  置身人群中
+              <br/>你只需要被淹没 享受 沉默
+              <br/>退到人群后
+              <br/>你只需给予双手 微笑 等候</div>
+            </dd>
+          </dl>
+          <dl class="am-accordion-item">
+          <dt class="am-accordion-title am-g">
+            <span class="am-u-sm-2 icon am-icon-bullhorn am-icon-md"></span>
+            <span class="am-u-sm-8 content">
+              <!-- <p class="c-title">qw</p>
+              <p class="c-date">2015-5-25 12:12:12</p> -->
+              <b>我是广播</b> <br/>
+              2015-5-25 12:12:12
+            </span>
+          </dt>
+          <dd class="am-accordion-bd am-collapse">
+            <div class="am-accordion-content">
+                  置身人群中
+              <br/>你只需要被淹没 享受 沉默
+              <br/>退到人群后
+              <br/>你只需给予双手 微笑 等候</div>
+            </dd>
+          </dl>
+          </section>
         </div>
-        <div class="right">
-          right
+        <div id="detail-right" class="right">
+          <section data-am-widget="accordion" class="am-accordion am-accordion-gapped"
+        data-am-accordion='{  }'>
+        <dl class="am-accordion-item">
+          <dt class="am-accordion-title am-g">
+            <span class="am-u-sm-2 icon am-icon-bell-o am-icon-md"></span>
+            <span class="am-u-sm-8 content">
+              <!-- <p class="c-title">qw</p>
+              <p class="c-date">2015-5-25 12:12:12</p> -->
+              <b>我是系统消息</b> <br/>
+              2015-5-25 12:12:12
+            </span>
+          </dt>
+          <dd class="am-accordion-bd am-collapse">
+            <div class="am-accordion-content">
+                  置身人群中
+              <br/>你只需要被淹没 享受 沉默
+              <br/>退到人群后
+              <br/>你只需给予双手 微笑 等候</div>
+            </dd>
+          </dl>
+          <dl class="am-accordion-item">
+          <dt class="am-accordion-title am-g">
+            <span class="am-u-sm-2 icon am-icon-bell-o am-icon-md"></span>
+            <span class="am-u-sm-8 content">
+              <!-- <p class="c-title">qw</p>
+              <p class="c-date">2015-5-25 12:12:12</p> -->
+              <b>我是广播</b> <br/>
+              2015-5-25 12:12:12
+            </span>
+          </dt>
+          <dd class="am-accordion-bd am-collapse">
+            <div class="am-accordion-content">
+                  置身人群中
+              <br/>你只需要被淹没 享受 沉默
+              <br/>退到人群后
+              <br/>你只需给予双手 微笑 等候</div>
+            </dd>
+          </dl>
+          </section>
         </div>
     </div>
 </div>
 <script>
-  
+  $(function(){
+    // init() 初始化
+    $("#msg-left").addClass("msg-color-click");
+    $("#msg-right").addClass("msg-color-none");
+    $("#detail-right").hide();
+
+    // 选择
+    $("#msg-left").click(function(){
+      $("#msg-left").addClass("msg-color-click");
+      $("#msg-right").addClass("msg-color-none");
+      $("#msg-left").removeClass("msg-color-none");
+      $("#msg-right").removeClass("msg-color-click");
+
+      $("#detail-left").show();
+      $("#detail-right").hide();
+    });
+    $("#msg-right").click(function(){
+      $("#msg-left").addClass("msg-color-none");
+      $("#msg-right").addClass("msg-color-click");
+      $("#msg-left").removeClass("msg-color-click");
+      $("#msg-right").removeClass("msg-color-none");
+
+      $("#detail-left").hide();
+      $("#detail-right").show();
+    });
+  })
 </script>
 
 <!-- footer-tabs -->

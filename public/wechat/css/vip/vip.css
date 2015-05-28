@@ -203,17 +203,67 @@
 }
 .msg .msg-container .msg-header{
 	margin: 0.5em auto;
-	background-color: #999;
 	height: 2em;
 	width: 14em;
+	border-radius: 3px;
+	border: 1px solid #B6B8F0;
 }
 .msg .msg-container .msg-header div{
 	text-align: center;
 	height: 100%;
+	cursor: pointer;
 }
 .msg .msg-container .msg-header #msg-left{
-	border-right: 1px solid #666;
+	border-right: 1px solid #B6B8F0;
+}
+.msg-color-click{
+	background-color: #B6B8F0;
+	color: white;
+}
+.msg-color-none{
+	background-color: #F5FFFA;
+	color: #B6B8F0;
 }
 .msg .msg-container .msg-details{
-	border-top: 1px solid #000 !important;
+	border-top: 1px solid #B6B8F0 !important;
 }
+.msg .msg-container .msg-details #detail-right{
+	display: none;
+}
+.msg .tabs-icon-top a:active{
+	color: #B6B8F0;
+}
+.msg .am-accordion{
+	width: 100% !important;
+	margin: 0 !important;
+}
+.msg .am-accordion-item{
+	width: 100% !important;
+	margin: 0 !important;
+}
+.msg .am-accordion-title{
+	height: 4em;
+}
+.msg .am-accordion-title span.icon{
+	display: block;
+	height: 3em;
+	color: #FFF !important;
+	line-height: 3em;
+	text-align: center;
+	background-color: #B6B8F0;
+	border-radius: 6px;
+}
+.msg .am-accordion-title span.content{
+	display: block;
+	height: 4em;
+	padding-left: 0;
+	left: -2em;
+}
+/* .msg .am-accordion-title span.content p.c-title{
+	margin: 0 !important;
+	line-height: 2em;
+	font-size: 1em;
+}
+.msg .am-accordion-title span.content p.c-date{
+	margin: 0 !important;
+} */
