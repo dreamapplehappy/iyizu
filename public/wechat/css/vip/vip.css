@@ -212,6 +212,7 @@
 	text-align: center;
 	height: 100%;
 	cursor: pointer;
+	line-height: 2em;
 }
 .msg .msg-container .msg-header #msg-left{
 	border-right: 1px solid #B6B8F0;
