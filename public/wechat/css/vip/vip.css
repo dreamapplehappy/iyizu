@@ -96,3 +96,124 @@
 .register .header{
 	text-align: center;
 }
+
+/* sign */
+.sign-container{
+	width: 100%;
+	height: 10em;
+	background-color: #E0FFFF;
+	margin-top: 0em;
+	position: absolute;
+}
+.sign-container #sign-btn{
+	width: 7em;
+	height: 7em;
+	border-radius: 7em;
+	border: 0.5em solid #BBFFFF;
+	background-color: #00F5FF;
+	margin: 1em auto;
+	text-align: center;
+	line-height: 7em;
+	font-size: 1em;
+}
+.sign-container #sign-left{
+	float: left;
+	width: 4em;
+	height: 3em;
+	margin-top: -6em;
+	margin-left: 1.5em;
+	background-color: ;
+}
+.sign-container #sign-right{
+	float: right;
+	width: 4em;
+	height: 3em;
+	margin-top: -6em;
+	margin-right: 1.5em;
+	background-color: ;
+}
+.sign-container div .total{
+	text-align: center;
+	height: 1.5em;
+	line-height: 1.5em;
+}
+.sign-container div .total-detail{
+	text-align: center;
+	height: 1.5em;
+	line-height: 1.5em;
+}
+.sign-op{
+	margin-top: 10em;
+	position: absolute;
+	width: 100%;
+	height: 3em;
+	background-color: #BBFFFF;
+}
+.sign-op a{
+	display: block;
+	height: 3em;
+	font-size: 1em;
+	text-align: center;
+	padding: 0em;
+	color: #AAA;
+}
+.sign-op a i{
+	display: block;
+	padding-top: 0.2em;
+	height: 1.8em;
+	line-height: 1em;
+	font-size: 0.8em;
+}
+.sign-op a span{
+	display: block;
+	margin-top: 0.5em;
+	height: 1em;
+	font-size: 0.5em;
+}
+.sign-op .left{
+	border-right: 1px solid #00F5FF;
+}
+#sign-date{
+	margin-top: 13em;
+	position: absolute;
+	width: 100%;
+	height: 0em;
+	background-color: #000;
+}
+
+/* recorder */
+.recorder-body{
+	background-color: #F5FFFA;
+}
+.recorder-body .am-list li{
+	height: 2em;
+	box-shadow: -0.5em 0.5em 1em #999;
+}
+.recorder-body .list-header{
+	background-color: #666 !important;
+	color: #FFF;
+}
+
+/* msg */
+.msg{
+	background-color: #F8F8FF;
+}
+.msg .msg-container{
+	width: 100%;
+}
+.msg .msg-container .msg-header{
+	margin: 0.5em auto;
+	background-color: #999;
+	height: 2em;
+	width: 14em;
+}
+.msg .msg-container .msg-header div{
+	text-align: center;
+	height: 100%;
+}
+.msg .msg-container .msg-header #msg-left{
+	border-right: 1px solid #666;
+}
+.msg .msg-container .msg-details{
+	border-top: 1px solid #000 !important;
+}

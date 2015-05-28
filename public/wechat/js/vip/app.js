@@ -37,3 +37,13 @@ $(function(){
 		}
 	});
 });
+
+// sign 
+$(function(){
+	$("#sign-date").datepicker("open");
+});
+
+// message
+$(function(){
+    $('#doc-my-tabs').tabs();
+})
