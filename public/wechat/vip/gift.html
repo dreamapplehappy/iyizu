@@ -8,7 +8,6 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.flat.min.css">
   <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.min.css">
-  <link rel="stylesheet" type="text/css" href="../bower_components/datetimepicker/css/amazeui.datetimepicker.css">
 
   <!-- your app's css -->
   <link rel="stylesheet" type="text/css" href="../css/vip/vip.css">
@@ -16,7 +15,6 @@
   <!-- JS -->
   <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.min.js"></script>
-  <script type="text/javascript" src="../bower_components/datetimepicker/js/amazeui.datetimepicker.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.legacy.min.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.widgets.helper.min.js"></script>
   
@@ -25,40 +23,27 @@
   <script src="../js/vip/app.js"></script>
 </head>
 
-<body>
-<!-- sign -->
-<div class="sign-container">
-  <div id="sign-btn" class="sign-btn">签到</div>
-  <div id="sign-left">
-    <div class="total"><span>13</span></div>
-    <div class="total-detail">可用积分</div>
-  </div>
-  <div id="sign-right">
-    <div class="total"><span>14</span></div>
-    <div class="total-detail">签到次数</div>
-  </div>
+<body class="gift">
+
+<div class="am-panel am-panel-default gift-panel">
+    <div class="am-panel-bd">
+        <div class="describe">
+          <p><b>上东方闪电</b><br/>有效期至2015-9-9 15:15:15</p>
+        </div>
+        <div id="pic" class="img">
+          <img src="http://img.taopic.com/uploads/allimg/140328/235045-14032PZ55337.jpg" alt="">
+        </div>
+        <div id="gift-detail" class="detail">
+          	<b>这里是礼物的详细信息</b><br/>
+		这个礼物实在是太好了
+        </div>
+    </div>
+    <div id="gift-get" class="am-g">
+        <div class="am-u-sm-8"><span class="gift-score">100</span>积分</div>
+        <div class="am-u-sm-4 go-get">立即兑换</div>
+    </div>
 </div>
 
-<div class="sign-op am-g">
-  <a href="gift.html" class="left am-u-sm-6">
-      <i class="am-icon-gift am-icon-md"></i>
-      <span>兑换礼品</span>
-  </a>
-  <a href="sign-recorder.html" class="right am-u-sm-6">
-      <i class="am-icon-file-text am-icon-md"></i>
-      <span>签到记录</span>
-  </a>
-</div>
-
-<!-- <div class="sign-date-container">
-  <input id="sign-date" type="text" class="am-form-field" placeholder="日历组件" data-am-datepicker readonly/>
-</div> -->
-<!-- <input id="cc" type="date" /> -->
-<script>
-  $("#cc").click(function(){
-    
-  });
-</script>
 
 <div class="space"></div>
 

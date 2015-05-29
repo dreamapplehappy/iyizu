@@ -8,7 +8,6 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.flat.min.css">
   <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.min.css">
-  <link rel="stylesheet" type="text/css" href="../bower_components/datetimepicker/css/amazeui.datetimepicker.css">
 
   <!-- your app's css -->
   <link rel="stylesheet" type="text/css" href="../css/vip/vip.css">
@@ -16,7 +15,6 @@
   <!-- JS -->
   <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.min.js"></script>
-  <script type="text/javascript" src="../bower_components/datetimepicker/js/amazeui.datetimepicker.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.legacy.min.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.widgets.helper.min.js"></script>
   
@@ -26,39 +24,52 @@
 </head>
 
 <body>
-<!-- sign -->
-<div class="sign-container">
-  <div id="sign-btn" class="sign-btn">签到</div>
-  <div id="sign-left">
-    <div class="total"><span>13</span></div>
-    <div class="total-detail">可用积分</div>
-  </div>
-  <div id="sign-right">
-    <div class="total"><span>14</span></div>
-    <div class="total-detail">签到次数</div>
-  </div>
-</div>
 
-<div class="sign-op am-g">
-  <a href="gift.html" class="left am-u-sm-6">
-      <i class="am-icon-gift am-icon-md"></i>
-      <span>兑换礼品</span>
-  </a>
-  <a href="sign-recorder.html" class="right am-u-sm-6">
-      <i class="am-icon-file-text am-icon-md"></i>
-      <span>签到记录</span>
-  </a>
-</div>
+<div class="margin"></div>
 
-<!-- <div class="sign-date-container">
-  <input id="sign-date" type="text" class="am-form-field" placeholder="日历组件" data-am-datepicker readonly/>
-</div> -->
-<!-- <input id="cc" type="date" /> -->
-<script>
-  $("#cc").click(function(){
-    
-  });
-</script>
+  <div>
+    <section class="am-panel am-panel-secondary bill-fisrt">
+      <header class="am-panel-hd">
+        <h3 class="am-panel-title">充值消息</h3>
+      </header>
+      <div class="am-panel-bd bill-cost">
+        <div class="am-g">
+              <div class="am-u-sm-6">充值</div>
+              <div class="am-u-sm-6"> <span class="am-icon-cny">100</span> </div>
+          </div>
+      </div>
+    </section>
+    <section class="am-panel am-panel-secondary">
+      <header class="am-panel-hd">
+        <h3 class="am-panel-title">消费信息</h3>
+      </header>
+      <div class="am-panel-bd cost-info">
+          <div class="am-g a">
+              <div class="am-u-sm-6">应付:</div>
+              <div class="am-u-sm-6"><span class="am-icon-cny"> 100</span></div>
+          </div>
+           <div class="am-g b">
+              <div class="am-u-sm-6">实付:</div>
+              <div class="am-u-sm-6"><span class="am-icon-cny"> 90</span></div>
+          </div>
+           <div class="am-g c">
+              <div class="am-u-sm-6">积分抵用:</div>
+              <div class="am-u-sm-6"><span class="am-icon-diamond"> 10</span></div>
+          </div>
+      </div>
+    </section>
+    <section class="am-panel am-panel-secondary">
+      <header class="am-panel-hd">
+        <h3 class="am-panel-title">积分积累</h3>
+      </header>
+      <div class="am-panel-bd score-lists">
+        <div class="am-g score-list">
+              <div class="am-u-sm-6">签到积分:</div>
+              <div class="am-u-sm-6"><span class="am-icon-diamond"> 10</span></div>
+          </div>
+      </div>
+    </section>
+  </div>
 
 <div class="space"></div>
 

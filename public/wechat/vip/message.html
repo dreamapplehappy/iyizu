@@ -114,34 +114,9 @@
         </div>
     </div>
 </div>
-<script>
-  $(function(){
-    // init() 初始化
-    $("#msg-left").addClass("msg-color-click");
-    $("#msg-right").addClass("msg-color-none");
-    $("#detail-right").hide();
 
-    // 选择
-    $("#msg-left").click(function(){
-      $("#msg-left").addClass("msg-color-click");
-      $("#msg-right").addClass("msg-color-none");
-      $("#msg-left").removeClass("msg-color-none");
-      $("#msg-right").removeClass("msg-color-click");
 
-      $("#detail-left").show();
-      $("#detail-right").hide();
-    });
-    $("#msg-right").click(function(){
-      $("#msg-left").addClass("msg-color-none");
-      $("#msg-right").addClass("msg-color-click");
-      $("#msg-left").removeClass("msg-color-click");
-      $("#msg-right").removeClass("msg-color-none");
-
-      $("#detail-left").hide();
-      $("#detail-right").show();
-    });
-  })
-</script>
+<div class="space"></div>
 
 <!-- footer-tabs -->
 <div class="tabs tabs-icon-top am-g">
@@ -149,7 +124,7 @@
     <i class="am-icon-credit-card am-icon-md"></i>
     <span>会员卡</span>
   </a>
-  <a class="tab-item am-u-sm-3">
+  <a href="message.html" class="tab-item am-u-sm-3">
     <i class="am-icon-wechat am-icon-md"></i>
     <span>消息</span>
   </a>
@@ -157,7 +132,7 @@
     <i class="am-icon-edit am-icon-md"></i>
     <span>签到</span>
   </a>
-  <a class="tab-item am-u-sm-3">
+  <a href="my-bill.html" class="tab-item am-u-sm-3">
     <i class="am-icon-file-text am-icon-md"></i>
     <span>账单</span>
   </a>

@@ -29,8 +29,9 @@
 
 <div id="card-container" class="card-container">
   <div id="card" class="card">
-    <div id="front" class="front">这是前面呀</div>
-    <div id="back" class="back">这是后面呀</div>
+    <!-- <div id="front" class="front">这是前面呀</div> -->
+    <img id="front" class="front per-card" src="http://img0.imgtn.bdimg.com/it/u=1058784631,2333183477&fm=21&gp=0.jpg" alt="">
+    <div id="back" class="back per-card"></div>
   </div>
   <div class="card-op am-g">
     <div class="card-detail am-u-sm-6">会员卡详情</div>
@@ -44,21 +45,34 @@
 
 
 <!-- lists -->
-<ul class="am-list am-list-static am-list-border">
-  <li>
+<ul id="index-op" class="am-list am-list-static am-list-border">
+  <!--  -->
+  <li id="index-qrcode">
+    <i class="am-icon-th am-icon-qrcode"></i>
+    会员身份二维码
+    <span class="am-badge">
+      <span class="am-icon-chevron-right"></span>
+    </span>
+  </li>
+  <li id="index-qrcode-c">
+    <img id="qrcode" src="http://a0.att.hudong.com/41/44/01300542247656138373440038935.png" alt="">
+  </li>
+  <!--  -->
+  <li id="index-c-m">
     <i class="am-icon-th am-icon-fw"></i>
     完善会员资料
     <span class="am-badge">
       <span class="am-icon-chevron-right"></span>
     </span>
   </li>
-  <li>
+  <li id="index-connect">
     <i class="am-icon-phone-square am-icon-fw"></i>
-    与我们联系
+      与我们联系
     <span class="am-badge">
       <span class="am-icon-chevron-right"></span>
     </span>
-  <li>
+    </li>
+  <li id="index-map">
     <i class="am-icon-map-marker am-icon-fw"></i>
     浙江省 杭州市 江干区 龙湖滟澜山
     <span class="am-badge">
@@ -66,6 +80,8 @@
     </span>
   </li>
 </ul>
+
+<div class="space"></div>
 
 <!-- footer-tabs -->
 <div class="tabs tabs-icon-top am-g">
@@ -81,7 +97,7 @@
     <i class="am-icon-edit am-icon-md"></i>
     <span>签到</span>
   </a>
-  <a class="tab-item am-u-sm-3">
+  <a href="my-bill.html" class="tab-item am-u-sm-3">
     <i class="am-icon-file-text am-icon-md"></i>
     <span>账单</span>
   </a>

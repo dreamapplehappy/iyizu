@@ -44,6 +44,79 @@ $(function(){
 });
 
 // message
-$(function(){
-    $('#doc-my-tabs').tabs();
-})
+ $(function(){
+    // init() 初始化
+    $("#msg-left").addClass("msg-color-click");
+    $("#msg-right").addClass("msg-color-none");
+    $("#detail-right").hide();
+
+    // 选择
+    $("#msg-left").click(function(){
+      $("#msg-left").addClass("msg-color-click");
+      $("#msg-right").addClass("msg-color-none");
+      $("#msg-left").removeClass("msg-color-none");
+      $("#msg-right").removeClass("msg-color-click");
+
+      $("#detail-left").show();
+      $("#detail-right").hide();
+    });
+    $("#msg-right").click(function(){
+      $("#msg-left").addClass("msg-color-none");
+      $("#msg-right").addClass("msg-color-click");
+      $("#msg-left").removeClass("msg-color-click");
+      $("#msg-right").removeClass("msg-color-none");
+
+      $("#detail-left").hide();
+      $("#detail-right").show();
+    });
+  });
+
+ //  gift
+ $(function(){
+	var giftFlag = 0;
+  $("#pic").click(function(){
+    if(0 == giftFlag){
+      $("#gift-detail").show();
+      giftFlag = 1;
+    }
+    else if(1 == giftFlag){
+      $("#gift-detail").hide();
+      giftFlag = 0;
+    }
+  });
+ });
+
+ // index
+ $(function(){
+ 	$("#index-op li").click(function(){
+    // $(this).addClass("index-color");
+  });
+  $("#index-c-m").click(function(){
+    window.location.href = "register.html";
+  });
+  $("#index-connect").click(function(){
+    window.location.href = "wtai://wp/mc;13738015054";
+  });
+  $("#index-map").click(function(){
+    window.location.href = "http://www.amap.com/";
+  });
+});
+
+  $(function(){
+	var qrcodeFlag = 0;
+  $("#index-qrcode").click(function(){
+    if(0 == qrcodeFlag){
+      $("#index-qrcode-c").show();
+      qrcodeFlag = 1;
+    }
+    else if(1 == qrcodeFlag){
+      $("#index-qrcode-c").hide();
+      qrcodeFlag = 0;
+    }
+  });
+ });
+
+  // sign date
+  $(function(){
+  	$("#sign-date").datepicker();
+  })
