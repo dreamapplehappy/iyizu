@@ -1,6 +1,9 @@
 .calendar-day-2015-05-27{
   background-color: #000;
 }
+.calendar .event{
+  background-color: #000 !important;
+}
 .calendar{
   background-color: #FFFFCC;
 }
