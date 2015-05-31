@@ -96,15 +96,12 @@ $(document).ready( function() {
     template: $('#template-calendar').html(),
     daysOfTheWeek: ['日', '一', '二', '三','四','五','六'],
     ready: function(){
-      data = ["2015-5-27","2015-5-23", "2015-5-19"];
-     for(var i = 0; i < data.length; i++){
-      var obj = {
-        date: moment(data[i]).format("YYYY-MM-DD"),
-        title: "sign"
-      }
-      eventArray.push(obj);
-    }
-     // console.log(eventArray);
+      var data = ["2015-05-25"];
+      for(var i = 0; i < data.length; i++){
+        $("div.calendar-day-" + data[i]).css(
+        {"background-color": "blue"}
+        );
+      }  
     },
     events: eventArray,
     multiDayEvents: {
