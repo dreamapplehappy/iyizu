@@ -10,11 +10,12 @@ $(document).ready( function() {
   // here's some magic to make sure the dates are happening this month.
   var thisMonth = moment().format('YYYY-MM');
   console.log(thisMonth);
-  var data = ["2015-5-27","2015-5-22", "2015-5-19"];
+  var data = ["2015-5-27","2015-5-23", "2015-5-19"];
   var eventArray = [];
   for(var i = 0; i < data.length; i++){
     var obj = {};
-    var signDate = moment(data[i]);
+    var signDate = moment(data[i]).format("YYYY-MM-DD");
+    console.log(signDate);
     obj.date = signDate;
     obj.title = "sign";
     eventArray.push(obj);
