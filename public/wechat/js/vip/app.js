@@ -21,6 +21,10 @@ $(function(){
 			flag = 0;
 		}
 	});
+
+  $("#card-detail").click(function(){
+    window.location.href="vip-detail.html";
+  })
 });
 
 // register date
@@ -115,12 +119,16 @@ $(function(){
 
   // sign date
   $(function(){
-    var signDate = ["2015-5-30"];
+   /* var signDate = ["2015-5-20"];
     for(var i = 0; i < signDate.length; i++){
-      console.log(".calendar-day-"+signDate[i]);
-      $(".calendar-day-"+signDate[i]).css({"border-color":"black ",
+      var choose = ".calendar-day-"+signDate[i];
+      $(choose).css({"border-color":"black ",
                                           "background-color":"blue"});
     }
+    $(".calendar-day-2015-05-28").css({"border-color":"black ",
+                                          "background-color":"blue"});*/
+    $(".event").css({"border-color":"black ",
+                                                      "background-color":"blue"});
     $("#click-btn").click(function(){
       $("#click-btn").text("已签到");
       $(".cal2 .clndr .clndr-grid .day.today").css({"border-color":"black ",
