@@ -21,12 +21,12 @@ $(document).ready( function() {
     obj.date = signDate;
     obj.title = "sign";*/
     obj = {
-      date: moment(data[i]),
+      date: moment(data[i]).format("YYYY-MM-DD"),
       title: "sign"
     }
     eventArray.push(obj);
   }
-  // console.log(eventArray);
+   console.log(eventArray);
   /*var eventArray = [
     { date: moment("2015-5").format("YYYY-MM") + "-27", title: 'Single Day Event' },
     { date: moment("2015-5-22").format("YYYY-MM-DD"), title: 'Single Day Event' },
