@@ -39,9 +39,6 @@ $(function(){
 });
 
 // sign 
-$(function(){
-	$("#sign-date").datepicker("open");
-});
 
 // message
  $(function(){
@@ -89,7 +86,7 @@ $(function(){
  // index
  $(function(){
  	$("#index-op li").click(function(){
-    // $(this).addClass("index-color");
+    
   });
   $("#index-c-m").click(function(){
     window.location.href = "register.html";
@@ -118,5 +115,12 @@ $(function(){
 
   // sign date
   $(function(){
-  	$("#sign-date").datepicker();
-  })
+    $("#click-btn").click(function(){
+      $("#click-btn").text("已签到");
+      $("#click-btn").addClass("click-after");
+    });
+
+    $("#click-recorder").click(function(){
+      window.location.href = "sign-recorder.html";
+    });
+  });

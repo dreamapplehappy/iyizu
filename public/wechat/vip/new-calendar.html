@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>VIP Center</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.flat.min.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.min.css">
+
+  <!-- your app's css -->
+  <link rel="stylesheet" type="text/css" href="../css/vip/vip.css">
+  <link rel="stylesheet" type="text/css" href="../css/calendar/clndr.css">
+
+  <!-- JS -->
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.legacy.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.widgets.helper.min.js"></script>
+  <script src="../js/calendar/json2.js"></script>
+  <script src="../js/calendar/jquery.min.js"></script>
+  <script src="../js/calendar/underscore-min.js"></script>
+  <script src="../js/calendar/moment-2.8.3.js"></script>
+
+  <script src="../js/calendar/clndr.js"></script>
+  <script src="../js/calendar/site.js"></script>
+  <script src="../js/vip/app.js"></script>
+</head>
+<body class="calendar">
+<div>
+  
+</div>
+  <div class="container">
+    <div class="cal2">
+      <script type="text/template" id="template-calendar">
+        <div class="clndr-controls">
+          <div class="clndr-previous-button"><span class="am-icon-chevron-circle-left"></span></div>
+          <div class="month"><%= month %></div>
+          <div class="clndr-next-button"><span class="am-icon-chevron-circle-right"></span></div>
+        </div>
+        <div class="clndr-grid">
+          <div class="days-of-the-week">
+            <% _.each(daysOfTheWeek, function(day) { %>
+              <div class="header-day"><%= day %></div>
+            <% }); %>
+            <div class="days">
+              <% _.each(days, function(day) { %>
+                <div class="<%= day.classes %>"><%= day.day %></div>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+      </script>
+
+    </div>
+  </div>
+
+<div class="am-g click-container">
+  <div class="am-u-sm-3 click-left">
+    <div class="content">
+      <b>3</b><br/>
+      <b>可用积分</b>
+    </div>
+  </div>
+  <div class="am-u-sm-6 click-content">
+    <div id="click-btn" class="click-btn">
+      签到
+    </div>
+  </div>
+  <div class="am-u-sm-3 click-right">
+    <div class="content">
+      <b>3</b><br/>
+      <b>可用积分</b>
+    </div>
+  </div>
+</div>
+<div id="click-recorder" class="click-recorder">
+  签到记录
+</div>
+
+<div class="space"></div>
+<div class="space"></div>
+  <!-- footer-tabs -->
+<div class="tabs tabs-icon-top am-g">
+  <a href="index.html" class="tab-item am-u-sm-3">
+    <i class="am-icon-credit-card am-icon-md"></i>
+    <span>会员卡</span>
+  </a>
+  <a href="message.html" class="tab-item am-u-sm-3">
+    <i class="am-icon-wechat am-icon-md"></i>
+    <span>消息</span>
+  </a>
+  <a href="new-calendar.html" class="tab-item am-u-sm-3">
+    <i class="am-icon-edit am-icon-md"></i>
+    <span>签到</span>
+  </a>
+  <a href="my-bill.html" class="tab-item am-u-sm-3">
+    <i class="am-icon-file-text am-icon-md"></i>
+    <span>账单</span>
+  </a>
+</div>
+</body>
+</html>
