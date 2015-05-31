@@ -119,14 +119,12 @@ $(function(){
 
   // sign date
   $(function(){
-   /* var signDate = ["2015-5-20"];
+   var signDate = ["2015-5-25"];
     for(var i = 0; i < signDate.length; i++){
-      var choose = ".calendar-day-"+signDate[i];
-      $(choose).css({"border-color":"black ",
-                                          "background-color":"blue"});
+      $(".calendar-day-"+signDate[i]).text("K");
     }
-    $(".calendar-day-2015-05-28").css({"border-color":"black ",
-                                          "background-color":"blue"});*/
+    $(".calendar-day-2015-05-25").css({"border-color":"black !important",
+                                          "background-color":"blue !important"});
     /*$(".event").css({"border-color":"black ",
                                                       "background-color":"blue"});*/
     $("#click-btn").click(function(){
