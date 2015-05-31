@@ -117,7 +117,7 @@ $(function(){
   $(function(){
     $("#click-btn").click(function(){
       $("#click-btn").text("已签到");
-      $("#click-btn").addClass("click-after");
+      $("#click-recorder").addClass("click-after");
     });
 
     $("#click-recorder").click(function(){

@@ -16,9 +16,18 @@
   margin-top: 50px;
   font-size: 12px;
 }
-.click-after{
+.calendar .click-container .click-btn:active{
+  text-align: center;
+  line-height: 100px;
+  height: 100px;
+  margin: 25px auto;
+  width: 100px;
+  border-radius: 100px;
   background-color: #FFF;
   border: 6px solid #000;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
 }
 .calendar .click-container .click-btn{
   text-align: center;
