@@ -9,20 +9,22 @@ $(document).ready( function() {
 
   // here's some magic to make sure the dates are happening this month.
   var thisMonth = moment().format('YYYY-MM');
+  console.log(thisMonth);
   var data = ["2015-5-27","2015-5-22", "2015-5-19"];
- /* var eventArray = [];
+  var eventArray = [];
   for(var i = 0; i < data.length; i++){
     var obj = {};
-    obj.date = data[i];
+    var signDate = moment(data[i]);
+    obj.date = signDate;
     obj.title = "sign";
     eventArray.push(obj);
   }
-  console.log(eventArray);*/
-  var eventArray = [
+  console.log(eventArray);
+  /*var eventArray = [
     { date: "2015-5-27", title: 'Single Day Event' },
     { date: "2015-5-22", title: 'Single Day Event' },
     { date: thisMonth + '-19', title: 'Single Day Event' }
-  ];
+  ];*/
 
   // the order of the click handlers is predictable.
   // direct click action callbacks come first: click, nextMonth, previousMonth, nextYear, previousYear, or today.
