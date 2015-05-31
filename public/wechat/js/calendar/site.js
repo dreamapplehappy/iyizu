@@ -96,10 +96,11 @@ $(document).ready( function() {
     template: $('#template-calendar').html(),
     daysOfTheWeek: ['日', '一', '二', '三','四','五','六'],
     ready: function(){
-      var data = ["2015-05-25"];
+      var data = ["2015-05-25", "2015-05-24", "2015-05-23"];
       for(var i = 0; i < data.length; i++){
         $("div.calendar-day-" + data[i]).css(
-        {"background-color": "blue"}
+        {"border-color":"green",
+         "background-color":"#99CCFF"}
         );
       }  
     },

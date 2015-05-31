@@ -123,14 +123,11 @@ $(function(){
     for(var i = 0; i < signDate.length; i++){
       $(".calendar-day-"+signDate[i]).text("K");
     }
-    $(".calendar-day-2015-05-25").css({"border-color":"black !important",
-                                          "background-color":"blue !important"});
-    /*$(".event").css({"border-color":"black ",
-                                                      "background-color":"blue"});*/
     $("#click-btn").click(function(){
       $("#click-btn").text("已签到");
-      $(".cal2 .clndr .clndr-grid .day.today").css({"border-color":"black ",
-                                                      "background-color":"blue"});
+      $(".cal2 .clndr .clndr-grid .day.today").css(
+        {"border-color":"green",
+         "background-color":"#99CCFF"});
     });
 
     $("#click-recorder").click(function(){
