@@ -12,26 +12,29 @@ $(document).ready( function() {
   /*var a = moment();
   console.log(thisMonth);
   console.log(a);*/
-  var data = ["2015-5-27","2015-5-23", "2015-5-19"];
+ /* var data = ["2015-5-27","2015-5-23", "2015-5-19"];
   var eventArray = [];
   for(var i = 0; i < data.length; i++){
-    /*var obj = {};
+    var obj = {};
     var signDate = moment(data[i]).format("YYYY-MM-DD");
     console.log(signDate);
     obj.date = signDate;
-    obj.title = "sign";*/
+    obj.title = "sign";
     obj = {
       date: moment(data[i]).format("YYYY-MM-DD"),
       title: "sign"
     }
     eventArray.push(obj);
   }
-   console.log(eventArray);
+   console.log(eventArray);*/
+   var data = [];
+   var eventArray = [];
   /*var eventArray = [
     { date: moment("2015-5").format("YYYY-MM") + "-27", title: 'Single Day Event' },
     { date: moment("2015-5-22").format("YYYY-MM-DD"), title: 'Single Day Event' },
     { date: thisMonth + '-19', title: 'Single Day Event' }
   ];*/
+    console.log(eventArray);
 
   // the order of the click handlers is predictable.
   // direct click action callbacks come first: click, nextMonth, previousMonth, nextYear, previousYear, or today.
@@ -82,7 +85,6 @@ $(document).ready( function() {
     //   singleDay: 'date'
     // },
     ready: function(){
-         
     },
     showAdjacentMonths: true,
     adjacentDaysChangeMonth: false
@@ -92,8 +94,19 @@ $(document).ready( function() {
 
   calendars.clndr2 = $('.cal2').clndr({
     template: $('#template-calendar').html(),
-    events: eventArray,
     daysOfTheWeek: ['日', '一', '二', '三','四','五','六'],
+    ready: function(){
+      data = ["2015-5-27","2015-5-23", "2015-5-19"];
+     for(var i = 0; i < data.length; i++){
+      var obj = {
+        date: moment(data[i]).format("YYYY-MM-DD"),
+        title: "sign"
+      }
+      eventArray.push(obj);
+    }
+     // console.log(eventArray);
+    },
+    events: eventArray,
     multiDayEvents: {
       singleDay: 'date'
     },
