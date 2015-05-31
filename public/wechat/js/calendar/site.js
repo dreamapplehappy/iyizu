@@ -18,7 +18,7 @@ $(document).ready( function() {
     }
     eventArray.push(obj);
   }
-  console.log(eventArray);
+  // console.log(eventArray);
 
   // the order of the click handlers is predictable.
   // direct click action callbacks come first: click, nextMonth, previousMonth, nextYear, previousYear, or today.

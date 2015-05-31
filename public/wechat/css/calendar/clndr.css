@@ -9,6 +9,10 @@
   width: 100%;
   background-color: #FFFFCC;
 }
+.calendar .event{
+  background-color: blue !important;
+  border: 1px solid black !important;
+}
 .calendar .click-container .click-left .content
 ,.calendar .click-container .click-right .content{
   width: 100%;

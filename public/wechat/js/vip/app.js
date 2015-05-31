@@ -127,8 +127,8 @@ $(function(){
     }
     $(".calendar-day-2015-05-28").css({"border-color":"black ",
                                           "background-color":"blue"});*/
-    $(".event").css({"border-color":"black ",
-                                                      "background-color":"blue"});
+    /*$(".event").css({"border-color":"black ",
+                                                      "background-color":"blue"});*/
     $("#click-btn").click(function(){
       $("#click-btn").text("已签到");
       $(".cal2 .clndr .clndr-grid .day.today").css({"border-color":"black ",
