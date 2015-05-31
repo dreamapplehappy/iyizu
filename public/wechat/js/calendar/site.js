@@ -9,12 +9,16 @@ $(document).ready( function() {
 
   // here's some magic to make sure the dates are happening this month.
   var thisMonth = moment().format('YYYY-MM');
-
-  var eventArray = [
-   /* { startDate: thisMonth + '-10', endDate: thisMonth + '-14', title: 'Multi-Day Event' },
-    { startDate: thisMonth + '-21', endDate: thisMonth + '-23', title: 'Another Multi-Day Event' },
-    { date: thisMonth + '-27', title: 'Single Day Event' }*/
-  ];
+  var data = ["2015-5-29","2015-5-30"];
+  var eventArray = [];
+  for(var i = 0; i < data.length; i++){
+    var obj = {
+      "date": data[i],
+      "title": "sign"
+    }
+    eventArray.push(obj);
+  }
+  console.log(eventArray);
 
   // the order of the click handlers is predictable.
   // direct click action callbacks come first: click, nextMonth, previousMonth, nextYear, previousYear, or today.
@@ -65,7 +69,7 @@ $(document).ready( function() {
     //   singleDay: 'date'
     // },
     ready: function(){
-        // 
+         
     },
     showAdjacentMonths: true,
     adjacentDaysChangeMonth: false

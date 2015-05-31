@@ -115,9 +115,16 @@ $(function(){
 
   // sign date
   $(function(){
+    var signDate = ["2015-5-30"];
+    for(var i = 0; i < signDate.length; i++){
+      console.log(".calendar-day-"+signDate[i]);
+      $(".calendar-day-"+signDate[i]).css({"border-color":"black ",
+                                          "background-color":"blue"});
+    }
     $("#click-btn").click(function(){
       $("#click-btn").text("已签到");
-      $("#click-recorder").addClass("click-after");
+      $(".cal2 .clndr .clndr-grid .day.today").css({"border-color":"black ",
+                                                      "background-color":"blue"});
     });
 
     $("#click-recorder").click(function(){
