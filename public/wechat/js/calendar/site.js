@@ -12,10 +12,9 @@ $(document).ready( function() {
   var data = ["2015-5-27","2015-5-22", "2015-5-19"];
   var eventArray = [];
   for(var i = 0; i < data.length; i++){
-    var obj = {
-      date: data[i],
-      title: "sign"
-    }
+    var obj = {};
+    obj.date = data[i];
+    obj.title = "sign";
     eventArray.push(obj);
   }
   console.log(eventArray);
@@ -87,8 +86,6 @@ $(document).ready( function() {
     events: eventArray,
     daysOfTheWeek: ['日', '一', '二', '三','四','五','六'],
     multiDayEvents: {
-      startDate: 'startDate',
-      endDate: 'endDate',
       singleDay: 'date'
     },
     // startWithMonth: moment().add(1, 'month'),
