@@ -13,8 +13,8 @@ $(document).ready( function() {
   var eventArray = [];
   for(var i = 0; i < data.length; i++){
     var obj = {
-      "date": data[i],
-      "title": "sign"
+      date: data[i],
+      title: "sign"
     }
     eventArray.push(obj);
   }
@@ -89,7 +89,7 @@ $(document).ready( function() {
     // startWithMonth: moment().add(1, 'month'),
     clickEvents: {
       click: function(target) {
-        console.log(target);
+        // console.log(target);
       }
     },
     forceSixRows: true
