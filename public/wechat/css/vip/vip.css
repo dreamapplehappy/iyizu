@@ -61,7 +61,23 @@
 	color: #000000;
 	border-left: 1px solid #8A2BE2;
 }
-
+.index .am-list-static.am-list-border>a{
+	padding: 1rem;
+}
+.index .am-list-border>a{
+	border-width: 1px;
+}
+.index .am-list>a{
+	position: relative;
+	display: block;
+	margin-bottom: -1px;
+	background-color: #FFF;
+	border: 1px solid #DEDEDE;
+	color: #000;
+}
+.index .am-list>a>.am-badge{
+	float: right;
+}
 
 /* lists */
 .am-list{

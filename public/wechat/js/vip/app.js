@@ -22,7 +22,7 @@ $(function(){
 		}
 	});
 
-  $("#card-detail").click(function(){
+  $(".card-detail").click(function(){
     window.location.href="vip-detail.html";
   })
 });
