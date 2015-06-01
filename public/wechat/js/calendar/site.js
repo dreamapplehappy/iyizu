@@ -112,6 +112,15 @@ $(document).ready( function() {
     clickEvents: {
       click: function(target) {
         // console.log(target);
+      },
+      previousMonth: function() {
+        var data = ["2015-05-25", "2015-05-24", "2015-05-23"];
+        for(var i = 0; i < data.length; i++){
+          $("div.calendar-day-" + data[i]).css(
+            {"border-color":"green",
+            "background-color":"#99CCFF"}
+            );
+        }  
       }
     },
     forceSixRows: true
