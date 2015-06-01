@@ -291,37 +291,7 @@
 } */
 
 /* my-bill */
-.bill-first{
-	margin-top: 2em !important;
-}
-.bill-cost{
-	height: 6em;
-}
-.bill-cost .am-g{
-	height: 100%;
-	width: 100%;
-}
-.bill-cost .am-g .am-u-sm-6{
-	text-align: center;
-	line-height: 4em;
-}
-.cost-info{
-	
-}
-.cost-info .am-g{
-	width: 100%;
-	height: 2em;
-}
-.cost-info .am-g .am-u-sm-6{
-	text-align: center;
-	line-height: 2em;
-}
-.score-lists .score-list{
-	height: 2em;
-	width: 100%;
-	line-height: 2em;
-	text-align: center;
-}
+
 
 /* space */
 .space{
