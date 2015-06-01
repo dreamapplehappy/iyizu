@@ -23,75 +23,57 @@
   <script src="../js/vip/app.js"></script>
 </head>
 
-<body>
-
-<ul class="am-pagination am-pagination-centered">
-  <li class=""><a href="#" class="am-icon-backward"></a></li>
-  <li class="am-active"><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#" class="am-icon-forward"></a></li>
-</ul>
+<body class="my-bill">
 
 <div class="am-panel am-panel-default">
-  <div class="am-panel-hd">
-    <h3 class="am-panel-title"><span class="am-icon-paperclip">&nbsp;</span><span class="date ">2015-5-25</span></h3>
+  <div class="am-panel-hd select">
+    <h3 class="am-panel-title select">
+        <select class="select-box" data-am-selected>
+  <option value="a">Apple</option>
+  <option value="b">Banana</option>
+  <option value="o">Orange</option>
+  <option value="m">Mango</option>
+  <option value="d" disabled>禁用鸟</option>
+</select>
+    </h3>
   </div>
-  <div class="am-panel-bd">
-    <span class="am-icon-list-ul"></span>&nbsp;账单信息如下：
+  <div class="am-panel-bd bill-head">
+    <span class="am-icon-list-ul"></span>&nbsp;账单信息如下：</span>
   </div>
-  <ul class="am-list am-list-static am-list-striped">
-    <li class="am-g">
-      <div class="am-u-sm-6">充值:</div>
-      <div class="am-u-sm-6"> <span class="am-icon-cny">100</span> </div>
+  <ul class="am-list am-list-static am-list-striped bill-lists">
+    <li class="cz">
+      <div class="am-g item-container">
+        <div class="am-u-sm-2 item">充值</div>
+        <div class="am-u-sm-6 item-info">备注信息</div>
+        <div class="am-u-sm-4 item-cost"><span class="am-icon-cny">&nbsp;100</span></div>
+      </div>
+      <div class="date">
+        2015-5-25 12:12:12
+      </div>
     </li>
-    <li class="am-g">
-      <div class="am-u-sm-6">应付：</div>
-      <div class="am-u-sm-6"> <span class="am-icon-cny">100</span> </div>
+    <li class="xf">
+      <div class="am-g item-container">
+        <div class="am-u-sm-2 item">充值</div>
+        <div class="am-u-sm-6 item-info">备注信息</div>
+        <div class="am-u-sm-4 item-cost">
+            <div class="shang"><span class="am-icon-cny">&nbsp;100</span></div>
+            <div class="zhong"><span class="am-icon-cny">&nbsp;90</span></div>
+            <div class="xia"><span class="am-icon-cny">&nbsp;10</span></div>
+        </div>
+      </div>
+      <div class="date">
+        2015-5-25 12:12:12
+      </div>
     </li>
-    <li class="am-g">
-      <div class="am-u-sm-6">实付：</div>
-      <div class="am-u-sm-6"> <span class="am-icon-cny">90</span> </div>
-    </li>
-    <li class="am-g">
-      <div class="am-u-sm-6">积分抵用：</div>
-      <div class="am-u-sm-6"> <span class="am-icon-diamond">10</span> </div>
-    </li>
-    <li class="am-g">
-      <div class="am-u-sm-6">签到积分: </div>
-      <div class="am-u-sm-6"> <span class="am-icon-diamond">100</span> </div>
-    </li>
-  </ul>
-</div>
-
-<div class="am-panel am-panel-default">
-  <div class="am-panel-hd">
-    <h3 class="am-panel-title"><span class="am-icon-paperclip">&nbsp;</span><span class="date ">2015-5-25</span></h3>
-  </div>
-  <div class="am-panel-bd">
-    <span class="am-icon-list-ul"></span>&nbsp;账单信息如下：
-  </div>
-  <ul class="am-list am-list-static am-list-striped">
-    <li class="am-g">
-      <div class="am-u-sm-6">充值:</div>
-      <div class="am-u-sm-6"> <span class="am-icon-cny">100</span> </div>
-    </li>
-    <li class="am-g">
-      <div class="am-u-sm-6">应付：</div>
-      <div class="am-u-sm-6"> <span class="am-icon-cny">100</span> </div>
-    </li>
-    <li class="am-g">
-      <div class="am-u-sm-6">实付：</div>
-      <div class="am-u-sm-6"> <span class="am-icon-cny">90</span> </div>
-    </li>
-    <li class="am-g">
-      <div class="am-u-sm-6">积分抵用：</div>
-      <div class="am-u-sm-6"> <span class="am-icon-diamond">10</span> </div>
-    </li>
-    <li class="am-g">
-      <div class="am-u-sm-6">签到积分: </div>
-      <div class="am-u-sm-6"> <span class="am-icon-diamond">100</span> </div>
+    <li class="cz">
+      <div class="am-g item-container">
+        <div class="am-u-sm-2 item">积分</div>
+        <div class="am-u-sm-6 item-info">消费抵用</div>
+        <div class="am-u-sm-4 item-cost"><span class="am-icon-diamond">&nbsp;10</span></div>
+      </div>
+      <div class="date">
+        2015-5-25 12:12:12
+      </div>
     </li>
   </ul>
 </div>
