@@ -90,13 +90,12 @@ $(document).ready( function() {
     adjacentDaysChangeMonth: false
   });
 
-  
+  var data = ["2015-05-25", "2015-05-24", "2015-05-23"];
 
   calendars.clndr2 = $('.cal2').clndr({
     template: $('#template-calendar').html(),
     daysOfTheWeek: ['日', '一', '二', '三','四','五','六'],
     ready: function(){
-      var data = ["2015-05-25", "2015-05-24", "2015-05-23"];
       for(var i = 0; i < data.length; i++){
         $("div.calendar-day-" + data[i]).css(
         {"border-color":"green",
@@ -113,14 +112,21 @@ $(document).ready( function() {
       click: function(target) {
         // console.log(target);
       },
-      previousMonth: function() {
-        var data = ["2015-05-25", "2015-05-24", "2015-05-23"];
+      onMonthChange: function() {
         for(var i = 0; i < data.length; i++){
           $("div.calendar-day-" + data[i]).css(
             {"border-color":"green",
             "background-color":"#99CCFF"}
             );
-        }  
+        }
+      },
+      onYearChange: function() {
+        for(var i = 0; i < data.length; i++){
+          $("div.calendar-day-" + data[i]).css(
+            {"border-color":"green",
+            "background-color":"#99CCFF"}
+            );
+        }
       }
     },
     forceSixRows: true
