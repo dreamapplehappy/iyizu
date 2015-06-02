@@ -40,9 +40,9 @@ $(function(){
     }
 	});
 
-  /*$(".card-detail").click(function(){
-    window.location.href="vip-detail.html";
-  })*/
+  $(".card-detail").click(function(){
+    window.location.href="vip-cost.html";
+  })
 });
 
 // register date

@@ -37,7 +37,7 @@
 	
 }
 .card-container div.card div.back{
-	background-color: #9933CC;
+	background-color: #6699CC;
 	height: 12em;
 	width: 100%;
 	display: none;
@@ -62,8 +62,9 @@ div.card-op a{
 	height: 100%;
 	line-height: 3em;
 	font-size: 1em;
-	background-color: #CCFFFF;
+	background-color: #29A7E1;
 	color: #000000;
+	opacity: 0.75;
 }
 
 .index #index-vip-detail{
@@ -90,6 +91,18 @@ div.card-op a{
 }
 .index .am-list>a>.am-badge{
 	float: right;
+}
+.index .am-list>li>.am-badge{
+	background-color: #FFF;
+}
+.index .am-list>a>.am-badge{
+	background-color: #FFF;
+}
+.index .am-list>li>.am-badge span{
+	color: #999;
+}
+.index .am-list>a>.am-badge span{
+	color: #999;
 }
 
 /* lists */

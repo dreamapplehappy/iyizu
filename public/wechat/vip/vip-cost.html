@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>VIP Center</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.flat.min.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.min.css">
+
+  <!-- your app's css -->
+  <link rel="stylesheet" type="text/css" href="../css/vip/vip.css">
+
+  <!-- JS -->
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.legacy.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.widgets.helper.min.js"></script>
+  
+
+  <!-- your app's js -->
+  <script src="../js/vip/app.js"></script>
+  <style type="text/css">
+  .vip-cost form div label{
+    text-align: right;
+  }
+  .vip-cost h3{
+    text-align: center;
+  }
+  .vip-cost .score-op{
+    text-align: center;
+    border: 1px solid black;
+    background-color: #E6E6E6;
+    padding-top: 0.4em;
+    padding-bottom: 0.5em;
+  }
+  </style>
+</head>
+
+<body class="vip-cost">
+
+<h3>会员卡消费</h3>
+<hr />
+<form class="am-form am-form-horizontal">
+  <div class="am-form-group">
+    <label for="vip-c-m" class="am-u-sm-3 am-form-label">金额：</label>
+    <div class="am-u-sm-9">
+      <input type="text" id="vip-c-m" name="money" placeholder="输入你的充值金额">
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <label for="vip-c-s" class="am-u-sm-3 am-form-label">积分：</label>
+    <div class="am-u-sm-4">
+      <input type="text" id="vip-c-s" name="score" placeholder="抵消积分">
+    </div>
+    <label class="am-u-sm-4 am-u-end am-form-label score-op">
+      全部抵用
+    </label>
+  </div>
+
+  <div class="am-form-group">
+    <label for="vip-c-p" class="am-u-sm-3 am-form-label">密码：</label>
+    <div class="am-u-sm-9">
+      <input type="password" id="vip-c-p" placeholder="输入您的密码">
+    </div>
+  </div>
+
+  <hr/>
+  
+  <div class="am-form-group am-g">
+    <div class="am-u-sm-4 am-u-sm-offset-1">
+      <button type="submit" class="am-btn am-btn-default">确认扣款</button>
+    </div>
+    <div class="am-u-sm-4 am-u-sm-offset-1 am-u-end">
+      <button type="reset" class="am-btn am-btn-default">取&nbsp;&nbsp;消</button>
+    </div>
+  </div>
+  <hr />
+<div class="am-panel am-panel-default">
+  <div class="am-panel-hd">
+    <h3 class="am-panel-title">当前会员信息</h3>
+  </div>
+  <ul class="am-list am-list-static">
+    <li class="am-g">
+      <div class="am-u-sm-6 l">当前余额：</div>
+      <div class="am-u-sm-6 r am-icon-cny">&nbsp;10.00</div>
+    </li>
+    <li class="am-g">
+      <div class="am-u-sm-6 l">当前积分：</div>
+      <div class="am-u-sm-6 r am-icon-diamond">&nbsp;1000</div>
+    </li>
+    <li class="am-g">
+      <div class="am-u-sm-6 l">会员卡号：</div>
+      <div class="am-u-sm-6 r">0000 0006</div>
+    </li>
+    <li class="am-g">
+      <div class="am-u-sm-6 l">用户名：</div>
+      <div class="am-u-sm-6 r">王董阳</div>
+    </li>
+
+  </ul>
+</div>
+  
+</form>
+
+
+</body>
+
+</html>
