@@ -126,6 +126,8 @@ $(function(){
   $("#index-qrcode").click(function(){
     if(0 == qrcodeFlag){
       $("#index-qrcode-c").show();
+      var url = "http://www.baidu.com";
+      $("#qrcode").qrcode({width:180,height:180,text:url}); 
       qrcodeFlag = 1;
     }
     else if(1 == qrcodeFlag){
