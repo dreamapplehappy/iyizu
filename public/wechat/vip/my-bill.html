@@ -21,6 +21,121 @@
 
   <!-- your app's js -->
   <script src="../js/vip/app.js"></script>
+  <style type="text/css">
+    .my-bill{
+      background-color: #F8F8F8;
+    }
+    .bill-panel{
+      background-color: #F8F8F8;
+    }
+    .bill-head{
+      border-bottom: 1px solid #DDD;
+      background-color: #FFF;
+    }
+    .bill-lists li{
+      margin-top: 1em;
+    }
+    .bill-lists .cz{
+      height: 4em;
+      padding: 0;
+    }
+    .bill-lists .cz div{
+      height: 4em;
+    }
+    .bill-lists .cz div.bill-icon{
+      padding-left: 0px;
+    }
+    .bill-lists .cz div.bill-icon div{
+      position: relative;
+      margin-top: 0.4em;
+      margin-left: 0;
+      width: 45px;
+      height: 45px;
+      border: 1px solid ;
+      line-height: 45px;
+    }
+    .bill-lists .cz div.bill-info{
+      height: 4em;
+    }
+    .bill-lists .cz div.bill-info p.up{
+      padding: 0;
+      margin: 0;
+      height: 2.5em;
+      line-height: 2.5em;
+    }
+    .bill-lists .cz div.bill-info p.down{
+      padding: 0;
+      margin: 0;
+      height: 1.5em;
+      line-height: 1.5em;
+      font-size: 10px;
+      margin-top: -0.5em;
+      white-space: nowrap;
+    }
+    .bill-lists .cz div.bill-cost{
+      height: 4em;
+      white-space: nowrap;
+      line-height: 4em;
+      padding-left: 0;
+      font-size: 0.8em;
+      margin-top: 0.6em;
+    }
+
+    .bill-lists .xf{
+      height: 6em;
+      padding: 0;
+    }
+    .bill-lists .xf div{
+      height: 6em;
+    }
+    .bill-lists .xf div.bill-icon{
+      padding-left: 0px;
+    }
+    .bill-lists .xf div.bill-icon div{
+      position: relative;
+      margin-top: 1em;
+      margin-left: 0;
+      width: 45px;
+      height: 45px;
+      border: 1px solid ;
+      line-height: 45px;
+    }
+    .bill-lists .xf div.bill-info{
+      height: 6em;
+    }
+    .bill-lists .xf div.bill-info p.up{
+      padding: 0;
+      margin: 0;
+      height: 3.5em;
+      line-height: 5em;
+    }
+    .bill-lists .xf div.bill-info p.down{
+      padding: 0;
+      margin: 0;
+      height: 2.5em;
+      line-height: 2.5em;
+      font-size: 10px;
+      margin-top: -0.5em;
+      white-space: nowrap;
+    }
+    .bill-lists .xf div.bill-cost{
+      height: 6em;
+      padding: 0;
+      font-size: 0.8em;
+      margin-top: 0.6em;
+    }
+    .bill-lists .xf div.bill-cost div.content{
+      height: 2em;
+      width: 100%;
+      white-space: nowrap;
+      line-height: 2em;
+      padding-left: 0;
+    }
+    .select{
+      background-color: #FFF;
+    }
+    
+  </style>
 </head>
 
 <body class="my-bill">
@@ -38,52 +153,49 @@
   </select>
 </div>
 
-<div class="am-panel am-panel-default">
+<div class="am-panel am-panel-default bill-panel">
   <div class="am-panel-bd bill-head">
     <span class="am-icon-list-ul"></span>&nbsp;账单信息如下：</span>
   </div>
-  <ul class="am-list am-list-static am-list-striped bill-lists">
-    <li class="cz">
-      <div class="am-g item-container">
-        <div class="am-u-sm-2 item">充值</div>
-        <div class="am-u-sm-6 item-info">备注信息</div>
-        <div class="am-u-sm-4 item-cost"><span class="am-icon-cny">&nbsp;100</span></div>
+  <ul class="am-list am-list-static bill-lists">
+    <li class="cz am-g">
+      <div class="am-u-sm-2 bill-icon">
+        <div class="am-icon-btn am-secondary am-icon-credit-card"></div>
       </div>
-      <div class="date">
-        2015-5-25 12:12:12
+      <div class="am-u-sm-6 bill-info">
+        <p class="up">备注信息</p>
+        <p class="down">2015-5-25 12:12:12</p>
       </div>
-    </li>
-    <li class="xf">
-      <div class="am-g item-container">
-        <div class="am-u-sm-2 item">充值</div>
-        <div class="am-u-sm-6 item-info">备注信息</div>
-        <div class="am-u-sm-4 item-cost">
-            <div class="shang am-g">
-              <div class="am-u-sm-6 s-l">应付：</div>
-              <div class="am-u-sm-6 s-r am-icon-cny">100</div>
-            </div>
-            <div class="zhong am-g">
-              <div class="am-u-sm-6 s-l">实付：</div>
-              <div class="am-u-sm-6 s-r am-icon-cny">90</div>
-            </div>
-            <div class="xia am-g">
-              <div class="am-u-sm-6 s-l">抵用：</div>
-              <div class="am-u-sm-6 s-r am-icon-cny">10</div>
-            </div>
-        </div>
-      </div>
-      <div class="date">
-        2015-5-25 12:12:12
+      <div class="am-u-sm-4 bill-cost">
+        <div class="content">充值：<span class="am-icon am-icon-cny">100</span></div>
       </div>
     </li>
-    <li class="cz">
-      <div class="am-g item-container">
-        <div class="am-u-sm-2 item">积分</div>
-        <div class="am-u-sm-6 item-info">消费抵用</div>
-        <div class="am-u-sm-4 item-cost"><span class="am-icon-diamond">&nbsp;10</span></div>
+    
+    <li class="cz am-g">
+      <div class="am-u-sm-2 bill-icon">
+        <div class="am-icon-btn am-secondary am-icon-credit-card"></div>
       </div>
-      <div class="date">
-        2015-5-25 12:12:12
+      <div class="am-u-sm-6 bill-info">
+        <p class="up">积分详情</p>
+        <p class="down">2015-6-25 11:11:11</p>
+      </div>
+      <div class="am-u-sm-4 bill-cost">
+        <div class="content">积分：<span class="am-icon am-icon-diamond">100</span></div>
+      </div>
+    </li>
+    
+    <li class="xf am-g">
+      <div class="am-u-sm-2 bill-icon">
+        <div class="am-icon-btn am-secondary am-icon-credit-card"></div>
+      </div>
+      <div class="am-u-sm-6 bill-info">
+        <p class="up">积分详情</p>
+        <p class="down">2015-6-25 11:11:11</p>
+      </div>
+      <div class="am-u-sm-4 bill-cost">
+        <div class="content">应付：<span class="am-icon am-icon-cny">100</span></div>
+        <div class="content">实付：<span class="am-icon am-icon-cny">90</span></div>
+        <div class="content">抵用：<span class="am-icon am-icon-diamond">10</span></div>
       </div>
     </li>
   </ul>

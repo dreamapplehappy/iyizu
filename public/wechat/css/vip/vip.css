@@ -406,12 +406,13 @@ div.card-op a{
 }
 
 /* my-bill */
-.my-bill .item-container{
+/* .my-bill .item-container{
 	height: 6em;
 	font-size: 1em;
 }
 .my-bill .item-container .item{
 	height: 6em;
+	border: 1px solid black;
 	white-space:nowrap;
 	text-align: center;
 	line-height: 6em;
@@ -476,7 +477,7 @@ div.card-op a{
 }
 .my-bill .xf .item-container .item-cost div.xia{
 	
-}
+} */
 /* .my-bill .bill-head{
 	background-color: #F5F5F5;
 	height: 2em;
