@@ -37,7 +37,7 @@
 	
 }
 .card-container div.card div.back{
-	background-color: #FFFFCC;
+	background-color: #9933CC;
 	height: 12em;
 	width: 100%;
 	display: none;
@@ -454,5 +454,13 @@ div.card-op a{
 } */
 .select{
 	width: 100%;
+	height: 3em;
+}
+.select .select-info{
+	height: 100%;
+	text-align: center;
+	line-height: 3em;
+}
+.select .select-box{
 	height: 100%;
 }
