@@ -2,7 +2,7 @@ $(function(){
 	var flag = 0;
 	// 后面让动画延时执行
 	$("#card").click(function(){
-		if(0 == flag){
+		/*if(0 == flag){
 			$("#card").removeClass("filp");
 			$("#front").removeClass("filpc");
 			$("#front").hide();
@@ -19,7 +19,25 @@ $(function(){
 			$("#front").show();
 			$("#front").addClass("filpc");
 			flag = 0;
-		}
+		}*/
+   if(0 == flag){
+      $("#front").removeClass("animated zoomInRight");
+      $("#front").addClass("animated zoomOutLeft");
+      $("#front").hide();
+      $("#back").show();
+      $("#back").removeClass("animated zoomOutLeft");
+      $("#back").addClass("animated zoomInRight");
+      flag = 1;
+    }
+    else if(1 == flag){
+      $("#back").hide();
+      $("#back").removeClass("animated zoomInRight");
+      $("#back").addClass("animated zoomOutLeft");
+      $("#front").show();
+      $("#front").removeClass("animated zoomOutLeft");
+      $("#front").addClass("animated zoomInRight");
+      flag = 0;
+    }
 	});
 
   $(".card-detail").click(function(){

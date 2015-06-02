@@ -29,6 +29,9 @@
 	height: 12em;
 	border-radius: 1em;
 	z-index: 100;
+	transition: 1s;
+	-moz-transition: 1s;
+	-webkit-transition: 1s;
 }
 .card-container div.card div.front{
 	
