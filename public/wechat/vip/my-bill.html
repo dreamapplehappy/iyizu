@@ -27,6 +27,7 @@
     }
     .bill-panel{
       background-color: #F8F8F8;
+      border-top: 0px;
     }
     .bill-head{
       border-bottom: 1px solid #DDD;
@@ -134,29 +135,41 @@
     .select{
       background-color: #FFF;
     }
+    .select-title{
+      height: 3em;
+      line-height: 3em;
+      text-indent: 2em;
+    }
+    .select .select-container{
+      height: 2em;
+    }
+    .select #date-select{
+      text-align: center;
+    }
     
   </style>
 </head>
 
 <body class="my-bill">
 
-<div class="select am-g">
-  <div class="am-u-sm-6 select-info">
-    请选择日期：
+<form class="select am-form">
+  <div class="select-title">
+    <span class="am-icon-calendar"></span>&nbsp;请选择日期<span></span>
   </div>
-  <select class="select-box am-u-sm-6" data-am-selected>
-            <option value="a">2015-5-25</option>
-            <option value="b">2015-5-26</option>
-            <option value="o">2015-5-27</option>
-            <option value="m">2015-5-28</option>
-            <option value="d">2015-5-29</option>
-  </select>
-</div>
+  <div class="am-form-group am-form-icon select-container">
+      <select id="date-select">
+        <option value="option1">2015-5-25</option>
+        <option value="option2">2015-5-26</option>
+        <option value="option3">2015-5-27</option>
+      </select>
+      <span class="am-form-caret"></span>
+  </div>
+</form>
 
 <div class="am-panel am-panel-default bill-panel">
-  <div class="am-panel-bd bill-head">
+  <!-- <div class="am-panel-bd bill-head">
     <span class="am-icon-list-ul"></span>&nbsp;账单信息如下：</span>
-  </div>
+  </div> -->
   <ul class="am-list am-list-static bill-lists">
     <li class="cz am-g">
       <div class="am-u-sm-2 bill-icon">
