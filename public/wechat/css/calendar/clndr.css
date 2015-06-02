@@ -28,7 +28,7 @@
   margin: 25px auto;
   width: 100px;
   border-radius: 100px;
-  background-color: #FFF;
+  background-color: #29A7E1;
   border: 6px solid #000;
   transition: 0.5s;
   -moz-transition: 0.5s;
@@ -42,7 +42,7 @@
   width: 100px;
   border-radius: 100px;
   background-color: #29A7E1;
-  border: 6px solid #CCFFFF;
+  border: 6px solid #ddd;
   transition: 2s;
   -moz-transition: 2s;
   -webkit-transition: 2s;
