@@ -98,8 +98,8 @@ $(document).ready( function() {
     ready: function(){
       for(var i = 0; i < data.length; i++){
         $("div.calendar-day-" + data[i]).css(
-        {"border-color":"green",
-         "background-color":"#99CCFF"}
+        {"border-color":"#CCFFFF",
+         "background-color":"#29A7E1"}
         );
       }  
     },
@@ -115,16 +115,16 @@ $(document).ready( function() {
       onMonthChange: function() {
         for(var i = 0; i < data.length; i++){
           $("div.calendar-day-" + data[i]).css(
-            {"border-color":"green",
-            "background-color":"#99CCFF"}
+            {"border-color":"#CCFFFF",
+            "background-color":"#29A7E1"}
             );
         }
       },
       onYearChange: function() {
         for(var i = 0; i < data.length; i++){
           $("div.calendar-day-" + data[i]).css(
-            {"border-color":"green",
-            "background-color":"#99CCFF"}
+            {"border-color":"#CCFFFF",
+            "background-color":"#29A7E1"}
             );
         }
       }
