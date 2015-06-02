@@ -113,15 +113,14 @@ div.card-op a{
 	display: none;
 }
 #index-qrcode-c div.qrcode{
-	display: block;
-	width: 180px !important;
-	height: 180px !important;
-	margin: 0 auto !important;
-	padding: 0 !important;
+	padding: 0;
 }
 #index-qrcode-c div.qrcode canvas{
+	
+}
+#index-qrcode-c div.qrcode img{
 	display: block;
-	margin-left: 6em;
+	margin: 0 auto;
 }
 
 /* footer-tabs */
