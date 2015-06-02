@@ -39,28 +39,37 @@
 	display: none;
 }
 
-.card-container div.card-op{
+div.card-op{
+	position: fixed;
 	height: 3em;
-	margin-bottom: 0em;
-	border-top: 1px solid #8A2BE2;
+	margin-top: -3em;
+	z-index: 1000;
 }
-.card-container div.card-op div{
+div.card-op div{
 	text-align: center;
 	height: 100%;
 	line-height: 3em;
 	font-size: 1em;
-	background-color: #F0FFFF;
-	color: #000000;
+	background-color: #000;
+	opacity: 0.1;
 }
-.card-container div.card-op a{
+div.card-op a{
 	text-align: center;
 	height: 100%;
 	line-height: 3em;
 	font-size: 1em;
-	background-color: #F0FFFF;
+	background-color: #CCFFFF;
 	color: #000000;
-	border-left: 1px solid #8A2BE2;
 }
+
+.index #index-vip-detail{
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.index #index-vip-detail div{
+	text-align: center;
+}
+
 .index .am-list-static.am-list-border>a{
 	padding: 1rem;
 }
@@ -371,6 +380,7 @@
 	line-height: 6em;
 }
 .my-bill .bill-lists .date{
+	text-indent: -3em;
 	text-align: center;
 	white-space: nowrap;
 	width: 100%;
@@ -393,27 +403,52 @@
 }
 .my-bill .xf .item-container .item-cost{
 	height: 6em;
+	padding: 0px !important;
+	margin: 0px !important;
 }
 .my-bill .xf .item-container .item-cost div{
 	height: 2em;
-	text-align: center;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-.my-bill .xf .item-container .item-cost div span{
-	display: block;
-	width: 100%;
-	height: 100%;
+.my-bill .xf .item-container .item-cost div div{
 	line-height: 2em;
 }
-.my-bill .bill-head{
+.my-bill .xf .item-container .item-cost div div.s-l{
+	text-align: right;
+}
+.my-bill .xf .item-container .item-cost div div.s-r{
+	text-align: left;
+}
+.my-bill .xf .item-container .item-cost div.shang{
+	
+}
+.my-bill .xf .item-container .item-cost div.zhong{
+	
+}
+.my-bill .xf .item-container .item-cost div.xia{
+	
+}
+/* .my-bill .bill-head{
 	background-color: #F5F5F5;
+	height: 2em;
 }
 .my-bill .select{
 	background-color: #DEDEDE !important;
+	height: 2em;
+}
+.my-bill .select h3{
+	display: block;
+	width: 100%;
+	width: 100%;
+	height: 2em;
 }
 .my-bill .select-box{
 	background-color: #DEDEDE !important;
+	width: 100%;
+	height: 100%;
+} */
+.select{
 	width: 100%;
 	height: 100%;
 }

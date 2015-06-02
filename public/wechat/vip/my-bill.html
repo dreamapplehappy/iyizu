@@ -25,18 +25,17 @@
 
 <body class="my-bill">
 
+<div class="select">
+  <select class="select-box" data-am-selected>
+            <option value="a">2015-5-25</option>
+            <option value="b">2015-5-26</option>
+            <option value="o">2015-5-27</option>
+            <option value="m">2015-5-28</option>
+            <option value="d">2015-5-29</option>
+  </select>
+</div>
+
 <div class="am-panel am-panel-default">
-  <div class="am-panel-hd select">
-    <h3 class="am-panel-title select">
-        <select class="select-box" data-am-selected>
-  <option value="a">Apple</option>
-  <option value="b">Banana</option>
-  <option value="o">Orange</option>
-  <option value="m">Mango</option>
-  <option value="d" disabled>禁用鸟</option>
-</select>
-    </h3>
-  </div>
   <div class="am-panel-bd bill-head">
     <span class="am-icon-list-ul"></span>&nbsp;账单信息如下：</span>
   </div>
@@ -56,9 +55,18 @@
         <div class="am-u-sm-2 item">充值</div>
         <div class="am-u-sm-6 item-info">备注信息</div>
         <div class="am-u-sm-4 item-cost">
-            <div class="shang"><span class="am-icon-cny">&nbsp;100</span></div>
-            <div class="zhong"><span class="am-icon-cny">&nbsp;90</span></div>
-            <div class="xia"><span class="am-icon-cny">&nbsp;10</span></div>
+            <div class="shang am-g">
+              <div class="am-u-sm-6 s-l">应付：</div>
+              <div class="am-u-sm-6 s-r am-icon-cny">100</div>
+            </div>
+            <div class="zhong am-g">
+              <div class="am-u-sm-6 s-l">实付：</div>
+              <div class="am-u-sm-6 s-r am-icon-cny">90</div>
+            </div>
+            <div class="xia am-g">
+              <div class="am-u-sm-6 s-l">抵用：</div>
+              <div class="am-u-sm-6 s-r am-icon-cny">10</div>
+            </div>
         </div>
       </div>
       <div class="date">
