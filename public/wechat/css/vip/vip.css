@@ -269,7 +269,7 @@ div.card-op a{
 	height: 2em;
 	width: 14em;
 	border-radius: 3px;
-	border: 1px solid #B6B8F0;
+	border: 1px solid #29A7E1;
 }
 .msg .msg-container .msg-header div{
 	text-align: center;
@@ -278,24 +278,24 @@ div.card-op a{
 	line-height: 2em;
 }
 .msg .msg-container .msg-header #msg-left{
-	border-right: 1px solid #B6B8F0;
+	border-right: 1px solid #29A7E1;
 }
 .msg-color-click{
-	background-color: #B6B8F0;
+	background-color: #29A7E1;
 	color: white;
 }
 .msg-color-none{
 	background-color: #F5FFFA;
-	color: #B6B8F0;
+	color: #29A7E1;
 }
 .msg .msg-container .msg-details{
-	border-top: 1px solid #B6B8F0 !important;
+	border-top: 1px solid #29A7E1 !important;
 }
 .msg .msg-container .msg-details #detail-right{
 	display: none;
 }
 .msg .tabs-icon-top a:active{
-	color: #B6B8F0;
+	color: #29A7E1;
 }
 .msg .am-accordion{
 	width: 100% !important;
@@ -303,18 +303,44 @@ div.card-op a{
 }
 .msg .am-accordion-item{
 	width: 100% !important;
-	margin: 0 !important;
+	margin: 6px !important;
 }
 .msg .am-accordion-title{
-	height: 4em;
+	padding: 0;
+	margin: 0;
+	height: 3em;
+	width: 100%;
 }
-.msg .am-accordion-title span.icon{
+.msg .am-accordion-item{
+	
+}
+.msg .am-accordion-item .msg-div-c{
+	width: 100%;
+	height: 3em;
+}
+.msg .am-accordion-item .msg-div-c .msg-div{
+	height: 3em;
+	border: 0px solid #29A7E1;
+}
+.msg .am-accordion-item .msg-div-c .msg-div .msg-left{
+	padding: 0.5em;
+	padding-left: 1em;
+	padding-top: 0.8em;
+}
+.msg .am-accordion-item .msg-div-c .msg-div .msg-left span{
+	display: block;
+	color: #29A7E1;
+}
+.msg .am-accordion-item .msg-div-c .msg-div .msg-right .msg-time{
+	text-indent: -2em;
+}
+/* .msg .am-accordion-title span.icon{
 	display: block;
 	height: 3em;
 	color: #FFF !important;
 	line-height: 3em;
 	text-align: center;
-	background-color: #B6B8F0;
+	background-color: #29A7E1;
 	border-radius: 6px;
 }
 .msg .am-accordion-title span.content{
@@ -322,7 +348,7 @@ div.card-op a{
 	height: 4em;
 	padding-left: 0;
 	left: -2em;
-}
+} */
 /* .msg .am-accordion-title span.content p.c-title{
 	margin: 0 !important;
 	line-height: 2em;
@@ -476,4 +502,19 @@ div.card-op a{
 }
 .select .select-box{
 	height: 100%;
+}
+
+/* vip-cost */
+.vip-cost form div label{
+	text-align: right;
+}
+.vip-cost h3{
+	text-align: center;
+}
+.vip-cost .score-op{
+	text-align: center;
+	border: 1px solid black;
+	background-color: #E6E6E6;
+	padding-top: 0.4em;
+	padding-bottom: 0.5em;
 }
