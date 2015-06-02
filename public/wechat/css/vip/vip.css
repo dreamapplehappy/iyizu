@@ -40,7 +40,7 @@
 }
 
 div.card-op{
-	position: fixed;
+	position: relative;
 	height: 3em;
 	margin-top: -3em;
 	z-index: 1000;
