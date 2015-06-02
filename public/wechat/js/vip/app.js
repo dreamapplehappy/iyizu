@@ -121,30 +121,6 @@ $(function(){
   });
 });
 
-  $(function(){
-   var qrcodeFlag = 0;
-   var qrcode = new QRCode(document.getElementById("qrcode"), {
-      width : 180,
-      height : 180
-  });
-   var url = "http://www.baidu.com";
-  $("#index-qrcode").click(function(){
-    if(0 == qrcodeFlag){
-      $("#index-qrcode-c").show();
-      // 
-      // var url = "http://www.baidu.com";
-      // $("#qrcode").qrcode({width: 200,height: 200,text: url});
-       // 
-      qrcode.makeCode(url);
-      qrcodeFlag = 1;
-    }
-    else if(1 == qrcodeFlag){
-      qrcode.clear();
-      $("#index-qrcode-c").hide();
-      qrcodeFlag = 0;
-    }
-  });
- });
 
   // sign date
   $(function(){
