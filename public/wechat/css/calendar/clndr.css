@@ -138,7 +138,7 @@
   background-color: ;
 }
 .cal2 .clndr .clndr-grid .day.today {
-  background-color: #CCCCCC;
+  border: 1px solid #29A7E1;
 }
 .cal2 .clndr .clndr-grid .empty,
 .cal2 .clndr .clndr-grid .adjacent-month {

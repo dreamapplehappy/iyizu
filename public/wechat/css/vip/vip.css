@@ -62,9 +62,8 @@ div.card-op a{
 	height: 100%;
 	line-height: 3em;
 	font-size: 1em;
-	background-color: #29A7E1;
+	background-color: rgba(41, 167, 225, 0.75); 
 	color: #FFF;
-	opacity: 0.75;
 }
 
 .index #index-vip-detail{
