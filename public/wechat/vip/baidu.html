@@ -28,8 +28,17 @@
 	var map = new BMap.Map("allmap");
 	map.centerAndZoom(new_point, 11);
 	map.enableScrollWheelZoom(true);
+
+	map.addControl(new BMap.NavigationControl());
+	map.addControl(new BMap.ScaleControl());            
+	map.addControl(new BMap.OverviewMapControl());       
+	map.enableScrollWheelZoom();                         
+	map.disable3DBuilding();
+
 	map.clearOverlays();
 	map.addOverlay(marker);
-	map.panTo(new_point);
+	// map.panTo(new_point);
+	
+
 	
 </script>
