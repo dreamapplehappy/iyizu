@@ -42,6 +42,7 @@
   width: 100px;
   border-radius: 100px;
   background-color: #29A7E1;
+  color: #FFF;
   border: 6px solid #ddd;
   transition: 2s;
   -moz-transition: 2s;
@@ -54,7 +55,7 @@
   border: 1px solid #CCFFFF;
   text-align: center;
   line-height: 40px;
-  color: black;
+  color: #FFF;
 }
 .cal2 {
   max-width: 280px;
@@ -85,7 +86,7 @@
   color: #29A7E1;
 }
 .cal2 .clndr .clndr-controls .clndr-previous-button:hover {
-  background-color: #29A7E1;
+  /**/
 }
 .cal2 .clndr .clndr-controls .month {
   float: left;
@@ -106,7 +107,7 @@
   /* IE10+ */
 }
 .cal2 .clndr .clndr-controls .clndr-next-button:hover {
-  background-color: #f4f4f4;
+  /**/
 }
 .cal2 .clndr .clndr-grid {
   width: 280px;
@@ -121,7 +122,7 @@
   width: 38px;
   height: 38px;
   background: #FFFFFF;
-  border: 1px solid #CCFFFF;
+  border: 1px solid #CCCCCC;
   margin: 1px;
   line-height: 38px;
 }
@@ -129,7 +130,7 @@
   float: left;
   width: 38px;
   height: 38px;
-  border: 1px solid #CCFFFF;
+  border: 1px solid #CCCCCC;
   margin: 1px;
   line-height: 38px;
 }
@@ -137,7 +138,7 @@
   background-color: ;
 }
 .cal2 .clndr .clndr-grid .day.today {
-  background-color: #CCFFFF;
+  background-color: #CCCCCC;
 }
 .cal2 .clndr .clndr-grid .empty,
 .cal2 .clndr .clndr-grid .adjacent-month {
@@ -145,7 +146,7 @@
   width: 38px;
   height: 38px;
   background: #ddd;
-  border: 1px solid #CCFFFF;
+  border: 1px solid #CCCCCC;
   margin: 1px;
   line-height: 38px;
 }

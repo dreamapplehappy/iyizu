@@ -30,9 +30,9 @@ $(function(){
       flag = 1;
     }
     else if(1 == flag){
-      $("#back").hide();
       $("#back").removeClass("animated zoomInRight");
       $("#back").addClass("animated zoomOutLeft");
+      $("#back").hide();
       $("#front").show();
       $("#front").removeClass("animated zoomOutLeft");
       $("#front").addClass("animated zoomInRight");
@@ -131,7 +131,7 @@ $(function(){
     $("#click-btn").click(function(){
       $("#click-btn").text("已签到");
       $(".cal2 .clndr .clndr-grid .day.today").css(
-        {"border-color":"black",
+        {"border-color":"#CCFFFF",
          "background-color":"#29A7E1"});
     });
 
