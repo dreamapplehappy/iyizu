@@ -8,6 +8,7 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.flat.min.css">
   <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.min.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/datetimepicker/css/amazeui.datetimepicker.css">
 
   <!-- your app's css -->
   <link rel="stylesheet" type="text/css" href="../css/order/order.css">
@@ -16,6 +17,7 @@
   <!-- JS -->
   <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../bower_components/datetimepicker/js/amazeui.datetimepicker.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.legacy.min.js"></script>
   <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.widgets.helper.min.js"></script>
   
@@ -23,10 +25,94 @@
   <!-- your app's js -->
   <script src="../js/order/app.js"></script>
 </head>
-<body class="index">
+<style type="text/css">
+  .order-body{
+    background-color: #DEDEDE;
+  }
+  ol.am-control-nav li a.am-active{
+    background-color: #FFF !important; 
+  }
+
+  a.my-order{
+    display: block;
+    line-height: 3em;
+    line-height: 3em;
+    border: 1px solid #CCCCCC;
+    color: #000;
+    margin-top: 1em;
+    background-color: #FFF;
+  }
+  a.my-order span{
+    float: right;
+    background-color: #FFF;
+    color: #CCC;
+    height: 3em;
+    line-height: 4em;
+  }
+  .order-body .order-detail{
+    margin-top: 1em;
+    background-color: #FFF;
+  }
+  .order-body .order-detail .am-panel-hd{
+    background-color: #FFF;
+    height: 3em;
+    padding: 0;
+  }
+  .order-body .order-detail .am-panel-hd .odh-left{
+    line-height: 3em;
+    white-space: nowrap;
+  }
+  .order-body .order-detail .am-panel-hd .odh-left i{
+    margin-left: -0.4em;
+  }
+  .order-body .order-detail .am-panel-hd .odh-left{
+    height: 3em;
+  }
+  .order-body .order-detail .am-panel-hd .odh-right{
+    font-size: 10px;
+    white-space: nowrap;
+    margin-top: 1.3em;
+  }
+  .order-body .order-detail .am-panel-hd .odh-right span{
+    width: 10px;
+    height: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  .order-body .order-detail .am-panel-hd .odh-right span.red{
+    background-color: #E84C3D;
+  }
+  .order-body .order-detail .am-panel-hd .odh-right span.green{
+    background-color: #408E3C;
+  }
+  .order-body .order-detail .am-panel-hd .odh-right span.space{
+    background-color: #FFFFFF;
+  }
+  .order-body .order-op{
+    padding: 0;
+    background-color: #FFF;
+  }
+  .order-body .order-op ul li.reserve{
+    height: 3em;
+    font-size: 0.8em;
+    text-align: center;
+    text-indent: -3em;
+  }
+  .order-body .order-op ul li.reserve span{
+    text-indent: 3em;
+    color: #CCCCCC;
+    background-color: #FFFFFF;
+    font-weight: 200%;
+  }
+  .order-body .order-date{
+    color: black !important;
+  }
+</style>
+<body class="order-body">
 
 <!-- 图片轮播 -->
-<div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{&quot;directionNav&quot;:false}'>
+<div data-am-widget="slider" class="order am-slider am-slider-a1" data-am-slider='{&quot;directionNav&quot;:false}'>
   <ul class="am-slides">
     <li>
       <img src="http://7jpqbr.com1.z0.glb.clouddn.com/bing-1.jpg">
@@ -38,6 +124,42 @@
       <img src="http://7jpqbr.com1.z0.glb.clouddn.com/bing-3.jpg">
     </li>
   </ul>
+</div>
+
+<!-- 我的预定 -->
+<a href="#" id="my-order" class="my-order">
+      &nbsp;<i class="am-icon-coffee am-icon-fw"></i>
+      &nbsp;我的预定
+      <span class="am-badge">
+        <span class="am-icon-chevron-right"></span>
+      </span>
+</a>
+
+<!-- 预定详情 -->
+<div class="am-panel am-panel-default order-detail">
+  <div class="am-panel-hd am-g order-d-head">
+    <div class="odh-left am-u-sm-3"><i class="am-icon-send-o am-icon-fw">&nbsp;</i>&nbsp;&nbsp;我要预定</div>
+    <div class="white am-u-sm-3"></div>
+    <p class="odh-right am-u-sm-6">
+      <span class="space"></span>空闲
+      <span class="green"></span>正供餐
+      <span class="red"></span>已预定
+    </p>
+  </div>
+  <div class="am-panel-bd order-op">
+      <!-- <div id="date-picker-container" class="am-input-group am-datepicker-date am-u-sm-11">
+        <input id="date-picker" type="text" class="am-form-field" placeholder="选择您的生日" readonly data-am-datepicker="{theme: 'success'}" value="asd">
+      </div>
+      <span class="am-icon-angle-right am-u-sm-1"></span> -->
+      <ul class="am-list am-list-static">
+        <li id="date-picker" data-am-datepicker="{theme: 'success'}" class="reserve"><span class="am-badge am-badge-danger"><span class="am-icon-angle-right am-icon-sm"></span></span>
+    <span id="order-date" class="order-date">选择时间</span></li>
+      </ul>
+  </div>
+  <table class="am-table">
+    ...
+  </table>
+  <div class="am-panel-footer">...</div>
 </div>
 
 </body>
