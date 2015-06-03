@@ -117,7 +117,7 @@ $(function(){
     window.location.href = "wtai://wp/mc;13738015054";
   });
   $("#index-map").click(function(){
-    window.location.href = "http://www.amap.com/";
+    window.location.href = "baidu.html";
   });
 });
 

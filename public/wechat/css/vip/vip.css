@@ -67,8 +67,8 @@ div.card-op a{
 }
 
 .index #index-vip-detail{
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
+	border-top: 1px solid #DEDEDE;
+	border-bottom: 1px solid #DEDEDE;
 }
 .index #index-vip-detail div{
 	text-align: center;
@@ -136,7 +136,7 @@ div.card-op a{
 	color: #666;
 }
 .tabs-icon-top a:active{
-	color: #00F5FF;
+	color: #29A7E1;
 }
 .tabs-icon-top a i{
 	display: block;
@@ -316,7 +316,7 @@ div.card-op a{
 	width: 100%;
 }
 .msg .am-accordion-item{
-	
+	color: #000 !important;
 }
 .msg .am-accordion-item .msg-div-c{
 	width: 100%;
@@ -338,29 +338,7 @@ div.card-op a{
 .msg .am-accordion-item .msg-div-c .msg-div .msg-right .msg-time{
 	text-indent: -2em;
 }
-/* .msg .am-accordion-title span.icon{
-	display: block;
-	height: 3em;
-	color: #FFF !important;
-	line-height: 3em;
-	text-align: center;
-	background-color: #29A7E1;
-	border-radius: 6px;
-}
-.msg .am-accordion-title span.content{
-	display: block;
-	height: 4em;
-	padding-left: 0;
-	left: -2em;
-} */
-/* .msg .am-accordion-title span.content p.c-title{
-	margin: 0 !important;
-	line-height: 2em;
-	font-size: 1em;
-}
-.msg .am-accordion-title span.content p.c-date{
-	margin: 0 !important;
-} */
+
 
 /* my-bill */
 
