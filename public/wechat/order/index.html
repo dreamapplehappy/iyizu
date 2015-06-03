@@ -108,6 +108,38 @@
   .order-body .order-date{
     color: black !important;
   }
+  .order-body ul li.choose{
+    
+  }
+  .order-body ul li.choose div{
+    
+  }
+  .order-body ul li.choose div div.circle{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 80px;
+    border: 1px solid #CCCCCC;
+  }
+  .order-body ul li.choose div div.circle div.up{
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .order-body ul li.choose div div.circle div.middle,
+  .order-body ul li.choose div div.circle div.down{
+    height: 15px;
+    font-size: 6px;
+    line-height: 15px;
+    text-align: center;
+  }
+  .order-body ul li.choose div div.round{
+    width: 80px;
+    height: 20px;
+    margin: 10px auto;
+    border: 1px solid black;
+  }
 </style>
 <body class="order-body">
 
@@ -153,12 +185,25 @@
       <span class="am-icon-angle-right am-u-sm-1"></span> -->
       <ul class="am-list am-list-static">
         <li id="date-picker" data-am-datepicker="{theme: 'success'}" class="reserve"><span class="am-badge am-badge-danger"><span class="am-icon-angle-right am-icon-sm"></span></span>
-    <span id="order-date" class="order-date">选择预定时间</span></li>
+        <span id="order-date" class="order-date">选择预定时间</span>
+        </li>
+        <li class="am-g choose">
+          <div class="bj am-u-sm-4">
+            <div class="circle">
+              <div class="up">包间</div>
+              <div class="middle">10人桌</div>
+              <div class="down">查看详情</div>
+            </div>
+            <div class="round">
+              
+            </div>
+          </div>
+          <div class="dt am-u-sm-4">2</div>
+          <div class="dt am-u-sm-4">3</div>
+        </li>
       </ul>
   </div>
-  <table class="am-table">
-    ...
-  </table>
+  
   <div class="am-panel-footer">...</div>
 </div>
 
