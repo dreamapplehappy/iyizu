@@ -58,7 +58,7 @@
   color: #FFF;
 }
 .cal2 {
-  max-width: 280px;
+  max-width: 252px;
   margin: 0 auto;
 }
 .cal2 .clndr .clndr-controls {
@@ -110,8 +110,8 @@
   /**/
 }
 .cal2 .clndr .clndr-grid {
-  width: 280px;
-  height: 280px;
+  width: 252px;
+  height: 252px;
   text-align: center;
   border: 0px solid #000;
   display: inline-block;
@@ -119,20 +119,20 @@
 }
 .cal2 .clndr .clndr-grid .header-day {
   float: left;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   background: #FFFFFF;
   border: 1px solid #CCCCCC;
   margin: 1px;
-  line-height: 38px;
+  line-height: 34px;
 }
 .cal2 .clndr .clndr-grid .day {
   float: left;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   border: 1px solid #CCCCCC;
   margin: 1px;
-  line-height: 38px;
+  line-height: 34px;
 }
 .cal2 .clndr .clndr-grid .day.event {
   background-color: ;
@@ -143,12 +143,12 @@
 .cal2 .clndr .clndr-grid .empty,
 .cal2 .clndr .clndr-grid .adjacent-month {
   float: left;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   background: #ddd;
   border: 1px solid #CCCCCC;
   margin: 1px;
-  line-height: 38px;
+  line-height: 34px;
 }
 .cal2 .clndr .clndr-today-button {
   width: 100%;

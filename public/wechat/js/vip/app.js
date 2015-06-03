@@ -132,6 +132,7 @@ $(function(){
       $("#click-btn").text("已签到");
       $(".cal2 .clndr .clndr-grid .day.today").css(
         {"border-color":"#CCFFFF",
+          "color":"#FFFFFF",
          "background-color":"#29A7E1"});
     });
 
