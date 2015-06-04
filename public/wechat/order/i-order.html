@@ -25,61 +25,39 @@
   <!-- your app's js -->
   <script src="../js/order/app.js"></script>
   <style type="text/css">
-  .my-order ul li{
-    height: 3em;
-    line-height: 3em;
-    width: 90%;
-    margin: 0.5em auto;
-  }
-  .my-order ul li i{
-    text-indent: 0.2em;
-  }
-  .my-order ul li span.my-list-date{
-    
-  }
-  .my-order ul li span.am-badge{
-    line-height: 3em;
-    background-color: #FFFFFF;
-    color: #CCCCCC;
-  }
-</style>
+    .i-order{
+      background-color: #DEDEDE;
+    }
+    .i-order div.input-container{
+      background-color: #FFFFFF;
+      height: 3em;
+      line-height: 3em;
+      margin-top: 0.5em;
+      border: 1px solid #CCCCCC;
+    }
+    .i-order div.input-container label{
+      font-size: 15px;
+      line-height: 3em;
+    }
+    .i-order div.input-container input{
+      height: 100%;
+      outline: none;
+    }
+  </style>
 </head>
-<body class="my-order">
 
-<button type="button" class="am-btn am-btn-primary am-btn-block">返回</button>
+<body class="i-order">
 
+<div class="input-container am-g">
+  <label class="am-u-sm-4">姓名：</label>
+  <input type="text" class="am-u-sm-8" placeholder="请输入您的姓名">
+</div>
 
-<ul class="am-list am-list-border">
-  <li>
-    <i class="am-icon-calendar-o am-icon-fw"></i>
-    <span class="my-list-date">2015-5-29</span>
-    <span class="am-badge">
-      <span class="am-icon-chevron-right"></span>
-    </span>
-  </li>
-  <li>
-    <i class="am-icon-calendar-o am-icon-fw"></i>
-    <span class="my-list-date">2015-5-27</span>
-    <span class="am-badge">
-      <span class="am-icon-chevron-right"></span>
-    </span>
-  </li>
-  <li>
-    <i class="am-icon-calendar-o am-icon-fw"></i>
-    <span class="my-list-date">2015-5-25</span>
-    <span class="am-badge">
-      <span class="am-icon-chevron-right"></span>
-    </span>
-  </li>
-</ul>
-<script type="text/javascript">
-  $(".my-order ul>li").each(function(){
-    $(this).click(function(){
-      // console.log($(this).children("span.my-list-date").text());
-      window.location.href = "my-order-list-detail.html";
-    })
-  });
-</script>
+<div class="input-container am-g">
+  <label class="am-u-sm-4">到店时间：</label>
+  <input type="text" class="am-u-sm-8" placeholder="请输入您的姓名">
+</div>
+
 </body>
 
 </html>

@@ -24,8 +24,7 @@
 
   <!-- your app's js -->
   <script src="../js/order/app.js"></script>
-</head>
-<style type="text/css">
+  <style type="text/css">
   .order-body{
     background-color: #DEDEDE;
   }
@@ -154,6 +153,7 @@
     color: white;
   }
 </style>
+</head>
 <body class="order-body">
 
 <!-- 图片轮播 -->
@@ -201,8 +201,8 @@
         <span id="order-date" class="order-date">选择预定时间</span>
         </li>
         <li class="am-g choose">
-          <div class="bj am-u-sm-4 can-click">
-            <div class="circle">
+          <div class="bj am-u-sm-4">
+            <div class="circle can-click">
               <div class="up">包间</div>
               <div class="middle">10人桌</div>
               <div class="down">查看详情</div>
@@ -211,30 +211,8 @@
               立即预定
             </div>
           </div>
-          <div class="dt am-u-sm-4 can-click">
-            <div class="circle circle-green">
-              <div class="up">大厅</div>
-              <div class="middle">10人桌</div>
-              <div class="down">查看详情</div>
-            </div>
-            <div class="round">
-              立即预定
-            </div>
-          </div>
-          <div class="dt am-u-sm-4 can-click">
-            <div class="circle circle-red">
-              <div class="up">大厅</div>
-              <div class="middle">20人桌</div>
-              <div class="down">查看详情</div>
-            </div>
-            <div class="round">
-              立即预定
-            </div>
-          </div>
-        </li>
-        <li class="am-g choose">
-          <div class="dt am-u-sm-4 can-click">
-            <div class="circle circle-green">
+          <div class="dt am-u-sm-4">
+            <div class="circle circle-green can-click">
               <div class="up">大厅</div>
               <div class="middle">10人桌</div>
               <div class="down">查看详情</div>
@@ -253,8 +231,30 @@
               立即预定
             </div>
           </div>
-          <div class="bj am-u-sm-4 can-click">
-            <!-- <div class="circle">
+        </li>
+        <li class="am-g choose">
+          <div class="dt am-u-sm-4">
+            <div class="circle circle-green can-click">
+              <div class="up">大厅</div>
+              <div class="middle">10人桌</div>
+              <div class="down">查看详情</div>
+            </div>
+            <div class="round">
+              立即预定
+            </div>
+          </div>
+          <div class="dt am-u-sm-4">
+            <div class="circle circle-red can-click">
+              <div class="up">大厅</div>
+              <div class="middle">20人桌</div>
+              <div class="down">查看详情</div>
+            </div>
+            <div class="round">
+              立即预定
+            </div>
+          </div>
+          <div class="bj am-u-sm-4">
+            <!-- <div class="circle can-click">
               <div class="up">包间</div>
               <div class="middle">10人桌</div>
               <div class="down">查看详情</div>
@@ -272,6 +272,12 @@
     $(this).click(function(){
       // console.log($(this).children("span.my-list-date").text());
       window.location.href = "per-detail.html";
+    })
+  });
+  $(".order-body ul li div.round").each(function(){
+    $(this).click(function(){
+      // console.log($(this).children("span.my-list-date").text());
+      window.location.href = "i-order.html";
     })
   });
 </script>  
