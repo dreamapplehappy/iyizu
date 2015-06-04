@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>欢迎订餐</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.flat.min.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.min.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/datetimepicker/css/amazeui.datetimepicker.css">
+
+  <!-- your app's css -->
+  <link rel="stylesheet" type="text/css" href="../css/order/order.css">
+  <link rel="stylesheet" type="text/css" href="../css/vip/animate.css">
+
+  <!-- JS -->
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../bower_components/datetimepicker/js/amazeui.datetimepicker.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.legacy.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.widgets.helper.min.js"></script>
+  
+
+  <!-- your app's js -->
+  <script src="../js/order/app.js"></script>
+</head>
+<style type="text/css">
+  .my-order-list-detail{
+    background-color: #DEDEDE;
+  }
+  .my-order-list-detail ul li{
+    height: 3em;
+    margin-top: 0.5em;
+  }
+  .my-order-list-detail ul li.first{
+    margin-top: 0;
+  }
+  .my-order-list-detail .btns{
+    color: #FFFFFF;
+  }
+  .my-order-list-detail .btns .btn-back{
+    background-color: #408E3C;
+    color: #FFFFFF;
+  }
+  .my-order-list-detail .btns .btn-remove{
+    background-color: #E84C3D;
+    color: #FFFFFF;
+  }
+
+</style>
+<body class="my-order-list-detail">
+
+<ul class="am-list am-list-static am-list-border">
+  <li class="first am-g">
+    <i class="am-icon-user am-icon-fw am-u-sm-2"></i>
+    <span class="am-u-sm-4">姓名:</span>
+    <span class="am-u-sm-6">呵呵哒</span>
+  </li>
+  <li class="am-g">
+    <i class="am-icon-mobile am-icon-sm am-icon-fw am-u-sm-2"></i>
+    <span class="am-u-sm-4">手机:</span>
+    <span class="am-u-sm-6">13738015058</span>
+  </li>
+  <li class="am-g">
+    <i class="am-icon-clock-o am-icon-fw am-u-sm-2"></i>
+    <span class="am-u-sm-4">到店时间:</span>
+    <span class="am-u-sm-6">2015-8-8 12：00</span>
+  </li>
+  <li class="am-g">
+    <i class="am-icon-users am-icon-fw am-u-sm-2"></i>
+    <span class="am-u-sm-4">到店人数:</span>
+    <span class="am-u-sm-6">10</span>
+  </li>
+  <li class="am-g">
+    <i class="am-icon-pencil am-icon-fw am-u-sm-2"></i>
+    <span class="am-u-sm-4">备注:</span>
+    <span class="am-u-sm-6">没有备注</span>
+  </li>
+</ul>
+
+<div class="am-g btns">
+  <button class="am-u-sm-4 am-u-sm-offset-1 am-btn am-btn-default btn-back">
+    <i class="am-icon-chevron-left"></i>
+  返回
+  </button>
+  <button class="am-u-sm-offset-2 am-u-sm-4 am-u-end am-btn am-btn-default btn-remove">
+    <i class="am-icon-remove"></i>
+  删除
+  </button>
+</div>
+
+</body>
+
+</html>

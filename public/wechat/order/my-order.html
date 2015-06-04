@@ -72,7 +72,14 @@
     </span>
   </li>
 </ul>
-
+<script type="text/javascript">
+  $(".my-order ul>li").each(function(){
+    $(this).click(function(){
+      // console.log($(this).children("span.my-list-date").text());
+      window.location.href = "my-order-list-detail.html";
+    })
+  });
+</script>
 </body>
 
 </html>
