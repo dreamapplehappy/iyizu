@@ -14,7 +14,6 @@
 <script type="text/javascript">
 	angular.module("MyApp", [])
 .config(function($httpProvider){
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
     $httpProvider.defaults.headers.common["X-AVOSCloud-Application-Id"] = "rjrzlrq7wr8e252pbqms8ficcyh0kmihv6pahgvszhee6j4x";
     $httpProvider.defaults.headers.common["X-AVOSCloud-Application-Key"] = "j4ew7s9ssdz7ls72am6ex4yq7r8ql3sntj184cgdhkcb7qku";
     $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
@@ -23,7 +22,7 @@
     $scope.data = "hello";
     $http({
         method: "GET",
-        url: " https://leancloud.cn/1.1/classes/hello/"
+        url: "https://leancloud.cn/1.1/classes/hello/55702ec7e4b008cbbbdc49ec"
        
     })
     .success(function(data){
