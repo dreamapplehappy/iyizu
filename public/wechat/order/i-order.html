@@ -26,37 +26,68 @@
   <script src="../js/order/app.js"></script>
   <style type="text/css">
     .i-order{
-      background-color: #DEDEDE;
+      background-color: #FFF;
     }
-    .i-order div.input-container{
-      background-color: #FFFFFF;
-      height: 3em;
-      line-height: 3em;
-      margin-top: 0.5em;
-      border: 1px solid #CCCCCC;
+    .i-order form{
+      margin-top: 1em;
     }
-    .i-order div.input-container label{
+    .i-order form div.am-form-group{
+      background-color: #FFF;
+    }
+    .i-order form div label{
       font-size: 15px;
-      line-height: 3em;
+      white-space: nowrap;
     }
-    .i-order div.input-container input{
-      height: 100%;
-      outline: none;
+    .i-order button.submit{
+      background-color: #408E3C;
+      color: #FFF;
     }
+
   </style>
 </head>
 
 <body class="i-order">
 
-<div class="input-container am-g">
-  <label class="am-u-sm-4">姓名：</label>
-  <input type="text" class="am-u-sm-8" placeholder="请输入您的姓名">
-</div>
+<form class="am-form am-form-horizontal">
+  <div class="am-form-group">
+    <label for="doc-ipt-1" class="am-u-sm-2 am-form-label">姓名：</label>
+    <div class="am-u-sm-9">
+      <input type="email" id="doc-ipt-1" placeholder="请输入您的姓名">
+    </div>
+  </div>
 
-<div class="input-container am-g">
-  <label class="am-u-sm-4">到店时间：</label>
-  <input type="text" class="am-u-sm-8" placeholder="请输入您的姓名">
-</div>
+  <div class="am-form-group">
+    <label for="doc-ipt-pwd-2" class="am-u-sm-3 am-form-label">手机：</label>
+    <div class="am-u-sm-9">
+      <input type="text" id="doc-ipt-pwd-2" placeholder="请输入您的手机号码">
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <label for="doc-ipt-pwd-3" class="am-u-sm-3 am-form-label">到店时间：</label>
+    <div class="am-u-sm-9">
+      <input type="text" id="doc-ipt-pwd-3" placeholder="输入到店时间">
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <label for="doc-ipt-pwd-4" class="am-u-sm-3 am-form-label">到点人数</label>
+    <div class="am-u-sm-9">
+      <input type="text" id="doc-ipt-pwd-4" placeholder="输入到店人数">
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <label for="doc-ipt-pwd-5" class="am-u-sm-3 am-form-label">备注：</label>
+    <div class="am-u-sm-9">
+      <input type="text" id="doc-ipt-pwd-5" placeholder="请输入备注">
+    </div>
+  </div>
+
+  <div class="am-form-group am-g">
+    <button type="submit" class="submit am-btn am-btn-default am-u-sm-8 am-u-end am-u-sm-offset-2">提交</button>
+  </div>
+</form>
 
 </body>
 
