@@ -73,6 +73,13 @@
       <span class="am-icon-chevron-right"></span>
     </span>
   </li>
+  <a href="vip-cost.html" id="index-connect" class="needm card-account">
+      <i class="am-icon-cny am-icon-fw"></i>
+      账户充值
+      <span class="am-badge">
+        <span class="am-icon-chevron-right"></span>
+      </span>
+  </a>
   <li id="index-qrcode" class="needm">
     <i class="am-icon-th am-icon-qrcode am-icon-fw"></i>
     会员身份二维码
@@ -113,7 +120,7 @@
 
 <!-- footer-tabs -->
 <div class="tabs tabs-icon-top am-g">
-  <a href="index.html" class="tab-item am-u-sm-3">
+  <a href="index.html" class="tab-item am-u-sm-3 vip-card">
     <i class="am-icon-credit-card am-icon-md"></i>
     <span>会员卡</span>
   </a>
@@ -152,6 +159,11 @@
     }
   });
  });
+  $(function(){
+    $(".index .card-op .get-card").click(function(){
+      $(this).css({"font-size":"1.2em","line-height":"2.5em"});
+    });
+  })
 </script>
 
 </body>

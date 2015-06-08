@@ -127,6 +127,7 @@ div.card-op a{
 	position: fixed;
 	bottom: 0em;
 	background-color: #F8F8F8;
+	font-size: 0.8em;
 }
 .tabs-icon-top a{
 	text-align: center;
@@ -137,6 +138,12 @@ div.card-op a{
 }
 .tabs-icon-top a:active{
 	color: #29A7E1;
+}
+.tabs-icon-top a.vip-card{
+	color: #29A7E1;
+}
+.tabs-icon-top a.card-account i{
+	
 }
 .tabs-icon-top a i{
 	display: block;
