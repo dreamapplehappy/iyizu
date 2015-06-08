@@ -21,6 +21,12 @@
 
   <!-- your app's js -->
   <script src="../js/vip/app.js"></script>
+  <style type="text/css">
+    .vip-cost .btn-sure{
+      background-color: #29A7E1;
+      color: #FFFFFF;
+    }
+  </style>
 </head>
 
 <body class="vip-cost">
@@ -37,12 +43,12 @@
 
   <div class="am-form-group">
     <label for="vip-c-s" class="am-u-sm-3 am-form-label">积分：</label>
-    <div class="am-u-sm-4">
-      <input type="text" id="vip-c-s" name="score" placeholder="抵消积分">
+    <div class="am-u-sm-9">
+      <input type="text" id="vip-c-s" name="score" placeholder="输入您的抵用积分">
     </div>
-    <label class="am-u-sm-4 am-u-end am-form-label score-op">
+    <!-- <label class="am-u-sm-4 am-u-end am-form-label score-op">
       全部抵用
-    </label>
+    </label> -->
   </div>
 
   <div class="am-form-group">
@@ -56,7 +62,7 @@
   
   <div class="am-form-group am-g">
     <div class="am-u-sm-4 am-u-sm-offset-1">
-      <button type="submit" class="am-btn am-btn-default">确认扣款</button>
+      <button type="submit" class="am-btn am-btn-default btn-sure">确认扣款</button>
     </div>
     <div class="am-u-sm-4 am-u-sm-offset-1 am-u-end">
       <button type="reset" class="am-btn am-btn-default">取消操作</button>
