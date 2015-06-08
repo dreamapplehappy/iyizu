@@ -26,6 +26,20 @@
       background-color: #29A7E1;
       color: #FFFFFF;
     }
+    /* .vip-cost .score div input::-webkit-input-placeholder{
+      color: #29A7E1;
+    } */
+    .vip-cost .score div span{
+      float: right;
+      margin-top: -3em;
+      padding-right: 1em;
+      font-size: 0.6em;
+      line-height: 3em;
+      color: #999999;
+    }
+    .vip-cost .score div span b{
+      color: #29A7E1;
+    }
   </style>
 </head>
 
@@ -41,10 +55,11 @@
     </div>
   </div>
 
-  <div class="am-form-group">
+  <div class="am-form-group score">
     <label for="vip-c-s" class="am-u-sm-3 am-form-label">积分：</label>
     <div class="am-u-sm-9">
-      <input type="text" id="vip-c-s" name="score" placeholder="输入您的抵用积分">
+      <input type="text" id="vip-c-s" name="score" placeholder="输入抵用积分">
+      <span class="append">(您共有<b>200</b>分)</span>
     </div>
     <!-- <label class="am-u-sm-4 am-u-end am-form-label score-op">
       全部抵用
