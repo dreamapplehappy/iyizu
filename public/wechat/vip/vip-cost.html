@@ -59,11 +59,18 @@
     <label for="vip-c-s" class="am-u-sm-3 am-form-label">积分：</label>
     <div class="am-u-sm-9">
       <input type="text" id="vip-c-s" name="score" placeholder="输入抵用积分">
-      <span class="append">(您共有<b>200</b>分)</span>
+      <span class="append">(您共有<b id="vip-discount">200</b>分)</span>
     </div>
-    <!-- <label class="am-u-sm-4 am-u-end am-form-label score-op">
-      全部抵用
-    </label> -->
+    <script type="text/javascript">
+      $(function(){
+          $("#vip-c-s").click(function(){
+              // $("#vip-discount").text(parseInt($("#vip-c-m").text())*0.1);
+              var discount = $("#vip-c-m").val();
+              // console.log(discount);
+              $("#vip-discount").text(discount * 0.1);
+          });
+      });
+    </script>
   </div>
 
   <div class="am-form-group">
