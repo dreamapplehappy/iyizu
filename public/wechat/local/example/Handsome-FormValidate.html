@@ -19,7 +19,7 @@
 	<style type="text/css">
 		.password-strength{
 			height: 6px;
-			background-color: #CCC;
+			background-color: #F8F8F8;
 			margin-bottom: 6px;
 		}
     .password-strength .p-s-s{
@@ -28,11 +28,17 @@
       height: 100%;
       background-color: #F00;
     }
+    .confirm-password{
+      border: 1px solid red !important;
+    }
+    .confirm-info{
+      color: red;
+    }
 	</style>
 	
 </head>
 <body ng-app="MyApp">
-	<form name="form" class="am-form" hsfv ng-controller="HsfvController">
+	<form name="form" class="am-form hsfvForm" hsfv ng-controller="HsfvController">
   	<fieldset>
   	    <legend>Handsome Form Validate</legend>
   	
@@ -46,12 +52,12 @@
   	      <div class="password-strength am-g" ng-show="form.hsfvPassword.$dirty">
            <div class="p-s-s"></div> 
           </div>
-  	      <input name="hsfvPassword" password-strength ng-model="user.password" type="password" class="" id="hsfv-password" placeholder="请设置一个密码">
+  	      <input name="hsfvPassword" password-strength ng-model="user.password" type="password" class="password" id="hsfv-password" placeholder="请设置一个密码">
   	    </div>
   	
   	    <div class="am-form-group">
-  	      <label for="hsfv-password-repeat"><span class="am-icon-repeat"></span>&nbsp;重复密码：</label>
-  	      <input name="hsfvPasswordRepeat" hsfv-repeat-password ng-model="user.repeatPassword" type="password" class="" id="hsfv-password-repeat" placeholder="请重复上述密码">
+  	      <label for="hsfv-password-repeat"><span class="am-icon-repeat"></span>&nbsp;重复密码：<span ng-show="form.hsfvPasswordRepeat.$invalid && form.hsfvPasswordRepeat.$dirty" class="confirm-info">确认密码错误</span></label>
+  	      <input name="hsfvPasswordRepeat" hsfv-repeat-password="hsfvPassword" ng-model="user.repeatPassword" type="password" class="" id="hsfv-password-repeat" placeholder="请重复上述密码">
   	    </div>
   	
   	    <div class="am-form-group">
@@ -179,7 +185,7 @@
             var passwordContainer = iElement.parent().children(".password-strength");
             var totalLength = parseInt(passwordContainer.css("width"));
             var per = totalLength / 12;
-            var color = ["#FF0000","#ff7575", "#4DFFFF", "#00E3E3", "#0080FF", "#0000E3"];
+            var color = ["#FF0000", "#4DFFFF", "#0080FF"];
 
 					scope.$watch("user.password", function(newValue){
             var password = newValue + "";
@@ -197,10 +203,8 @@
             }
             var showLength = (length * per < totalLength) ? (length * per) : totalLength;
             passwordShow.css({"width": showLength + "px" });
-            passwordShow.css({"background-color": color[length/2]});
+            passwordShow.css({"background-color": color[length/3]});
             
-
-
 					});				
 				}
 			};
@@ -211,6 +215,45 @@
 				require: "ngModel",
 				link: function (scope, iElement, iAttrs, ngModelCtrl) {
 					if(!ngModelCtrl) return;
+          var passwordModel = iElement.inheritedData("$formController")[iAttrs.hsfvRepeatPassword];
+
+          var passwordConfirm = function(viewValue){
+            var compareBorder = (viewValue+"").length - (passwordModel.$viewValue+"").length;
+            if(compareBorder < 0){
+              ngModelCtrl.$setValidity("hsfvRepeatPassword", true);
+              return viewValue ? viewValue : undefined;
+            }
+            var validity = (viewValue === passwordModel.$viewValue);
+            ngModelCtrl.$setValidity("hsfvRepeatPassword", validity);
+
+            if(ngModelCtrl.$invalid){
+              iElement.addClass("confirm-password");
+            }
+            else{
+              iElement.removeClass("confirm-password");
+            }
+            return viewValue ? viewValue : undefined;
+            }
+
+          ngModelCtrl.$formatters.push(passwordConfirm);
+          ngModelCtrl.$parsers.push(passwordConfirm);
+
+          passwordModel.$parsers.push(function(viewValue){
+            if(ngModelCtrl.$invalid){
+              iElement.addClass("confirm-password");
+            }
+            else{
+              iElement.removeClass("confirm-password");
+            }
+            var validity = (viewValue === ngModelCtrl.$viewValue);
+            var compareBorder = (viewValue+"").length - (ngModelCtrl.$viewValue+"").length;
+            if(compareBorder < 0){
+              ngModelCtrl.$setValidity("hsfvRepeatPassword", true);
+              return viewValue ? viewValue : undefined;
+            }
+            ngModelCtrl.$setValidity("hsfvRepeatPassword", validity);
+            return viewValue;
+          });
 				}
 			};
 		})

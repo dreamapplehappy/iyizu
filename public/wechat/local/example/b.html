@@ -8,7 +8,8 @@
 	<script type="text/javascript">
 		var password = "12qweqwe3CCa?";
 		var reg = /(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
-		console.log(reg.test(password));
+		var reg2 = /\d|[+a-z][+A-Z]/g;
+		console.log(password.match(reg2));
    	</script>
 </body>
 </html>
