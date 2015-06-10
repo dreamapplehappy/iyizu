@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ngModelController</title>
+	<script src="http://cdn.bootcss.com/angular.js/1.4.0-rc.1/angular.js"></script>
+	<script type="text/javascript" src="angular-sanitize.js"></script>
+	<style type="text/css">
+		div{
+			border: 1px solid black;
+			height: 30px;
+		}
+	</style>
+</head>
+<body ng-app="MyApp">
+	<form>
+		<div contenteditable ng-model="content" strip-br="true"></div>
+		<hr/>
+		<textarea ng-model="content"></textarea>
+	</form>
+
+
+
+	
+	<script type="text/javascript">
+		"use strict";
+		angular.module("MyApp", ["ngSanitize"])
+		.directive("contenteditable", ["$sce", function($sce){
+			return {
+				restrict: "AE",
+				require: "ngModel",
+				link: function (scope, iElement, iAttrs, ngModelCtrl){
+					if(!ngModelCtrl) return;
+					function read(){
+						var html = iElement.html();
+						if(iAttrs.stripBr && html == "<br>"){
+							html = "";
+						}
+						ngModelCtrl.$setViewValue(html);
+					}
+
+					ngModelCtrl.$render = function(){
+						iElement.html($sce.getTrustedHtml(ngModelCtrl.$viewValue || ""));
+					}
+
+					iElement.on('blur keyup change', function() {
+						scope.$evalAsync(read);
+					});
+					read();
+				}
+			};
+		}])
+	</script>
+</body>
+</html>
