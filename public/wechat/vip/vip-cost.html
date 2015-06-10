@@ -65,7 +65,7 @@
       $(function(){
           $("#vip-c-s").click(function(){
               // $("#vip-discount").text(parseInt($("#vip-c-m").text())*0.1);
-              var discount = $("#vip-c-m").val();
+              var discount = $("#vip-c-m").val() || 0;
               // console.log(discount);
               $("#vip-discount").text(discount * 0.1);
           });
