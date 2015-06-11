@@ -32,3 +32,6 @@ Properties:
 http://www.ngnice.com/showcase/#/form/customValidation
 http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/
 
+
+http://rawgit.com/dreamapplehappy/iyizu/master/public/wechat/local/example/Confirm-Password.html
+
