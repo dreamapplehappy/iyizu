@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <!-- <script src="https://cdn1.lncld.net/static/js/av-mini-0.5.4.js"></script> -->
+   
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+     <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
+
+    <script type="text/javascript" src="b.js"></script>
+</head>
+<body>
+	<div ng-app="MyApp">
+    <div ng-controller="MyController">
+        {{data}} <hr/>
+    </div>
+</div>
+<script type="text/javascript">
+	angular.module("MyApp", ["ngResource"])
+.config(function($httpProvider){
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.defaults.headers.common["X-AVOSCloud-Application-Id"] = "rjrzlrq7wr8e252pbqms8ficcyh0kmihv6pahgvszhee6j4x";
+    $httpProvider.defaults.headers.common["X-AVOSCloud-Application-Key"] = "j4ew7s9ssdz7ls72am6ex4yq7r8ql3sntj184cgdhkcb7qku";
+    $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
+    // $httpProvider.defaults.headers.delete = { 'Content-Type' : 'application/json' };
+})
+/*.config(function(){
+    AV.initialize("rjrzlrq7wr8e252pbqms8ficcyh0kmihv6pahgvszhee6j4x", "j4ew7s9ssdz7ls72am6ex4yq7r8ql3sntj184cgdhkcb7qku");
+})*/
+/*.controller("MyController", function($scope, $http){
+    $http.get("https://leancloud.cn/1.1/classes/hello")
+    .success(function(data){
+        $scope.data = data;
+        console.log(data);
+    })
+    .error(function(error){
+        console.log(error);
+    });
+    $http.delete("https://leancloud.cn/1.1/classes/hello/55702ec7e4b008cbbbdc49ec")
+    .success(function(msg){
+        console.log(msg);
+    })
+    .error(function(error){
+        console.log(error);
+    });
+});
+*/
+.controller("MyController", ["$scope","$http","$resource", function($scope, $http, $resource){
+    /*var User = $resource("https://api.leancloud.cn/1.1/classes/hello");
+    User.remove({objectId: "55705e83e4b08ae2e1be177f"},function(res){
+        console.log(res);
+    })*/
+    $http.get("https://api.leancloud.cn/1.1/classes/hello").then(function(data){
+        $scope.data = data;
+    },function(error){
+        console.log(error);
+    });
+    $http.delete("https://api.leancloud.cn/1.1/classes/hello/557305a6e4b06d93b89146a6").
+    then(function(msg){
+        console.log(msg);
+    });
+    // $scope.data = [];
+    /*store.query.find({
+            success: function(results) {
+                var data = [];
+                for(var i=0; i<results.length; i++){
+                    console.log(results[i].attributes);
+                    data.push(results[i].attributes);
+                }
+               return data;
+            },
+            error: function(error) {
+                 alert("Error: " + error.code + " " + error.message);
+            }
+        })
+    .then(function(data){
+        $scope.data = data;
+    })*/
+}]);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../node_modules/underscore/underscore.js"></script>
+	<script src="angular.min.js"></script>
+    <script src="../node_modules/restangular/dist/restangular.js"></script>
+</head>
+<body>
+	<div ng-app="MyApp">
+    AngularJS $(this)
+    <div ng-controller="MyController">
+        {{user}}
+        <hr/>
+    </div>
+</div>
+<script type="text/javascript">
+angular.module("MyApp", ["restangular"])
+.config(["$httpProvider","RestangularProvider", function($httpProvider, RestangularProvider){
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.defaults.headers.common["X-AVOSCloud-Application-Id"] = "rjrzlrq7wr8e252pbqms8ficcyh0kmihv6pahgvszhee6j4x";
+    $httpProvider.defaults.headers.common["X-AVOSCloud-Application-Key"] = "j4ew7s9ssdz7ls72am6ex4yq7r8ql3sntj184cgdhkcb7qku";
+    // $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
+
+    RestangularProvider.setBaseUrl("https://leancloud.cn/1.1/classes");
+    RestangularProvider.setResponseExtractor(function(response, operation) {
+    if (operation === 'getList') {
+        var newResponse = response.body;
+        return newResponse;
+    }
+    return response;
+});
+}])
+.controller("MyController", ["Restangular", "$scope", function(Restangular, $scope){
+    /*var User = Restangular.all("hello");
+    var users = User.getList();
+    // User.post({name: "dreamC", age: 22});
+    var singleUser = Restangular.one("hello", "557305a6e4b06d93b89146a6");
+    console.log(singleUser);*/
+    Restangular.all("hello").getList().then(function(users){
+        $scope.user = users[0];
+        console.log(users);
+    })
+}]);
+</script>
+</body>
+</html>

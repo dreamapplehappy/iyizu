@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularFire</title>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="../firebase-2.2.4.js"></script>
+	<script type="text/javascript" src="../angularfire.min-1.1.1.js"></script>
+</head>
+<body ng-app="MyApp">
+	<!-- HTML -->
+	<div ng-controller="MyController" ng-cloak>
+		{{data}}
+	</div>
+	<!-- JS -->
+	<script type="text/javascript">
+		angular.module("MyApp", ["firebase"])
+		.controller("MyController",["$scope","$firebase", function($scope, $firebase){
+			var Url = "https://dreamapple.firebaseio.com/";
+			var dreamapple = $firebase(new Firebase());
+		}])
+	</script>
+</body>
+</html>

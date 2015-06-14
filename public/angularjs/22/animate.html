@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.bootcss.com/angular.js/1.3.14/angular.js"></script>
+    <script type="text/javascript" src="angular-animate.min.js"></script>
+    <style type="text/css">
+        .example{
+            
+            width: 100px;
+            height: 100px;
+            background-color: #999;
+            margin-top: 10px;
+        }
+        
+        .example.ng-enter{
+            transition: 2s linear all;
+            --webkit-transition: 2s linear all;
+            background-color: red;
+        }
+        .example.ng-enter.ng-enter-active{
+            background-color: blue;
+        }
+        .example.ng-leave{
+            background-color: yellow;
+        }
+        .example.ng-leave.ng-leave-active{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+	<div ng-app="MyApp">
+        <div ng-controller="MyController">
+            <li class="example" ng-repeat="user in data" ng-click="change()" ng-hide="hide">{{user.name}}</li>
+        </div>
+    </div>
+    <script type="text/javascript">
+        angular.module("MyApp", ["ngAnimate"])
+        .controller("MyController", function($scope){
+            $scope.data = [
+            {name: "dream1"},
+            {name: "dream2"},
+            {name: "dream3"}
+            ];
+            $scope.change = function(){
+                $scope.hide = true;
+            }
+        });
+    </script>
+</body>
+</html>
