@@ -2,30 +2,89 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Ease</title>
+	<script type="text/javascript" src="../lib/createjs-2015.05.21.min.js"></script>
 	<style type="text/css">
-		div{
-			width: 100px;
-			height: 100px;
-			margin: 100px auto;
-			border: 1px solid black;
+		*{
+			margin: 0;
+			padding: 0;
 		}
-		button{
-			margin: 50px auto;
+		body{
+			overflow: hidden;
+		}
+		canvas#myGame{
+			background-color: "#CFD"
 		}
 	</style>
 </head>
-<body>
-	<div>asd
-		<button>asd</button>
-	</div>
+<body scroll="no">
+<!--  -->
+	<canvas id="myGame"></canvas>
 	<script type="text/javascript">
-	document.addEventListener("click", function(){
-		alert(this+ "asd");
-	}, false);
-	document.body.addEventListener("click", function(){
-		alert(this+ "asd");
-	}, false);
+
+		// 获取设备的宽和高
+		var device = {
+			width: function(){
+				return document.documentElement.clientWidth;
+			},
+			height: function(){
+				return document.documentElement.clientHeight;
+			}
+		}
+
+		document.body.addEventListener("touchmove", function (event) {
+			event.preventDefault();
+		}, false);
+		window.onresize = function(){
+			canvas.width = device.width();
+			canvas.height = device.height();
+		}
+
+		var canvas = document.getElementById("myGame");
+		canvas.width = device.width();
+		canvas.height = device.height();
+		canvas.style.backgroundColor = "#CFD";
+		// mygame
+		var stage = new createjs.Stage('myGame');
+
+		for(var i = 1; i <= 10; i++){
+			var zz = new createjs.Bitmap("../images/zongzi/"+i+".png");
+			zz.scaleX = 0.1;
+			zz.scaleY = 0.1;
+			zz.x = Math.random() * device.width();
+			zz.y = 0;//Math.random() * getClientHeight()
+			stage.addChild(zz);
+			stage.update();
+		}
+		createjs.Ticker.addEventListener("tick", handleTick);
+		createjs.Ticker.framerate = 30;
+		var ly = 10;
+		var lx = 0;
+		function handleTick(event) {
+			for(var i = 0; i < 10; i++){
+				var zz = stage.getChildAt(i);
+				zz.x += lx;
+				zz.y += ly;
+				// zz.regX = 60;
+				// zz.regY = 60;
+				// zz.rotation += 10;
+				if(zz.x > device.width()){
+					lx = -0;
+				}
+				else if(zz.x < 10){
+					lx = 0;
+				}
+				if(zz.y >= device.height()){
+					ly = -10;
+				}
+				else if(zz.y <= 0){
+					ly = 10;
+				}
+			}
+			stage.update();
+		}
 	</script>
 </body>
 </html>

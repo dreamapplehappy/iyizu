@@ -5,9 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<title>端午大狂欢</title>
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js
-"></script>
-	<script type="text/javascript" src="https://code.createjs.com/createjs-2015.05.21.min.js"></script>
+	<script type="text/javascript" src="../lib/createjs-2015.05.21.min.js"></script>
 	<style type="text/css">
 		*{
 			margin: 0;
@@ -17,7 +15,10 @@
 			overflow: hidden;
 		}
 		canvas#myGame{
-			/*background-image: url("images/longmao.jpg");*/
+			/*background-image: url("images/longmao.jpg");
+			https://code.createjs.com/createjs-2015.05.21.min.js
+			../lib/createjs-2015.05.21.min.js
+			*/
 		}
 	</style>
 </head>
@@ -27,7 +28,6 @@
 <!-- JavaScript -->
 
 	<script type="text/javascript">
-		!(function(){
 			// get the device width and height
 			var device = {
 				width: function(){
@@ -37,7 +37,6 @@
 					return document.documentElement.clientHeight;
 				}
 			}
-			console.log(device.height())
 
 			// display the device
 			var canvas = document.getElementById("myGame");
@@ -46,18 +45,26 @@
 				canvas.height = device.height();
 			}
 			changeCanvas();
-			canvas.style.backgroundColor = "#F00";
+			canvas.style.backgroundColor = "#CFD";
 
-			document.body.addEventListener("touchmove", function (event) {
+			/*document.body.addEventListener("touchmove", function (event) {
 				event.preventDefault();
 			}, false);
-
 			window.onresize = function(){
 				changeCanvas();
-			}
+			}*/
 
-			var stage = new createjs.Stage(canvas);
-		})()
+			var stage = new createjs.Stage("myGame");
+			for(var i = 1; i <= 10; i++){
+			var zz = new createjs.Bitmap("../images/zongzi/"+i+".png");
+			zz.scaleX = 0.1;
+			zz.scaleY = 0.1;
+			zz.x = Math.random() * device.width();
+			zz.y = 0;//Math.random() * getClientHeight()
+			stage.addChild(zz);
+			stage.update();
+		}
+			
 	</script>
 </body>
 </html>
