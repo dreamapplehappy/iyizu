@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Ease</title>
 	<script type="text/javascript" src="https://code.createjs.com/createjs-2015.05.21.min.js"></script>
 	<style type="text/css">
@@ -17,109 +18,27 @@
 <body>
 <!--  -->
 	<canvas id="myGame"></canvas>
+<!-- JavaScript -->
 	<script type="text/javascript">
-		console.log(navigator.userAgent.toLowerCase());
-		console.log(navigator);
-
-		console.log(document.documentElement.clientHeight);
-		console.log(document.documentElement.clientWidth);
-
-		// 获取设备的宽和高
-		function getClientWidth(){
-			return document.documentElement.clientWidth;
-		}
-
-		function getClientHeight(){
-			return document.documentElement.clientHeight;
-		}
-
-
-
-		var canvas = document.getElementById("myGame");
-		canvas.width = getClientWidth();
-		canvas.height = getClientHeight();
-		canvas.style.backgroundColor = "#CCC";
-		// mygame
-		var stage = new createjs.Stage('myGame');
-		var image = new createjs.Bitmap("images/longmao.jpg");
-		var gift = new createjs.Bitmap("images/a.png");
-
-		/*var giftBound = gift.getBounds();*/
-		gift.addEventListener("click",handleGiftClick);
-		function handleGiftClick(){
-			gift.scaleX = 0.6;
-			gift.scaleY = 0.6;
-		}
-
-		// console.log(giftBound);*/
-		// canvas.drawImage(image,0,0);
-		// stage.addChild(image);
-		// stage.addChild(gift);
-
-		var circle = new createjs.Graphics();
- 		circle.setStrokeStyle(2);
- 		circle.beginStroke("#0F0");
- 		circle.beginFill("#F00");
- 		circle.drawCircle(100,100,100);
-
- 		stage.addChild(gift);
- 		
- 		// stage.cache(-25, -25, 50, 50);
-
-		var div = document.createElement("div");
-		div.style.width = 60;
-		div.style.height = 60;
-		div.style.backgroundColor = "#000";
-		// stage.addChild(div);
-		// shape();
-		var color = "#000";
-		var shape = new createjs.Shape();
-		shape.graphics.beginFill(color).drawRect(0, 0, 120, 120);
-
-		stage.addChild(shape);
-		createjs.Ticker.addEventListener("tick", handleTick);
-		createjs.Ticker.framerate = 20;
-		var ly = 10;
-		var lx = 20;
-		function handleTick(event) {
-			shape.x += lx;
-			shape.y += ly;
-			shape.regX = 60;
-			shape.regY = 60;
-			shape.rotation += 10;
-			stage.update();
-			if(shape.x > 1200){
-				lx = -10;
+		!(function(){
+			// get the device width and height
+			var device = {
+				width: function(){
+					return document.documentElement.clientWidth;
+				},
+				height: function(){
+					return document.documentElement.clientHeight;
+				}
 			}
-			else if(shape.x < 10){
-				lx = 10;
-			}
-			if(shape.y > 600){
-				ly = -10;
-			}
-			else if(shape.y < 0){
-				ly = 10;
-			}
-		}
-		shape.addEventListener("click",handleShapeClick);
-		function handleShapeClick(){
-			// alert("SU");
-			// shape.visible = false;
-			shape.scaleX *= 0.9;
-			shape.scaleY *= 0.9;
-			stage.update();
-		}
-		var circle = new createjs.Shape();
-		for(var i = 0; i < 10; i++){
-			circle.graphics.beginFill("#000").drawRect(0, 0, 30, 30);
-			stage.addChild(circle);
-		}
-		/*var shape = new createjs.Shape();
-		shape.graphics.beginFill('#cdf').drawRect(0, 0, 120, 120);
-		shape.graphics.beginFill('#cd1').drawRect(120, 0, 120, 120);
-		shape.graphics.beginFill('#000').drawRect(240, 0, 120, 120);
-		stage.addChild(shape);
-		stage.update();*/
+
+			// display the device
+			var canvas = document.getElementById("myGame");
+			canvas.width = device.width();
+			canvas.height = device.height();
+			canvas.style.backgroundColor = "#123";
+
+			var stage = new createjs.Stage(canvas);
+		})()
 	</script>
 </body>
 </html>
