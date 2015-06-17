@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			margin: 100px auto;
+			border: 1px solid black;
+		}
+		button{
+			margin: 50px auto;
+		}
+	</style>
+</head>
+<body>
+	<div>asd
+		<button>asd</button>
+	</div>
+	<script type="text/javascript">
+	document.addEventListener("click", function(){
+		alert(this+ "asd");
+	}, false);
+	document.body.addEventListener("click", function(){
+		alert(this+ "asd");
+	}, false);
+	</script>
+</body>
+</html>

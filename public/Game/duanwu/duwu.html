@@ -41,13 +41,20 @@
 
 			// display the device
 			var canvas = document.getElementById("myGame");
-			canvas.width = device.width();
-			canvas.height = device.height();
+			function changeCanvas(){
+				canvas.width = device.width();
+				canvas.height = device.height();
+			}
+			changeCanvas();
 			canvas.style.backgroundColor = "#123";
 
 			document.body.addEventListener("touchmove", function (event) {
 				event.preventDefault();
 			}, false);
+
+			window.onresize = function(){
+				changeCanvas();
+			}
 
 			var stage = new createjs.Stage(canvas);
 		})()
