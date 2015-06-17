@@ -25,11 +25,7 @@
 <!--  -->
 	<canvas id="myGame"></canvas>
 <!-- JavaScript -->
-	<script type="text/javascript">
-		$(function(){
-			$("body").height($(window).height());
-		});
-	</script>
+
 	<script type="text/javascript">
 		!(function(){
 			// get the device width and height
@@ -48,6 +44,10 @@
 			canvas.width = device.width();
 			canvas.height = device.height();
 			canvas.style.backgroundColor = "#123";
+
+			document.body.addEventListener("touchmove", function (event) {
+				event.preventDefault();
+			}, false);
 
 			var stage = new createjs.Stage(canvas);
 		})()
