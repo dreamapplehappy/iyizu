@@ -49,9 +49,9 @@
 		// mygame
 		var stage = new createjs.Stage('myGame');
 		stage.setBounds(0, 0, device.width(), device.height());
-		var longBoat = new createjs.Bitmap("../images/longzhou.png");
-		longBoat.scaleX = 0.3;
-		longBoat.scaleY = 0.2;
+		var longBoat = new createjs.Bitmap("../images/longzhou2.png");
+		longBoat.scaleX = 0.6;
+		longBoat.scaleY = 0.3;
 		longBoat.setBounds(0, 0, 250, 100);
 		// console.log(stage.getBounds());
 		longBoat.x = (stage.getBounds().width -longBoat.getBounds().width) / 2;
@@ -95,6 +95,11 @@
 				tcrpC.scaleX = 0.1;
 				tcrpC.scaleY = 0.1;
 			}
+			/*var pt = tcrpC.localToLocal(10,10,longBoat);
+			if (longBoat.hitTest(pt.x, pt.y)) {
+				// console.log(pt);
+			}
+			// console.log(pt);*/
 			stage.update();
 		}
 	</script>
