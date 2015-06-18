@@ -15,7 +15,8 @@
 			overflow: hidden;
 		}
 		canvas#myGame{
-			background-color: "#CFD"
+			background-image: url("../images/gameBg.png");
+			background-size: cover;
 		}
 	</style>
 </head>
@@ -48,39 +49,38 @@
 		canvas.style.backgroundColor = "#CFD";
 		// mygame
 		var stage = new createjs.Stage('myGame');
+		stage.setBounds(0, 0, device.width(), device.height());
 
-		for(var i = 1; i <= 10; i++){
-			var zz = new createjs.Bitmap("../images/zongzi/"+i+".png");
-			zz.scaleX = 0.1;
-			zz.scaleY = 0.1;
-			zz.x = Math.random() * device.width();
-			zz.y = 0;//Math.random() * getClientHeight()
-			stage.addChild(zz);
+		var whichOne = parseInt(Math.random()*10);
+		var addTcrp = setInterval(function(){
+			var tcrp = new createjs.Bitmap("../images/zongzi/"+whichOne+".png");
+			tcrp.scaleX = 0.1;
+			tcrp.scaleY = 0.1;
+			tcrp.x = device.width() / 2;
+			tcrp.y = 0;
+			stage.addChild(tcrp);
 			stage.update();
-		}
+			whichOne = parseInt(Math.random()*9 + 1);
+		},1000);
 		createjs.Ticker.addEventListener("tick", handleTick);
 		createjs.Ticker.framerate = 30;
-		var ly = 10;
-		var lx = 0;
+		var ly = 8;
+		var lx = 10;
 		function handleTick(event) {
-			for(var i = 0; i < 10; i++){
-				var zz = stage.getChildAt(i);
-				zz.x += lx;
-				zz.y += ly;
-				// zz.regX = 60;
-				// zz.regY = 60;
-				// zz.rotation += 10;
-				if(zz.x > device.width()){
-					lx = -0;
+			for(var i = 0; i < stage.getNumChildren(); i++){
+				var tcrpC = stage.getChildAt(i);
+				tcrpC.x += lx;
+				tcrpC.y += ly;
+				if(tcrpC.x < 0){
+					tcrpC.x = 0;
+					lx = -lx;
 				}
-				else if(zz.x < 10){
-					lx = 0;
+				if(tcrpC.x > device.width()){
+					tcrpC.x = device.width();
+					lx = -lx;
 				}
-				if(zz.y >= device.height()){
-					ly = -10;
-				}
-				else if(zz.y <= 0){
-					ly = 10;
+				if(tcrpC.y >= (device.height()-60)){
+					stage.removeChild(tcrpC);
 				}
 			}
 			stage.update();

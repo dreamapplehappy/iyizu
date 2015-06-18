@@ -31,6 +31,53 @@
     .index .needm{
       margin-top: 0.5em;
     }
+    #front, #back{
+      background-repeat:no-repeat;
+      background-size:cover;
+      -moz-background-size:cover;
+      -webkit-background-size:cover;
+    }
+    #front .up{
+      height: 50%;
+    }
+    #front .up img{
+      width: 60px;
+      height: 60px;
+      border-radius: 60px;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    #front .down{
+        height: 4em;
+        color: white;
+        line-height: 4em;
+    }
+    #front .down .card-c{
+      height: 100%;
+      text-align: center;
+    }
+    #back{
+      color: white;
+    }
+    #back .discount{
+      height: 3em;
+      line-height: 2em;
+      padding-top: 1em;
+      text-align: left;
+      text-indent: 1em;
+    }
+    #back .experience{
+      height: 3em;
+      line-height: 2em;
+      padding-top: 1em;
+      text-align: left;
+      text-indent: 1em;
+    }
+    #back .info{
+      text-align: left;
+      text-indent: 1em;
+    }
+
   </style>
 </head>
 
@@ -41,10 +88,28 @@
 <div id="card-container" class="card-container">
   <div id="card" class="card">
     <!-- <div id="front" class="front">这是前面呀</div> -->
-    <img id="front" class="front per-card" src="http://img0.imgtn.bdimg.com/it/u=1058784631,2333183477&fm=21&gp=0.jpg" alt="">
-    <div id="back" class="back per-card"></div>
+    <div id="front" class="front per-card">
+      <div class="up">
+        <img src="http://img0.imgtn.bdimg.com/it/u=1058784631,2333183477&fm=21&gp=0.jpg">
+      </div>
+      <div class="down am-g">
+        <div class="card-c am-u-sm-4">金卡</div>
+        <div class="card-num am-u-sm-8">编号：<span>0000-0000</span></div>
+      </div>
+    </div>
+    <div id="back" class="back per-card">
+      <div class="discount">折扣：<span>7</span>折</div>
+      <div class="info">使用说明：<span>修改是指改动、删节或增添，改正，纠正修改有错误的文本，主要是为了达到提高文章质量的目的，包括四种方法：删、增、理、换。</span></div>
+      <div class="experience">升级经验: <span>699</span><span>/700</span></div>
+    </div>
   </div>
 </div>
+<script type="text/javascript">
+ $(function(){
+   $(".card #front").css("background-image", "url('http://img0.imgtn.bdimg.com/it/u=1058784631,2333183477&fm=21&gp=0.jpg')");
+   $(".card #back").css("background-image", "url('http://img0.imgtn.bdimg.com/it/u=1058784631,2333183477&fm=21&gp=0.jpg')");
+ })
+</script>
 
 <div class="card-op am-g">
     <!-- <div id="card-detail" class="card-detail am-u-sm-0"></div> -->
