@@ -50,6 +50,14 @@
 		// mygame
 		var stage = new createjs.Stage('myGame');
 		stage.setBounds(0, 0, device.width(), device.height());
+		var longBoat = new createjs.Bitmap("../images/longzhou.png");
+		longBoat.scaleX = 0.3;
+		longBoat.scaleY = 0.2;
+		longBoat.setBounds(0, 0, 250, 100);
+		// console.log(stage.getBounds());
+		longBoat.x = (stage.getBounds().width -longBoat.getBounds().width) / 2;
+		longBoat.y = stage.getBounds().height -longBoat.getBounds().height
+		stage.addChild(longBoat);
 
 		var whichOne = parseInt(Math.random()*10);
 		var addTcrp = setInterval(function(){
@@ -61,13 +69,13 @@
 			stage.addChild(tcrp);
 			stage.update();
 			whichOne = parseInt(Math.random()*9 + 1);
-		},1000);
+		},800);
 		createjs.Ticker.addEventListener("tick", handleTick);
 		createjs.Ticker.framerate = 30;
-		var ly = [5, 5, 5, 5, 5, 5];
-		var lx = [5, 5, 5, 5, 5, 5];
+		var ly = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
+		var lx = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
 		function handleTick(event) {
-			for(var i = 0; i < stage.getNumChildren(); i++){
+			for(var i = 1; i < stage.getNumChildren(); i++){
 				var tcrpC = stage.getChildAt(i);
 				tcrpC.x += lx[i] + lx[i] * Math.random();
 				tcrpC.y += ly[i];
