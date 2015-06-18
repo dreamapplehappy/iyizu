@@ -68,6 +68,9 @@
 			stage.addChild(tcrp);
 			stage.update();
 			whichOne = parseInt(Math.random()*9 + 1);
+			if(100 >= createjs.Ticker.framerate){
+				createjs.Ticker.framerate += 2;
+			}
 		},800);
 		createjs.Ticker.addEventListener("tick", handleTick);
 		createjs.Ticker.framerate = 30;
@@ -89,6 +92,8 @@
 				if(tcrpC.y >= (device.height()-60)){
 					stage.removeChild(tcrpC);
 				}
+				tcrpC.scaleX = 0.1;
+				tcrpC.scaleY = 0.1;
 			}
 			stage.update();
 		}
