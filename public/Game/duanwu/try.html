@@ -62,7 +62,7 @@
 		
 		stage.addChild(dragger);
 		dragger.on("pressmove",function(evt) {		
-				evt.currentTarget.x = evt.stageX;
+				evt.currentTarget.x = evt.stageX + dragger.getBounds().width / 2;
 				// evt.currentTarget.y = evt.stageY;
 				stage.update();   
 		});
