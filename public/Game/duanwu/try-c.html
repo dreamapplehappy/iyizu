@@ -35,9 +35,9 @@
 			}
 		}
 
-		document.body.addEventListener("touchmove", function (event) {
+		/*document.body.addEventListener("touchmove", function (event) {
 			event.preventDefault();
-		}, false);
+		}, false);*/
 		window.onresize = function(){
 			canvas.width = device.width();
 			canvas.height = device.height();
@@ -48,23 +48,24 @@
 		canvas.height = device.height();
 		// mygame
 		var stage = new createjs.Stage('myGame');
-		var dragger = new createjs.Container();
-		var longBoat = new createjs.Bitmap("../images/longzhou2.png");
 		createjs.Touch.enable(stage);
 		stage.setBounds(0, 0, device.width(), device.height());
+		var dragger = new createjs.Container();
+		var longBoat = new createjs.Bitmap("../images/longzhou2.png");
 		dragger.addChild(longBoat);
 		longBoat.scaleX = 0.6;
 		longBoat.scaleY = 0.3;
-		dragger.setBounds(0, 0, 250, 100);
-		dragger.x = (stage.getBounds().width -dragger.getBounds().width) / 2;
-		dragger.y = stage.getBounds().height -dragger.getBounds().height
+		longBoat.setBounds(0, 0, 250, 100);
+		longBoat.x = (stage.getBounds().width -longBoat.getBounds().width) / 2;
+		longBoat.y = stage.getBounds().height -longBoat.getBounds().height
 		
 		
 		stage.addChild(dragger);
-		dragger.on("pressmove",function(evt) {		
-				evt.currentTarget.x = evt.stageX;
-				evt.currentTarget.y = evt.stageY;
-				stage.update();   
+		dragger.on("pressmove",function(evt) {	
+				
+			evt.currentTarget.x = evt.stageX;
+			evt.currentTarget.y = evt.stageY;
+			stage.update();   
 		});
 
 		var whichOne = parseInt(Math.random()*10);
