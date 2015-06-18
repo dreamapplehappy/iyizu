@@ -35,9 +35,9 @@
 			}
 		}
 
-		document.body.addEventListener("touchmove", function (event) {
+		/*document.body.addEventListener("touchmove", function (event) {
 			event.preventDefault();
-		}, false);
+		}, false);*/
 		window.onresize = function(){
 			canvas.width = device.width();
 			canvas.height = device.height();
@@ -48,15 +48,24 @@
 		canvas.height = device.height();
 		// mygame
 		var stage = new createjs.Stage('myGame');
+		createjs.Touch.enable(stage);
 		stage.setBounds(0, 0, device.width(), device.height());
+		var dragger = new createjs.Container();
 		var longBoat = new createjs.Bitmap("../images/longzhou2.png");
+		dragger.addChild(longBoat);
 		longBoat.scaleX = 0.6;
 		longBoat.scaleY = 0.3;
 		longBoat.setBounds(0, 0, 250, 100);
-		// console.log(stage.getBounds());
 		longBoat.x = (stage.getBounds().width -longBoat.getBounds().width) / 2;
 		longBoat.y = stage.getBounds().height -longBoat.getBounds().height
-		stage.addChild(longBoat);
+		
+		
+		stage.addChild(dragger);
+		dragger.on("pressmove",function(evt) {		
+			evt.currentTarget.x = evt.stageX;
+			evt.currentTarget.y = evt.stageY;
+			stage.update();   
+		});
 
 		var whichOne = parseInt(Math.random()*10);
 		var addTcrp = setInterval(function(){
