@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<title>Ease</title>
+	<title>有种你接我呀！</title>
 	<script type="text/javascript" src="../lib/createjs-2015.05.21.min.js"></script>
 	<style type="text/css">
 		*{
@@ -56,7 +56,7 @@
 			var tcrp = new createjs.Bitmap("../images/zongzi/"+whichOne+".png");
 			tcrp.scaleX = 0.1;
 			tcrp.scaleY = 0.1;
-			tcrp.x = device.width() / 2;
+			tcrp.x = device.width() * Math.random();
 			tcrp.y = 0;
 			stage.addChild(tcrp);
 			stage.update();
@@ -64,20 +64,20 @@
 		},1000);
 		createjs.Ticker.addEventListener("tick", handleTick);
 		createjs.Ticker.framerate = 30;
-		var ly = 8;
-		var lx = 10;
+		var ly = [5, 5, 5, 5, 5, 5];
+		var lx = [5, 5, 5, 5, 5, 5];
 		function handleTick(event) {
 			for(var i = 0; i < stage.getNumChildren(); i++){
 				var tcrpC = stage.getChildAt(i);
-				tcrpC.x += lx;
-				tcrpC.y += ly;
+				tcrpC.x += lx[i] + lx[i] * Math.random();
+				tcrpC.y += ly[i];
 				if(tcrpC.x < 0){
 					tcrpC.x = 0;
-					lx = -lx;
+					lx[i] = -lx[i];
 				}
 				if(tcrpC.x > device.width()){
 					tcrpC.x = device.width();
-					lx = -lx;
+					lx[i] = -lx[i];
 				}
 				if(tcrpC.y >= (device.height()-60)){
 					stage.removeChild(tcrpC);
