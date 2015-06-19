@@ -24,7 +24,7 @@
 	</style>
 </head>
 <body scroll="no">
-<!--  -->
+	<!--  -->
 	<canvas id="myGame"></canvas>
 
 
@@ -43,12 +43,12 @@
 	</div>
 
 	<script type="text/javascript">
-	
+
 		var assetsPath = "../audio/";
 		var sounds = [
-			{src: "bg.ogg", id: 1},
-			{src: "get.ogg", id: 2},
-			{src: "lost.ogg", id: 3}
+		{src: "bg.ogg", id: 1},
+		{src: "get.ogg", id: 2},
+		{src: "lost.ogg", id: 3}
 		];
 		var bgMusic;
 		createjs.Sound.alternateExtensions = ["wav"];
@@ -56,19 +56,6 @@
 		createjs.Sound.registerSounds(sounds, assetsPath);
 		function soundLoaded(){
 			
-		}
-
-		window.onload = function(){
-			$('#my-confirm').modal({
-				relatedTarget: this,
-				onConfirm: function(options) {
-					createjs.Sound.play(1);
-					bgMusic = createjs.Sound.play(1);
-				},
-		        onCancel: function() {
-		        	alert('算求，不弄了');
-		        }
-    		});
 		}
 
 		// 获取设备的宽和高
@@ -126,18 +113,13 @@
 		stage.addChild(score);
 		stage.addChild(maxScore);
 
-		maxScore.addEventListener("click", handleMaxClick);
-		function handleMaxClick(event) {
-			
-		}
-
 		stage.addChild(dragger);
 		dragger.on("pressmove",function(evt) {
-				evt.currentTarget.x = evt.stageX - 125;
-				stage.update();   
+			evt.currentTarget.x = evt.stageX - 125;
+			stage.update();   
 		});
 
-		var timelineT = setInterval(function(){
+		/*var timelineT = setInterval(function(){
 			if(time <= 0){
 				clearInterval(timelineT);
 				
@@ -149,10 +131,11 @@
 				timeline.text = "0:0"+time;
 			}
 			--time;
-		},1000);
+		},1000);*/
 
-		var whichOne = parseInt(Math.random()*10);
-		var addTcrp = setInterval(function(){
+var whichOne = parseInt(Math.random()*10);
+var addTcrp,timelineT;
+		/*var addTcrp = setInterval(function(){
 			var tcrp = new createjs.Bitmap("../images/zz/"+whichOne+".png");
 			tcrp.x = device.width() * Math.random();
 			tcrp.y = 0;
@@ -162,48 +145,89 @@
 			if(100 >= createjs.Ticker.framerate){
 				createjs.Ticker.framerate += 2;
 			}
-		},800);
-		createjs.Ticker.addEventListener("tick", handleTick);
-		createjs.Ticker.framerate = 30;
-		var ly = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
-		var lx = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
-		function handleTick(event) {
-			for(var i = 4; i < stage.getNumChildren(); i++){
-				var tcrpC = stage.getChildAt(i);
-				tcrpC.x += lx[i] + lx[i] * Math.random();
-				tcrpC.y += ly[i];
-				if(tcrpC.x < 0){
-					tcrpC.x = 0;
-					lx[i] = -lx[i];
-				}
-				if(tcrpC.x > device.width()){
-					tcrpC.x = device.width();
-					lx[i] = -lx[i];
-				}
-				if(tcrpC.y >= (device.height())){
-					stage.removeChild(tcrpC);
-					createjs.Sound.play(3);
-				}
-				var intersection = ndgmr.checkRectCollision(tcrpC,longBoat);
-				if(intersection){
-					if((intersection.x - longBoat.x > 100) && (intersection.x - longBoat.x < 200) && (intersection.y > device.height() - 50) ){
-					
-						console.log(intersection);
-						console.log(longBoat.y);
-						stage.removeChild(tcrpC);
-						yourScore += 5 + 5 * Math.random();
-						score.text = parseInt(yourScore);
+		},800);*/
 
-						createjs.Sound.play(2);
+window.onload = function(){
+	$('#my-confirm').modal({
+		relatedTarget: this,
+		onConfirm: function(options) {
+			createjs.Sound.play(1);
+			bgMusic = createjs.Sound.play(1);
+			var addTcrp = setInterval(function(){
+				var tcrp = new createjs.Bitmap("../images/zz/"+whichOne+".png");
+				tcrp.x = device.width() * Math.random();
+				tcrp.y = 0;
+				stage.addChild(tcrp);
+				stage.update();
+				whichOne = parseInt(Math.random()*9 + 1);
+				if(100 >= createjs.Ticker.framerate){
+					createjs.Ticker.framerate += 2;
+				}
+			},800);
 
-						if(bgMusic.playState == createjs.Sound.PLAY_FINISHED){
-							createjs.Sound.play(1);
-						}
-					}
+
+			var timelineT = setInterval(function(){
+				if(time <= 0){
+					clearInterval(timelineT);
+
+				}
+				if(time >= 10){
+					timeline.text = "0:"+time;
+				}
+				else{
+					timeline.text = "0:0"+time;
+				}
+				--time;
+			},1000);
+		},
+		onCancel: function() {
+			createjs.Sound.play(1);
+			bgMusic = createjs.Sound.play(1);
+		}
+	});
+}
+
+createjs.Ticker.addEventListener("tick", handleTick);
+createjs.Ticker.framerate = 30;
+var ly = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
+var lx = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
+function handleTick(event) {
+	for(var i = 4; i < stage.getNumChildren(); i++){
+		var tcrpC = stage.getChildAt(i);
+		tcrpC.x += lx[i] + lx[i] * Math.random();
+		tcrpC.y += ly[i];
+		if(tcrpC.x < 0){
+			tcrpC.x = 0;
+			lx[i] = -lx[i];
+		}
+		if(tcrpC.x > device.width()){
+			tcrpC.x = device.width();
+			lx[i] = -lx[i];
+		}
+		if(tcrpC.y >= (device.height())){
+			stage.removeChild(tcrpC);
+			createjs.Sound.play(3);
+		}
+		var intersection = ndgmr.checkRectCollision(tcrpC,longBoat);
+		if(intersection){
+			if((intersection.x - longBoat.x > 100) && (intersection.x - longBoat.x < 200) && (intersection.y > device.height() - 50) ){
+
+				console.log(intersection);
+				console.log(longBoat.y);
+				stage.removeChild(tcrpC);
+				yourScore += 5 + 5 * Math.random();
+				score.text = parseInt(yourScore);
+
+				createjs.Sound.play(2);
+
+				if(bgMusic.playState == createjs.Sound.PLAY_FINISHED){
+					createjs.Sound.play(1);
 				}
 			}
-			stage.update();
 		}
-	</script>
+	}
+	stage.update();
+}
+</script>
 </body>
 </html>
