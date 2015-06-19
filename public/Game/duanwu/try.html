@@ -87,7 +87,8 @@
 		var timeline = new createjs.Text("1:00", "36px Arial", "#ff7700");
 		var time = 59;
 		var maxScore = new createjs.Text("最高分"+'\n'+"1000", "20px Arial", "#ff7700");
-		var score = new createjs.Text("0", "36px Arial", "#00F");
+		var myScore = 36;
+		var score = new createjs.Text("live:"+myScore, "36px Arial", "#00F");
 		var yourScore = 0;
 
 		createjs.Touch.enable(stage);
@@ -212,11 +213,8 @@ function handleTick(event) {
 		if(intersection){
 			if((intersection.x - longBoat.x > 100) && (intersection.x - longBoat.x < 200) && (intersection.y > device.height() - 50) ){
 
-				console.log(intersection);
-				console.log(longBoat.y);
 				stage.removeChild(tcrpC);
-				yourScore += 5 + 5 * Math.random();
-				score.text = parseInt(yourScore);
+				score.text = "live:" + myScore--;
 
 				createjs.Sound.play(2);
 
