@@ -24,13 +24,15 @@
 <!--  -->
 	<canvas id="myGame"></canvas>
 	<audio src="../audio/bg.ogg" autoplay></audio>
+	<audio src="../audio/bg.mp3" autoplay></audio>
+	<audio src="../audio/bg.wav" autoplay></audio>
 
 
 	<script type="text/javascript">
 
 		var bgAudio;
 
-		var assetsPath = "../audio/";
+		/*var assetsPath = "../audio/";
 		var sounds = [
 			{src: "bg.ogg", id: 1},
 			{src: "get.ogg", id: 2},
@@ -41,9 +43,9 @@
 		createjs.Sound.addEventListener("fileload", createjs.proxy(soundLoaded, this));
 		createjs.Sound.registerSounds(sounds, assetsPath);
 		function soundLoaded(){
-			// createjs.Sound.play(1);
-			// bgMusic = createjs.Sound.play(1);
-		}
+			createjs.Sound.play(1);
+			bgMusic = createjs.Sound.play(1);
+		}*/
 
 		// 获取设备的宽和高
 		var device = {
@@ -151,7 +153,7 @@
 				}
 				if(tcrpC.y >= (device.height())){
 					stage.removeChild(tcrpC);
-					createjs.Sound.play(3);
+					// createjs.Sound.play(3);
 				}
 				var intersection = ndgmr.checkRectCollision(tcrpC,longBoat);
 				if(intersection){
@@ -162,11 +164,12 @@
 						stage.removeChild(tcrpC);
 						yourScore += 5 + 5 * Math.random();
 						score.text = parseInt(yourScore);
-						// createjs.Sound.play(2);
+
+						/*createjs.Sound.play(2);
 
 						if(bgMusic.playState == createjs.Sound.PLAY_FINISHED){
-							// createjs.Sound.play(1);
-						}
+							createjs.Sound.play(1);
+						}*/
 					}
 				}
 			}
