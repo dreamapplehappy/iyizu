@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 	<title>有种你接我呀！</title>
+	<link rel="stylesheet" type="text/css" href="http://cdn.amazeui.org/amazeui/2.4.0/css/amazeui.min.css">
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.4.0/js/amazeui.min.js"></script>
 	<script type="text/javascript" src="../lib/createjs-2015.05.21.min.js"></script>
 	<script type="text/javascript" src="../lib/ndgmr.Collision.js"></script>
 	<style type="text/css">
@@ -23,16 +26,25 @@
 <body scroll="no">
 <!--  -->
 	<canvas id="myGame"></canvas>
-	<audio src="../audio/bg.ogg" autoplay></audio>
-	<audio src="../audio/bg.mp3" autoplay></audio>
-	<audio src="../audio/bg.wav" autoplay></audio>
 
+
+
+	<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+		<div class="am-modal-dialog">
+			<div class="am-modal-hd">进入游戏</div>
+			<div class="am-modal-bd">
+				你，确定要删除这条记录吗？
+			</div>
+			<div class="am-modal-footer">
+				<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+				<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+			</div>
+		</div>
+	</div>
 
 	<script type="text/javascript">
-
-		var bgAudio;
-
-		/*var assetsPath = "../audio/";
+	
+		var assetsPath = "../audio/";
 		var sounds = [
 			{src: "bg.ogg", id: 1},
 			{src: "get.ogg", id: 2},
@@ -43,9 +55,21 @@
 		createjs.Sound.addEventListener("fileload", createjs.proxy(soundLoaded, this));
 		createjs.Sound.registerSounds(sounds, assetsPath);
 		function soundLoaded(){
-			createjs.Sound.play(1);
-			bgMusic = createjs.Sound.play(1);
-		}*/
+			
+		}
+
+		window.onload = function(){
+			$('#my-confirm').modal({
+				relatedTarget: this,
+				onConfirm: function(options) {
+					createjs.Sound.play(1);
+					bgMusic = createjs.Sound.play(1);
+				},
+		        onCancel: function() {
+		        	alert('算求，不弄了');
+		        }
+    		});
+		}
 
 		// 获取设备的宽和高
 		var device = {
@@ -75,7 +99,7 @@
 
 		var timeline = new createjs.Text("1:00", "36px Arial", "#ff7700");
 		var time = 59;
-		var maxScore = new createjs.Text("1000", "36px Arial", "#ff7700");
+		var maxScore = new createjs.Text("Music", "36px Arial", "#ff7700");
 		var score = new createjs.Text("0", "36px Arial", "#00F");
 		var yourScore = 0;
 
@@ -101,6 +125,11 @@
 		stage.addChild(timeline);
 		stage.addChild(score);
 		stage.addChild(maxScore);
+
+		maxScore.addEventListener("click", handleMaxClick);
+		function handleMaxClick(event) {
+			
+		}
 
 		stage.addChild(dragger);
 		dragger.on("pressmove",function(evt) {
@@ -153,7 +182,7 @@
 				}
 				if(tcrpC.y >= (device.height())){
 					stage.removeChild(tcrpC);
-					// createjs.Sound.play(3);
+					createjs.Sound.play(3);
 				}
 				var intersection = ndgmr.checkRectCollision(tcrpC,longBoat);
 				if(intersection){
@@ -165,11 +194,11 @@
 						yourScore += 5 + 5 * Math.random();
 						score.text = parseInt(yourScore);
 
-						/*createjs.Sound.play(2);
+						createjs.Sound.play(2);
 
 						if(bgMusic.playState == createjs.Sound.PLAY_FINISHED){
 							createjs.Sound.play(1);
-						}*/
+						}
 					}
 				}
 			}
