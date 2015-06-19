@@ -26,6 +26,21 @@
 	<canvas id="myGame"></canvas>
 	<script type="text/javascript">
 
+		var assetsPath = "../audio/";
+		var sounds = [
+			{src: "bg.wav", id: 1},
+			{src: "get.wav", id: 2},
+			{src: "lost.wav", id: 3}
+		];
+		var bgMusic;
+		createjs.Sound.alternateExtensions = ["mp3"];
+		createjs.Sound.addEventListener("fileload", createjs.proxy(soundLoaded, this));
+		createjs.Sound.registerSounds(sounds, assetsPath);
+		function soundLoaded(){
+			createjs.Sound.play(1);
+			bgMusic = createjs.Sound.play(1);
+		}
+
 		// 获取设备的宽和高
 		var device = {
 			width: function(){
@@ -50,7 +65,7 @@
 		// mygame
 		var stage = new createjs.Stage('myGame');
 		var dragger = new createjs.Container();
-		var longBoat = new createjs.Bitmap("../images/longzhou2.png");
+		var longBoat = new createjs.Bitmap("../images/lz.png");
 
 		var timeline = new createjs.Text("1:00", "36px Arial", "#ff7700");
 		var time = 59;
@@ -62,7 +77,7 @@
 		stage.setBounds(0, 0, device.width(), device.height());
 		dragger.addChild(longBoat);
 		longBoat.scaleX = 0.6;
-		longBoat.scaleY = 0.3;
+		longBoat.scaleY = 0.6;
 		longBoat.setBounds(0, 0, 250, 100);
 		dragger.setBounds(0, 0, 250, 100);
 		dragger.x = (stage.getBounds().width -dragger.getBounds().width) / 2;
@@ -90,7 +105,7 @@
 		var timelineT = setInterval(function(){
 			if(time <= 0){
 				clearInterval(timelineT);
-				alert("GAme GG");
+				
 			}
 			if(time >= 10){
 				timeline.text = "0:"+time;
@@ -103,9 +118,7 @@
 
 		var whichOne = parseInt(Math.random()*10);
 		var addTcrp = setInterval(function(){
-			var tcrp = new createjs.Bitmap("../images/zongzi/"+whichOne+".png");
-			tcrp.scaleX = 0.1;
-			tcrp.scaleY = 0.1;
+			var tcrp = new createjs.Bitmap("../images/zz/"+whichOne+".png");
 			tcrp.x = device.width() * Math.random();
 			tcrp.y = 0;
 			stage.addChild(tcrp);
@@ -134,17 +147,22 @@
 				}
 				if(tcrpC.y >= (device.height())){
 					stage.removeChild(tcrpC);
+					createjs.Sound.play(3);
 				}
-				tcrpC.scaleX = 0.1;
-				tcrpC.scaleY = 0.1;
 				var intersection = ndgmr.checkRectCollision(tcrpC,longBoat);
 				if(intersection){
 					if((intersection.x - longBoat.x > 100) && (intersection.x - longBoat.x < 200) && (intersection.y > device.height() - 50) ){
+					
 						console.log(intersection);
 						console.log(longBoat.y);
 						stage.removeChild(tcrpC);
 						yourScore += 5 + 5 * Math.random();
 						score.text = parseInt(yourScore);
+						createjs.Sound.play(2);
+
+						if(bgMusic.playState == createjs.Sound.PLAY_FINISHED){
+							createjs.Sound.play(1);
+						}
 					}
 				}
 			}
