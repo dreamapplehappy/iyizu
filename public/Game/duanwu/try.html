@@ -36,7 +36,7 @@
 				这是一个奇葩的游戏，不要接粽子，躲粽子，别让它砸死你！
 			</div>
 			<div class="am-modal-footer">
-				<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+				<span class="am-modal-btn" data-am-modal-cancel>取消不了</span>
 				<span class="am-modal-btn" data-am-modal-confirm>确定</span>
 			</div>
 		</div>
@@ -145,8 +145,8 @@
 		stage.addChild(dragger);
 		dragger.on("pressmove",function(evt) {
 			evt.currentTarget.x = evt.stageX - 125;
-			if(evt.currentTarget.x < -60){
-				evt.currentTarget.x = -60;
+			if(evt.currentTarget.x < -30){
+				evt.currentTarget.x = -30;
 			}
 			flag.x = evt.currentTarget.x
 			stage.update();   
@@ -174,6 +174,17 @@ window.onload = function(){
 		onCancel: function() {
 			createjs.Sound.play(1);
 			bgMusic = createjs.Sound.play(1);
+			addTcrp = setInterval(function(){
+				var tcrp = new createjs.Bitmap("../images/zz/"+whichOne+".png");
+				tcrp.x = device.width() * Math.random();
+				tcrp.y = 0;
+				stage.addChild(tcrp);
+				stage.update();
+				whichOne = parseInt(Math.random()*9 + 1);
+				if(100 >= createjs.Ticker.framerate){
+					createjs.Ticker.framerate += 2;
+				}
+			},800);
 		}
 	});
 }
@@ -204,7 +215,6 @@ function handleTick(event) {
 		var intersection = ndgmr.checkRectCollision(tcrpC,longBoat);
 		if(intersection){
 			if((intersection.x - longBoat.x > 100) && (intersection.x - longBoat.x < 200) && (intersection.y > device.height() - 50) ){
-
 				stage.removeChild(tcrpC);
 				if(myScore + 1){
 					score.text = "生命值:" + myScore--;
@@ -212,6 +222,7 @@ function handleTick(event) {
 				else{
 					clearInterval(addTcrp);
 					that.handleTick = null;
+					stage.removeAllChildren();
 					var $modal = $("#over-confirm");
 					$modal.modal();
 					$("#more").click(function(){
@@ -240,6 +251,7 @@ function handleTick(event) {
 					createjs.Sound.play(1);
 				}
 			}
+			
 		}
 	}
 	stage.update();
