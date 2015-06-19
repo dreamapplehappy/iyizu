@@ -23,9 +23,12 @@
 <body scroll="no">
 <!--  -->
 	<canvas id="myGame"></canvas>
+	<audio src="../audio/bg.ogg" autoplay></audio>
 
 
 	<script type="text/javascript">
+
+		var bgAudio;
 
 		var assetsPath = "../audio/";
 		var sounds = [
@@ -38,8 +41,8 @@
 		createjs.Sound.addEventListener("fileload", createjs.proxy(soundLoaded, this));
 		createjs.Sound.registerSounds(sounds, assetsPath);
 		function soundLoaded(){
-			createjs.Sound.play(1);
-			bgMusic = createjs.Sound.play(1);
+			// createjs.Sound.play(1);
+			// bgMusic = createjs.Sound.play(1);
 		}
 
 		// 获取设备的宽和高
@@ -159,10 +162,10 @@
 						stage.removeChild(tcrpC);
 						yourScore += 5 + 5 * Math.random();
 						score.text = parseInt(yourScore);
-						createjs.Sound.play(2);
+						// createjs.Sound.play(2);
 
 						if(bgMusic.playState == createjs.Sound.PLAY_FINISHED){
-							createjs.Sound.play(1);
+							// createjs.Sound.play(1);
 						}
 					}
 				}
