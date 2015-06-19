@@ -28,12 +28,12 @@
 
 		var assetsPath = "../audio/";
 		var sounds = [
-			{src: "bg.wav", id: 1},
-			{src: "get.wav", id: 2},
-			{src: "lost.wav", id: 3}
+			{src: "bg.mp3", id: 1},
+			{src: "get.mp3", id: 2},
+			{src: "lost.mp3", id: 3}
 		];
 		var bgMusic;
-		createjs.Sound.alternateExtensions = ["mp3"];
+		createjs.Sound.alternateExtensions = ["wav"];
 		createjs.Sound.addEventListener("fileload", createjs.proxy(soundLoaded, this));
 		createjs.Sound.registerSounds(sounds, assetsPath);
 		function soundLoaded(){
