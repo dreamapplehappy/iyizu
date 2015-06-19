@@ -32,9 +32,9 @@
 	<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
 		<div class="am-modal-dialog">
 			<div class="am-modal-hd">确定进入欢乐接粽子游戏吗？</div>
-			<!-- <div class="am-modal-bd">
-				你，确定要删除这条记录吗？
-			</div> -->
+			<div class="am-modal-bd">
+				这是一个奇葩的游戏，不要接粽子，躲粽子，别让它砸死你！
+			</div>
 			<div class="am-modal-footer">
 				<span class="am-modal-btn" data-am-modal-cancel>取消</span>
 				<span class="am-modal-btn" data-am-modal-confirm>确定</span>
@@ -42,8 +42,22 @@
 		</div>
 	</div>
 
+	<div class="am-modal am-modal-confirm" tabindex="-1" id="over-confirm">
+		<div class="am-modal-dialog">
+			<div class="am-modal-hd">你的分数：<span>100</span></div>
+			<!-- <div class="am-modal-bd">
+				这是一个奇葩的游戏，不要接粽子，躲粽子，别让它砸死你！
+			</div> -->
+			<div class="am-modal-footer">
+				<span id="more" class="am-modal-btn" data-am-modal-cancel>再来一次</span>
+				<span id="share" class="am-modal-btn" data-am-modal-confirm>分享</span>
+			</div>
+		</div>
+	</div>
+		
 	<script type="text/javascript">
 
+		var that = window;
 		var assetsPath = "../audio/";
 		var sounds = [
 		{src: "bg.ogg", id: 1},
@@ -84,12 +98,19 @@
 		var dragger = new createjs.Container();
 		var longBoat = new createjs.Bitmap("../images/lz.png");
 
-		var timeline = new createjs.Text("1:00", "36px Arial", "#ff7700");
-		var time = 59;
-		var maxScore = new createjs.Text("最高分"+'\n'+"1000", "20px Arial", "#ff7700");
-		var myScore = 36;
-		var score = new createjs.Text("live:"+myScore, "36px Arial", "#00F");
+		 var g = new createjs.Graphics();
+ 				g.setStrokeStyle(1);
+ 				g.beginStroke("#000000");
+ 				g.beginFill("blue");
+ 				g.drawRect(0, 20, device.width(), 6);
+ 		var dis = device.width() / 10;
+
+		var timeline = new createjs.Shape(g);
+		var maxScore = new createjs.Text("得分:0", "25px Arial", "#ff7700");
+		var myScore = 10;
 		var yourScore = 0;
+		var score = new createjs.Text("生命值:"+myScore, "25px Arial", "#00F");
+		var flag = new createjs.Bitmap("../images/zz/ao.png");
 
 		createjs.Touch.enable(stage);
 		stage.setBounds(0, 0, device.width(), device.height());
@@ -101,14 +122,21 @@
 		dragger.x = (stage.getBounds().width -dragger.getBounds().width) / 2;
 		dragger.y = stage.getBounds().height -dragger.getBounds().height
 		
-		timeline.x = 2;
-		timeline.y = 1;
+		timeline.x = 0;
+		timeline.y = 20;
 
-		score.x = device.width() - 180;
-		score.y = 1;
+		score.x = 20;
+		score.y = 6;
 
-		maxScore.x = device.width()-80;
-		maxScore.y = 1;
+		maxScore.x = device.width()-100;
+		maxScore.y = 6;
+
+		flag.x = dragger.x;
+		flag.y = dragger.y - 30;
+		flag.scaleX = 1.5;
+		flag.scaleY = 1.5;
+		flag.visible = false;
+		stage.addChild(flag);
 
 		stage.addChild(timeline);
 		stage.addChild(score);
@@ -117,44 +145,21 @@
 		stage.addChild(dragger);
 		dragger.on("pressmove",function(evt) {
 			evt.currentTarget.x = evt.stageX - 125;
+			if(evt.currentTarget.x < -60){
+				evt.currentTarget.x = -60;
+			}
+			flag.x = evt.currentTarget.x
 			stage.update();   
 		});
-
-		/*var timelineT = setInterval(function(){
-			if(time <= 0){
-				clearInterval(timelineT);
-				
-			}
-			if(time >= 10){
-				timeline.text = "0:"+time;
-			}
-			else{
-				timeline.text = "0:0"+time;
-			}
-			--time;
-		},1000);*/
-
 var whichOne = parseInt(Math.random()*10);
-var addTcrp,timelineT;
-		/*var addTcrp = setInterval(function(){
-			var tcrp = new createjs.Bitmap("../images/zz/"+whichOne+".png");
-			tcrp.x = device.width() * Math.random();
-			tcrp.y = 0;
-			stage.addChild(tcrp);
-			stage.update();
-			whichOne = parseInt(Math.random()*9 + 1);
-			if(100 >= createjs.Ticker.framerate){
-				createjs.Ticker.framerate += 2;
-			}
-		},800);*/
-
+var addTcrp;
 window.onload = function(){
 	$('#my-confirm').modal({
 		relatedTarget: this,
 		onConfirm: function(options) {
 			createjs.Sound.play(1);
 			bgMusic = createjs.Sound.play(1);
-			var addTcrp = setInterval(function(){
+			addTcrp = setInterval(function(){
 				var tcrp = new createjs.Bitmap("../images/zz/"+whichOne+".png");
 				tcrp.x = device.width() * Math.random();
 				tcrp.y = 0;
@@ -165,21 +170,6 @@ window.onload = function(){
 					createjs.Ticker.framerate += 2;
 				}
 			},800);
-
-
-			var timelineT = setInterval(function(){
-				if(time <= 0){
-					clearInterval(timelineT);
-
-				}
-				if(time >= 10){
-					timeline.text = "0:"+time;
-				}
-				else{
-					timeline.text = "0:0"+time;
-				}
-				--time;
-			},1000);
 		},
 		onCancel: function() {
 			createjs.Sound.play(1);
@@ -193,7 +183,7 @@ createjs.Ticker.framerate = 30;
 var ly = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
 var lx = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
 function handleTick(event) {
-	for(var i = 4; i < stage.getNumChildren(); i++){
+	for(var i = 5; i < stage.getNumChildren(); i++){
 		var tcrpC = stage.getChildAt(i);
 		tcrpC.x += lx[i] + lx[i] * Math.random();
 		tcrpC.y += ly[i];
@@ -208,13 +198,41 @@ function handleTick(event) {
 		if(tcrpC.y >= (device.height())){
 			stage.removeChild(tcrpC);
 			createjs.Sound.play(3);
+			yourScore += 10 * Math.random();
+			maxScore.text = "得分:"+ parseInt(yourScore);
 		}
 		var intersection = ndgmr.checkRectCollision(tcrpC,longBoat);
 		if(intersection){
 			if((intersection.x - longBoat.x > 100) && (intersection.x - longBoat.x < 200) && (intersection.y > device.height() - 50) ){
 
 				stage.removeChild(tcrpC);
-				score.text = "live:" + myScore--;
+				if(myScore + 1){
+					score.text = "生命值:" + myScore--;
+				}
+				else{
+					clearInterval(addTcrp);
+					that.handleTick = null;
+					var $modal = $("#over-confirm");
+					$modal.modal();
+					$("#more").click(function(){
+						window.location.reload();
+					});
+					$("#share").click(function(){
+						window.location = "http://www.baidu.com";
+					})
+					
+				}
+				g.beginFill("red");
+ 				g.drawRect(0, 20, (10 - myScore) * dis, 6);
+				timeline = new createjs.Shape(g);
+				flag.visible = true;
+				if(flag.visible == true){
+					setTimeout(function(){
+						flag.visible = false;
+						flag.scaleX = 1.5;
+						flag.scaleY = 1.5;
+					},360);
+				}
 
 				createjs.Sound.play(2);
 
