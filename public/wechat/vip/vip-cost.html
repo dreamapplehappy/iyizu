@@ -59,18 +59,8 @@
     <label for="vip-c-s" class="am-u-sm-3 am-form-label">积分：</label>
     <div class="am-u-sm-9">
       <input type="text" id="vip-c-s" name="score" placeholder="输入抵用积分">
-      <span class="append">(您共有<b id="vip-discount">200</b>分)</span>
+      <span class="append">(您可用<b id="vip-discount">0</b>分)</span>
     </div>
-    <script type="text/javascript">
-      $(function(){
-          $("#vip-c-s").click(function(){
-              // $("#vip-discount").text(parseInt($("#vip-c-m").text())*0.1);
-              var discount = $("#vip-c-m").val() || 0;
-              // console.log(discount);
-              $("#vip-discount").text(discount * 0.1);
-          });
-      });
-    </script>
   </div>
 
   <div class="am-form-group">
@@ -79,8 +69,18 @@
       <input type="password" id="vip-c-p" placeholder="输入您的密码">
     </div>
   </div>
-
-  <hr/>
+  <div class="am-panel am-panel-default">
+  <ul class="am-list am-list-static">
+    <li class="am-g">
+      <div class="am-u-sm-6 l">实付金额：</div>
+      <div id="realM" class="am-u-sm-6 r am-icon-cny">&nbsp;0</div>
+    </li>
+    <li class="am-g">
+      <div class="am-u-sm-6 l">使用积分：</div>
+      <div id="realS" class="am-u-sm-6 r">&nbsp;0</div>
+    </li>
+  </ul>
+</div>
   
   <div class="am-form-group am-g">
     <div class="am-u-sm-4 am-u-sm-offset-1">
@@ -101,8 +101,12 @@
       <div class="am-u-sm-6 r am-icon-cny">&nbsp;10.00</div>
     </li>
     <li class="am-g">
+      <div class="am-u-sm-6 l">当前折扣：</div>
+      <div id="disC" class="am-u-sm-6 r">&nbsp;7折</div>
+    </li>
+    <li class="am-g">
       <div class="am-u-sm-6 l">当前积分：</div>
-      <div class="am-u-sm-6 r am-icon-diamond">&nbsp;1000</div>
+      <div id="curScore" class="am-u-sm-6 r am-icon-diamond">&nbsp;100</div>
     </li>
     <li class="am-g">
       <div class="am-u-sm-6 l">会员卡号：</div>
@@ -115,10 +119,140 @@
 
   </ul>
 </div>
-  
+<script type="text/javascript">
+      $(function(){
+        /*var myScore = parseInt($("#curScore").text());
+        var disC = parseInt($("#disC").text());
+        var initS =  parseInt($("#vip-c-s").val());
+        var discount;
+        var wantS;
+        var realM;
+        var wantM;*/
+
+       /* $("#vip-c-m").on('input',function(e){
+              if(isNaN(initS)){
+                $("#vip-c-s").val(0);
+              }
+              discount = $("#vip-c-m").val() || 0; 
+              discount = parseInt(discount) * 0.1;
+              if(myScore <= discount){
+                discount = myScore;
+              }
+              $("#vip-discount").text(parseInt(discount));
+
+              wantS = parseInt($("#vip-c-s").val());
+            if(wantS > parseInt(discount)){
+              wantS = parseInt(discount);
+              $("#vip-c-s").val(wantS);
+            }
+            wantM = parseInt($("#vip-c-m").val());
+            realM = wantM * disC / 10 - wantS;
+            if(isNaN(realM)){
+                realM = 0;
+            }
+            realM = parseInt(realM);
+            $("#realM").text(" "+realM);
+
+         });
+          $("#vip-c-s").on('input', function(e){
+            if(isNaN(realM)){
+              realM = 0;
+            }
+            discount = $("#vip-c-m").val() || 0; 
+              discount = parseInt(discount) * 0.1;
+              if(myScore <= discount){
+                discount = myScore;
+              }
+              $("#vip-discount").text(parseInt(discount));
+
+            wantS = parseInt($("#vip-c-s").val());
+            if(wantS > parseInt(discount)){
+              wantS = parseInt(discount);
+              $("#vip-c-s").val(wantS);
+            }
+            else if(isNaN(initS)){
+              wantS = 0;
+            }
+            wantM = parseInt($("#vip-c-m").val());
+            realM = wantM * disC / 10 - wantS;
+            realM = parseInt(realM);
+            if(isNaN(wantS)){
+              wantS = 0;
+            }
+            $("#realM").text(" "+realM);
+            $("#realS").text(" "+wantS);
+          })*/
+        var curScore = $("#curScore").text();
+        var curDiscount = $("#disC").text();
+        var shouldPay;
+        var realScore = $("#vip-c-s").val();
+        var realPay = $("#realM");
+        var costScore = $("#realS");
+        var showScore = $("#vip-discount");
+        var countScore;
+        var inputScore;
+        var getScore;
+        var pay;
+
+        $("#vip-c-m").on("input", function(e){
+            $("#vip-c-m").val($("#vip-c-m").val().replace(/\D/gi, ""));
+            shouldPay = $("#vip-c-m").val();
+            if(isNaN(shouldPay)){
+              shouldPay = 0;
+            }
+            countScore = parseInt(shouldPay) * 0.1;
+            curScore = parseInt(curScore);
+            if(isNaN(countScore)){
+              countScore = 0;
+            }
+            if(isNaN(curScore)){
+              curScore = 0;
+            }
+            if(countScore > curScore){
+              countScore = curScore;
+            }
+            showScore.text(" " + parseInt(countScore));
+            pay = shouldPay * parseInt(curDiscount) / 10 - countScore;
+            pay = parseInt(pay);
+            if(isNaN(pay)){
+              pay = 0;
+            }
+            realPay.text(" " + pay);
+        });
+        $("#vip-c-s").on("input", function(e){
+            $("#vip-c-s").val($("#vip-c-s").val().replace(/\D/gi, ""));
+            inputScore = parseInt($("#vip-c-s").val());
+            if(isNaN(inputScore)){
+              inputScore = 0;
+            }
+            getScore = parseInt(showScore.text());
+            if(isNaN(getScore)){
+              getScore = 0;
+            }
+            if(inputScore > getScore){
+              inputScore = getScore;
+              $("#vip-c-s").val(inputScore);
+              costScore.text(" " + inputScore);
+            }
+            else{
+              $("#vip-c-s").val(inputScore);
+              costScore.text(" "+inputScore);
+            }
+
+            pay = parseInt($("#vip-c-m").val()) * parseInt(curDiscount) / 10 - inputScore;
+            pay = parseInt(pay);
+            if(isNaN(pay)){
+              pay = 0;
+            }
+            realPay.text(" " + pay);
+        })
+
+
+
+
+          
+      });
+  </script>
 </form>
-
-
 </body>
-
 </html>
