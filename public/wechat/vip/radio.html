@@ -37,6 +37,24 @@
     .wayLabel{
       line-height: 1em;
     }
+    .container{
+      text-align: center;
+      border: 1px solid #CCC;
+      font-size: 2em;
+      height: 2em;
+      line-height: 2em;
+    }
+    .left{
+      padding: 0;
+    }
+    .left:after{
+      content: '';
+      float: right;
+      width: 1px;
+      height: 1.6em;
+      border: 1px solid black;
+      margin-top: 0.2em;
+    }
   </style>
 </head>
 
@@ -59,5 +77,10 @@
     </div>
   </div>
 </form>
+<hr/>
+<div class="container am-g">
+  <div class="am-u-sm-6 left">好好学习</div>
+  <div class="am-u-sm-6 right">天天向上</div>
+</div>
 </body>
 </html>
