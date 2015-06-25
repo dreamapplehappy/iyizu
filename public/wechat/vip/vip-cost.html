@@ -106,7 +106,7 @@
     </li>
     <li class="am-g">
       <div class="am-u-sm-6 l">当前积分：</div>
-      <div id="curScore" class="am-u-sm-6 r am-icon-diamond">&nbsp;100</div>
+      <div id="curScore" class="am-u-sm-6 r am-icon-diamond">&nbsp;1000</div>
     </li>
     <li class="am-g">
       <div class="am-u-sm-6 l">会员卡号：</div>
@@ -121,69 +121,13 @@
 </div>
 <script type="text/javascript">
       $(function(){
-        /*var myScore = parseInt($("#curScore").text());
-        var disC = parseInt($("#disC").text());
-        var initS =  parseInt($("#vip-c-s").val());
-        var discount;
-        var wantS;
-        var realM;
-        var wantM;*/
-
-       /* $("#vip-c-m").on('input',function(e){
-              if(isNaN(initS)){
-                $("#vip-c-s").val(0);
-              }
-              discount = $("#vip-c-m").val() || 0; 
-              discount = parseInt(discount) * 0.1;
-              if(myScore <= discount){
-                discount = myScore;
-              }
-              $("#vip-discount").text(parseInt(discount));
-
-              wantS = parseInt($("#vip-c-s").val());
-            if(wantS > parseInt(discount)){
-              wantS = parseInt(discount);
-              $("#vip-c-s").val(wantS);
-            }
-            wantM = parseInt($("#vip-c-m").val());
-            realM = wantM * disC / 10 - wantS;
-            if(isNaN(realM)){
-                realM = 0;
-            }
-            realM = parseInt(realM);
-            $("#realM").text(" "+realM);
-
-         });
-          $("#vip-c-s").on('input', function(e){
-            if(isNaN(realM)){
-              realM = 0;
-            }
-            discount = $("#vip-c-m").val() || 0; 
-              discount = parseInt(discount) * 0.1;
-              if(myScore <= discount){
-                discount = myScore;
-              }
-              $("#vip-discount").text(parseInt(discount));
-
-            wantS = parseInt($("#vip-c-s").val());
-            if(wantS > parseInt(discount)){
-              wantS = parseInt(discount);
-              $("#vip-c-s").val(wantS);
-            }
-            else if(isNaN(initS)){
-              wantS = 0;
-            }
-            wantM = parseInt($("#vip-c-m").val());
-            realM = wantM * disC / 10 - wantS;
-            realM = parseInt(realM);
-            if(isNaN(wantS)){
-              wantS = 0;
-            }
-            $("#realM").text(" "+realM);
-            $("#realS").text(" "+wantS);
-          })*/
         var curScore = $("#curScore").text();
-        var curDiscount = $("#disC").text();
+
+        //这是付款的折扣
+        var curDiscount = 0.7;
+        // 这是积分的折扣
+        var percent = 0.2;
+
         var shouldPay;
         var realScore = $("#vip-c-s").val();
         var realPay = $("#realM");
@@ -193,31 +137,37 @@
         var inputScore;
         var getScore;
         var pay;
+        var minScore;
 
         $("#vip-c-m").on("input", function(e){
-            $("#vip-c-m").val($("#vip-c-m").val().replace(/\D/gi, ""));
+            //parseFloat
             shouldPay = $("#vip-c-m").val();
             if(isNaN(shouldPay)){
               shouldPay = 0;
             }
-            countScore = parseInt(shouldPay) * 0.1;
+            countScore = parseInt(parseFloat(shouldPay) * 100 * percent);
             curScore = parseInt(curScore);
+            inputScore = parseInt($("#vip-c-s").val());
+            if(isNaN(inputScore)){
+              inputScore = 0;
+            }
             if(isNaN(countScore)){
               countScore = 0;
             }
             if(isNaN(curScore)){
               curScore = 0;
             }
-            if(countScore > curScore){
-              countScore = curScore;
-            }
+            //比较大小
+            minScore = Math.min(inputScore,curScore,countScore);
+            console.log(countScore);
+
             showScore.text(" " + parseInt(countScore));
-            pay = shouldPay * parseInt(curDiscount) / 10 - countScore;
-            pay = parseInt(pay);
+            pay = shouldPay * curDiscount - minScore / 100;
+            pay = parseFloat(pay);
             if(isNaN(pay)){
               pay = 0;
             }
-            realPay.text(" " + pay);
+            realPay.text(" " + pay.toFixed(1));
         });
         $("#vip-c-s").on("input", function(e){
             $("#vip-c-s").val($("#vip-c-s").val().replace(/\D/gi, ""));
@@ -239,18 +189,12 @@
               costScore.text(" "+inputScore);
             }
 
-            pay = parseInt($("#vip-c-m").val()) * parseInt(curDiscount) / 10 - inputScore;
-            pay = parseInt(pay);
+            pay = parseFloat($("#vip-c-m").val()) * curDiscount - inputScore / 100;
             if(isNaN(pay)){
               pay = 0;
             }
-            realPay.text(" " + pay);
-        })
-
-
-
-
-          
+            realPay.text(" " + pay.toFixed(1));
+        })  
       });
   </script>
 </form>
