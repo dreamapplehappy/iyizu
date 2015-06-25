@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>会员消费</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.flat.min.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.min.css">
+
+  <!-- your app's css -->
+  <link rel="stylesheet" type="text/css" href="../css/vip/vip.css">
+
+  <!-- JS -->
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.legacy.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.widgets.helper.min.js"></script>
+  
+
+  <!-- your app's js -->
+  <script src="../js/vip/app.js"></script>
+  <style type="text/css">
+    .vip-charge h3{
+      text-align: center;
+      padding-top: 1em;
+    }
+    .vip-charge .way .wayLabel{
+      margin-top: -0.2em;
+    }
+    .vip-charge .wayDetail div label{
+      font-size: 1.2em;
+    }
+    .vip-charge #warning{
+      text-align: center;
+      font-size: 0.8em;
+    }
+    .vip-charge #chargeScore{
+      color: blue;
+      font-size: 1.5em;
+    }
+    input[type="radio"] {
+      content: url("../images/nocheck.png");
+      width: 18px;
+      height: 18px;
+    }
+    input[type="radio"]:checked{
+      content: url("../images/checked.png");
+    }
+    
+  </style>
+</head>
+
+<body class="vip-charge">
+
+<h3>会员卡充值</h3>
+<hr />
+<form class="am-form am-form-horizontal">
+  <div class="am-form-group">
+    <label for="vip-c-m" class="am-u-sm-3 am-form-label">金额：</label>
+    <div class="am-u-sm-9">
+      <input type="text" id="vip-charge" name="money" placeholder="请输入你的充值金额">
+    </div>
+  </div>
+
+  <div class="am-form-group way">
+    <label for="vip-c-s" class="am-u-sm-3 am-form-label wayLabel">方式：</label>
+    <div class="am-u-sm-9 am-g wayDetail">
+      <div class="am-u-sm-6 am-radio">
+        <label>
+        <input type="radio" class="style" name="payWay" value="wx">
+          微信支付
+        </label>
+      </div>
+      <div class="am-u-sm-6 am-radio">
+        <label>
+          <input type="radio" class="style" name="payWay" value="other">
+          其它方式
+        </label>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="am-form-group am-g">
+    <div class="am-u-sm-4 am-u-sm-offset-1">
+      <button type="submit" class="am-btn am-btn-primary">确认支付</button>
+    </div>
+    <div class="am-u-sm-4 am-u-sm-offset-1 am-u-end">
+      <button type="reset" class="am-btn am-btn-default">取消操作</button>
+    </div>
+  </div>
+
+  <ul class="am-list am-list-static">
+    <li class="am-g" id="warning">
+      充值提醒：充值1元人民币可获得<span id="chargeScore">1</span>积分
+    </li>
+  </ul>
+
+
+<script type="text/javascript">
+  $("#vip-charge").on("input", function(e){
+            $("#vip-charge").val($("#vip-charge").val().replace(/\D/gi, ""));
+  });
+</script>
+</form>
+</body>
+</html>

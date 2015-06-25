@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>会员消费</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.flat.min.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/amazeui/dist/css/amazeui.min.css">
+
+  <!-- your app's css -->
+  <link rel="stylesheet" type="text/css" href="../css/vip/vip.css">
+
+  <!-- JS -->
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.legacy.min.js"></script>
+  <script type="text/javascript" src="../bower_components/amazeui/dist/js/amazeui.widgets.helper.min.js"></script>
+  <style type="text/css">
+    .radio h3{
+      text-align: center;
+      margin-top: 1em;
+    }
+    input[type="radio"] {
+      content: url("../images/nocheck.png");
+      width: 18px;
+      height: 18px;
+    }
+    input[type="radio"]:checked{
+      content: url("../images/checked.png");
+    }
+    label{
+      text-align: center;
+      font-size: 1.2em;
+    }
+    .wayLabel{
+      line-height: 1em;
+    }
+  </style>
+</head>
+
+<body class="radio">
+
+<h3>优雅的改变Radio式样</h3>
+<hr />
+<form class="am-form am-form-horizontal">
+  <div class="am-form-group way">
+    <label class="am-u-sm-4 am-form-label wayLabel">你帅吗：</label>
+    <div class="am-u-sm-8 am-g wayDetail">
+      <div class="am-u-sm-6 am-radio">
+        <label for="a">老帅了</label>
+        <input id="a" type="radio" class="style" name="payWay" value="a">
+      </div>
+      <div class="am-u-sm-6 am-radio">
+        <label for="b">老衰了</label>
+        <input id="b" type="radio" class="style" name="payWay" value="b">
+      </div>
+    </div>
+  </div>
+</form>
+</body>
+</html>
